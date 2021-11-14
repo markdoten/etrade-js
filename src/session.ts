@@ -13,9 +13,11 @@ const HOSTNAMES = {
 
 interface IFetchOptions {
   body?: any;
+  headers?: string[];
   method?: 'DELETE' | 'GET' | 'POST' | 'PUT';
   path: string;
   query?: any;
+  version?: number;
 }
 
 /**
@@ -23,20 +25,24 @@ interface IFetchOptions {
  * @async
  * @param {Object} options - Fetch options.
  * @param {Object} [options.body] - Request body.
+ * @param {Object} [options.headers] - List of headers.
  * @param {string} [options.method] - Request path.
  * @param {string} [options.path] - Request path.
  * @param {Object} [options.query] - Request URL query params.
+ * @param {number} [options.version] - E*Trade API version.
  * @returns {Promise<any>} - Response.
  */
 export async function fetchWithAuth<T>({
   body = {},
+  headers = [],
   method = 'GET',
   path,
-  query = {}
+  query = {},
+  version = 1
 }: IFetchOptions): Promise<T> {
   // TODO: Get env from some config.
   const env = Environment.SANDBOX;
-  const url = new URL(`${HOSTNAMES[env]}/v1${path}`);
+  const url = new URL(`${HOSTNAMES[env]}${version ? `/v${version}` : ''}${path}`);
 
   Object.keys(query).forEach((key: string) => url.searchParams.set(key, query[key]));
 
@@ -56,6 +62,9 @@ export async function fetchWithAuth<T>({
 
   try {
     const response = await fetch(url.toString(), init);
+
+    // TODO: Can I get the URL and query params?
+
     const data = await response.json();
     return data as T;
   } catch (error) {
