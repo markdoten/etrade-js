@@ -2,8 +2,8 @@
  * @file View Portfolio.
  */
 import {fetchWithAuth} from '../session';
-import {MarketSession} from '../enums';
-import {SortOrder, View} from './enums';
+import {MarketSession, SortOrder} from '../enums';
+import {View} from './enums';
 import type {IAccountPortfolio, ITotals} from './interface';
 import type {SortBy} from './enums';
 

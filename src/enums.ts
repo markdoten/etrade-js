@@ -56,6 +56,11 @@ export enum SecurityType {
   OPTN = 'OPTN'
 }
 
+export enum SortOrder {
+  ASC = 'ASC',
+  DESC = 'DESC'
+}
+
 export enum TypeCode {
   BOND = 'BOND',
   CLOSED_END_FUND = 'CLOSED_END_FUND',

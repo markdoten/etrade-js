@@ -2,6 +2,9 @@
  * @file Session.
  */
 import {Environment} from './enums';
+import AbortController from 'abort-controller';
+import fetch, {AbortError} from 'node-fetch';
+import type {RequestInit} from 'node-fetch';
 
 const HOSTNAMES = {
   [Environment.LIVE]: 'https://api.etrade.com',
@@ -31,7 +34,35 @@ export async function fetchWithAuth<T>({
   path,
   query = {}
 }: IFetchOptions): Promise<T> {
+  // TODO: Get env from some config.
   const env = Environment.SANDBOX;
-  const url = `${HOSTNAMES[env]}/v1${path}`;
-  return {} as T;
+  const url = new URL(`${HOSTNAMES[env]}/v1${path}`);
+
+  Object.keys(query).forEach((key: string) => url.searchParams.set(key, query[key]));
+
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 5000);
+
+  const init: RequestInit = {
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    method,
+    signal: controller.signal
+  };
+
+  body && (init.body = JSON.stringify(body));
+
+  try {
+    const response = await fetch(url.toString(), init);
+    const data = await response.json();
+    return data as T;
+  } catch (error) {
+    if (error instanceof AbortError) {
+      console.log('request was aborted');
+    }
+  } finally {
+    clearTimeout(timeout);
+  }
 }

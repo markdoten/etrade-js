@@ -17,6 +17,8 @@
     "ts": "tsc"
   },
   "dependencies": {
+    "abort-controller": "^3.0.0",
+    "node-fetch": "^3.1.0",
     "typescript": "^4.4.4"
   },
   "devDependencies": {

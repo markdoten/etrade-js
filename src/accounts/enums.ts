@@ -211,11 +211,6 @@ export enum SortBy {
   WEEK_52_RANGE = 'WEEK_52_RANGE'
 }
 
-export enum SortOrder {
-  ASC = 'ASC',
-  DESC = 'DESC'
-}
-
 export enum View {
   COMPLETE = 'COMPLETE',
   FUNDAMENTAL = 'FUNDAMENTAL',
