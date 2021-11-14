@@ -1,0 +1,12 @@
+.docker.env
+.DS_Store
+.env
+.idea/
+/lib/
+build/
+config/ngrok/ngrok.conf
+grafana-provisioning/
+iv.json
+node_modules/
+temp/
+tmp/
