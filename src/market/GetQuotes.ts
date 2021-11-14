@@ -35,7 +35,7 @@ export interface IGetQuotesResponse {
  * @param {string[]} [request.symbols] - One or more (comma-separated) symbols for equities or options, up to a maximum of 25. Symbols for equities are simple, for example, GOOG. Symbols for options are more complex, consisting of six elements separated by colons, in this format: underlier:year:month:day:optionType:strikePrice.
  * @returns {Promise<IGetQuotesResponse>} - Portfolio information for a selected brokerage account.
  */
-export default ({
+export const GetQuotes = ({
   symbols,
   ...query
 }: IGetQuotesRequest): Promise<IGetQuotesResponse> =>

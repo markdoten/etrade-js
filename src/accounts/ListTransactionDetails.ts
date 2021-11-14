@@ -41,7 +41,7 @@ export interface IListTransactionDetailsResponse {
  * @param {string} [request.transactionId] - Transaction Id.
  * @returns {Promise<IListTransactionDetailsResponse>} - Transaction details.
  */
-export default ({
+export const ListTransactionDetails = ({
   accountIdKey,
   storeId,
   transactionId

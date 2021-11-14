@@ -1,0 +1,32 @@
+/**
+ * @file Delete Alert.
+ */
+import {fetchWithAuth} from '../session';
+import type {AlertResult} from './enums';
+import type {IFailedAlerts} from './interface';
+
+/* eslint-disable max-len */
+
+export interface IDeleteAlertRequest {
+  /** List of alert IDs. */
+  alertIds: string[];
+}
+
+export interface IDeleteAlertResponse {
+  /** The failed alerts response. */
+  failedAlerts: IFailedAlerts;
+  /** The result status of the alert. */
+  result: AlertResult;
+}
+
+/**
+ * Returns the details for an alert.
+ * @async
+ * @param {IDeleteAlertRequest} request - The request object.
+ * @param {string} [request.id] - The alert ID value. Alert id whose details are needed.
+ * @returns {Promise<IDeleteAlertResponse>} - Details for an alert.
+ */
+export const DeleteAlert = ({
+  alertIds
+}: IDeleteAlertRequest): Promise<IDeleteAlertResponse> =>
+  fetchWithAuth<IDeleteAlertResponse>({method: 'DELETE', path: `/user/alerts/${alertIds.join(',')}`});

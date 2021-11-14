@@ -34,5 +34,5 @@ export interface IListAlertsResponse {
  * @param {IListAlertsRequest} query - The request object.
  * @returns {Promise<IListAlertsResponse>} - List of alerts.
  */
-export default (query: IListAlertsRequest): Promise<IListAlertsResponse> =>
+export const ListAlerts = (query: IListAlertsRequest): Promise<IListAlertsResponse> =>
   fetchWithAuth<IListAlertsResponse>({path: '/user/alerts', query});

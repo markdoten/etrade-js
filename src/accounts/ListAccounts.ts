@@ -14,5 +14,5 @@ export interface IListAccountsResponse {
  * @async
  * @returns {Promise<IListAccountsResponse>} - List of accounts.
  */
-export default (): Promise<IListAccountsResponse> =>
+export const ListAccounts = (): Promise<IListAccountsResponse> =>
   fetchWithAuth<IListAccountsResponse>({path: '/accounts/list'});

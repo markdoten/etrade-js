@@ -31,9 +31,9 @@ export interface ICancelOrderResponse {
  * @param {string} [request.accountIdKey] - The unique account key. Retrievable by calling the List Accounts API.
  * @returns {Promise<ICancelOrderResponse>} - Order status.
  */
-export default ({
+export const CancelOrder = ({
   accountIdKey,
-  orderId,
+  orderId
 }: ICancelOrderRequest): Promise<ICancelOrderResponse> =>
   fetchWithAuth<ICancelOrderResponse>({
     body: {orderId},

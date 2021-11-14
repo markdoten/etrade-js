@@ -65,7 +65,7 @@ export interface IPlaceOrderResponse {
  * @param {string} [request.accountIdKey] - The unique account key. Retrievable by calling the List Accounts API.
  * @returns {Promise<IPlaceOrderResponse>} - Status of the order.
  */
-export default ({
+export const PlaceOrder = ({
   accountIdKey,
   ...body
 }: IPlaceOrderRequest): Promise<IPlaceOrderResponse> =>

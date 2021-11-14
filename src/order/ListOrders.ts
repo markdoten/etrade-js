@@ -50,7 +50,7 @@ export interface IListOrdersResponse {
  * @param {string} [request.accountIdKey] - The unique account key. Retrievable by calling the List Accounts API.
  * @returns {Promise<IListOrdersResponse>} - Order details.
  */
-export default ({
+export const ListOrders = ({
   accountIdKey,
   ...query
 }: IListOrdersRequest): Promise<IListOrdersResponse> => {

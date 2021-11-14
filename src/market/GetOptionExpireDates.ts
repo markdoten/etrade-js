@@ -24,5 +24,5 @@ export interface IGetOptionExpireDatesResponse {
  * @param {IGetOptionExpireDatesRequest} query - The request query object.
  * @returns {Promise<IGetOptionExpireDatesResponse>} - List of dates suitable for structuring an option table display.
  */
-export default (query: IGetOptionExpireDatesRequest): Promise<IGetOptionExpireDatesResponse> =>
+export const GetOptionExpireDates = (query: IGetOptionExpireDatesRequest): Promise<IGetOptionExpireDatesResponse> =>
   fetchWithAuth<IGetOptionExpireDatesResponse>({path: '/market/optionexpiredate', query});

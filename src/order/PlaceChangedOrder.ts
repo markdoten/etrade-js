@@ -68,7 +68,7 @@ export interface IPlaceChangedOrderResponse {
  * @param {string} [request.orderId] - The order Id.
  * @returns {Promise<IPlaceChangedOrderResponse>} - Status of the order.
  */
-export default ({
+export const PlaceChangedOrder = ({
   accountIdKey,
   orderId,
   ...body

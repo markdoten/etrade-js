@@ -51,5 +51,5 @@ export interface IGetOptionChainsResponse {
  * @param {IGetOptionChainsRequest} query - The request object.
  * @returns {Promise<IGetOptionChainsResponse>} - List of option chains for a specific underlying instrument.
  */
-export default (query: IGetOptionChainsRequest): Promise<IGetOptionChainsResponse> =>
+export const GetOptionChains = (query: IGetOptionChainsRequest): Promise<IGetOptionChainsResponse> =>
   fetchWithAuth<IGetOptionChainsResponse>({path: '/market/optionchains', query});

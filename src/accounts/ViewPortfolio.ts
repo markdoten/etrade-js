@@ -49,7 +49,7 @@ export interface IViewPortfolioResponse {
  * @param {string} [request.view] - The view query.
  * @returns {Promise<IViewPortfolioResponse>} - Provides portfolio information for a selected brokerage account.
  */
-export default ({
+export const ViewPortfolio = ({
   accountIdKey,
   count,
   lotsRequired = false,

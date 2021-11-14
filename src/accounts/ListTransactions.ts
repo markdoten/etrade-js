@@ -47,7 +47,7 @@ export interface IListTransactionsResponse {
  * @param {string} [request.accountIdKey] - The unique account key.
  * @returns {Promise<IListTransactionsResponse>} - Get all transactions for the specified account.
  */
-export default ({
+export const ListTransactions = ({
   accountIdKey,
   ...query
 }: IListTransactionsRequest): Promise<IListTransactionsResponse> => {

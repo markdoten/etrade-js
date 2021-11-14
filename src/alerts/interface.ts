@@ -13,3 +13,8 @@ export interface IAlert {
   /** The subject of the alert. */
   subject: string;
 }
+
+export interface IFailedAlerts {
+  /** The array of failed alert IDs. */
+  alertId: number[];
+}

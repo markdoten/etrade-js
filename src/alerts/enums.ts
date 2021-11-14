@@ -7,6 +7,11 @@ export enum AlertCategory {
   STOCK = 'STOCK'
 }
 
+export enum AlertResult {
+  ERROR = 'ERROR',
+  SUCCESS = 'SUCCESS'
+}
+
 export enum AlertStatus {
   DELETED = 'DELETED',
   READ = 'READ',

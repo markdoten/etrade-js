@@ -77,7 +77,7 @@ export interface IChangePreviewedOrderResponse {
  * @param {string} [request.orderId] - The order Id.
  * @returns {Promise<IChangePreviewedOrderResponse>} - Order status.
  */
-export default ({
+export const ChangePreviewedOrder = ({
   accountIdKey,
   orderId,
   ...body

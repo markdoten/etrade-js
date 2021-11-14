@@ -74,7 +74,7 @@ export interface IPreviewOrderResponse {
  * @param {string} [request.accountIdKey] - The unique account key. Retrievable by calling the List Accounts API.
  * @returns {Promise<IPreviewOrderResponse>} - Order details.
  */
-export default ({
+export const PreviewOrder = ({
   accountIdKey,
   ...body
 }: IPreviewOrderRequest): Promise<IPreviewOrderResponse> =>

@@ -23,5 +23,7 @@ export interface ILookUpProductResponse {
  * @param {string} [request.search] - The search request.
  * @returns {Promise<ILookUpProductResponse>} - Information about market events.
  */
-export default ({search}: ILookUpProductRequest): Promise<ILookUpProductResponse> =>
+export const LookUpProduct = ({
+  search
+}: ILookUpProductRequest): Promise<ILookUpProductResponse> =>
   fetchWithAuth<ILookUpProductResponse>({path: `/market/lookup/${search}`});
