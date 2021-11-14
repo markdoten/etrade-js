@@ -10,7 +10,7 @@ const HOSTNAMES = {
 
 interface IFetchOptions {
   body?: any;
-  method?: 'GET' | 'POST';
+  method?: 'GET' | 'POST' | 'PUT';
   path: string;
   query?: any;
 }
