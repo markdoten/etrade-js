@@ -11,8 +11,8 @@ import type {IGetAccessTokenResponse} from './auth';
  * @class ETrade
  */
 export default class ETrade extends Emitter {
-  private readonly accessSecret: string;
-  private readonly accessToken: string;
+  private accessSecret: number;
+  private accessToken: string;
 
   /**
    * E-Trade API constructor.
@@ -41,7 +41,8 @@ export default class ETrade extends Emitter {
    */
   async setOauthCode(oauth_verifier: string): Promise<IGetAccessTokenResponse> {
     const {oauth_token, oauth_token_secret} = await GetAccessToken();
-    // TODO: Set the access token on the instance.
+    this.accessSecret = oauth_token_secret;
+    this.accessToken = oauth_token;
     return {oauth_token, oauth_token_secret};
   }
 }
