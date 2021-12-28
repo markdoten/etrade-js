@@ -1,7 +1,7 @@
 /**
  * @file Place Changed Order.
  */
-import {fetchWithAuth} from '../session';
+import session from '../session';
 import type {IDisclosure, IOrderDetail, IOrderId, IPreviewId} from './interface';
 import type {IMessages, IPortfolioMargin} from '../interface';
 import type {MarginLevel, OrderType} from './enums';
@@ -73,7 +73,7 @@ export const PlaceChangedOrder = ({
   orderId,
   ...body
 }: IPlaceChangedOrderRequest): Promise<IPlaceChangedOrderResponse> =>
-  fetchWithAuth<IPlaceChangedOrderResponse>({
+  session.request<IPlaceChangedOrderResponse>({
     body,
     method: 'PUT',
     path: `/accounts/${accountIdKey}/orders/${orderId}/change/place`

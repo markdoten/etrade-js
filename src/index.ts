@@ -1,48 +1,36 @@
 /**
  * @file E-Trade API.
  */
-import {AuthorizeApplication} from './auth';
-import {GetAccessToken} from './auth';
-import {GetRequestToken} from './auth';
+import * as Accounts from './accounts';
+import * as Alerts from './alerts';
+import * as Auth from './auth';
+import * as Market from './market';
+import * as Order from './order';
 import Emitter from 'events';
-import type {IGetAccessTokenResponse} from './auth';
+import session from './session';
+import type {IEtradeConfig} from './interface';
 
 /**
  * @class ETrade
  */
 export default class ETrade extends Emitter {
-  private accessSecret: number;
-  private accessToken: string;
+  public accounts = Accounts;
+  public alerts = Alerts;
+  public auth = {
+    ...Auth,
+    completeOAuth: (verifier: string): Promise<void> => session.oauthComplete(verifier),
+    startOAuth: (): Promise<string> => session.oauthStart()
+  };
+
+  public market = Market;
+  public order = Order;
 
   /**
    * E-Trade API constructor.
+   * @param {IEtradeConfig} config - The configuration object.
    */
-  constructor() {
+  constructor(config: IEtradeConfig) {
     super();
-    // TODO: Something else here??
-  }
-
-  /**
-   * Get the OAuth URL to load in the browser.
-   * @async
-   * @returns {Promise<string>} - THe auth URL.
-   */
-  async getOAuthUrl(): Promise<string> {
-    const {oauth_token, oauth_token_secret} = await GetRequestToken();
-    const {oauth_verifier} = await AuthorizeApplication();
-    return oauth_verifier;
-  }
-
-  /**
-   * Set the OAuth code to get the access token.
-   * @async
-   * @param {string} oauth_verifier - The code returned from the OAuth URL.
-   * @returns {Promise<IGetAccessTokenResponse>} - The access token information.
-   */
-  async setOauthCode(oauth_verifier: string): Promise<IGetAccessTokenResponse> {
-    const {oauth_token, oauth_token_secret} = await GetAccessToken();
-    this.accessSecret = oauth_token_secret;
-    this.accessToken = oauth_token;
-    return {oauth_token, oauth_token_secret};
+    session.initialize(config);
   }
 }

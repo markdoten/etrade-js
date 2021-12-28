@@ -1,7 +1,7 @@
 /**
  * @file Place Order.
  */
-import {fetchWithAuth} from '../session';
+import session from '../session';
 import type {IDisclosure, IOrderDetail, IOrderId, IPreviewId} from './interface';
 import type {IMessages, IPortfolioMargin} from '../interface';
 import type {MarginLevel, OrderType} from './enums';
@@ -69,7 +69,7 @@ export const PlaceOrder = ({
   accountIdKey,
   ...body
 }: IPlaceOrderRequest): Promise<IPlaceOrderResponse> =>
-  fetchWithAuth<IPlaceOrderResponse>({
+  session.request<IPlaceOrderResponse>({
     body,
     method: 'POST',
     path: `/accounts/${accountIdKey}/orders/place`

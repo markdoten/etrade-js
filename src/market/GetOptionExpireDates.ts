@@ -1,7 +1,7 @@
 /**
  * @file Get Option Expire Dates.
  */
-import {fetchWithAuth} from '../session';
+import session from '../session';
 import type {IExpirationDate} from './interface';
 
 /* eslint-disable max-len */
@@ -25,4 +25,4 @@ export interface IGetOptionExpireDatesResponse {
  * @returns {Promise<IGetOptionExpireDatesResponse>} - List of dates suitable for structuring an option table display.
  */
 export const GetOptionExpireDates = (query: IGetOptionExpireDatesRequest): Promise<IGetOptionExpireDatesResponse> =>
-  fetchWithAuth<IGetOptionExpireDatesResponse>({path: '/market/optionexpiredate', query});
+  session.request<IGetOptionExpireDatesResponse>({path: '/market/optionexpiredate', query});

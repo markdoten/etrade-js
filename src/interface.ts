@@ -1,9 +1,21 @@
 /**
  * @file General interface.
  */
-import type {MessageType, SecurityType, TypeCode} from './enums';
+import type {Environment, MessageType, SecurityType, TypeCode} from './enums';
 
 /* eslint-disable max-len */
+
+export interface IEtradeConfig {
+  accessToken?: string;
+  accessTokenSecret?: string;
+  consumerKey: string;
+  consumerSecret: string;
+  environment?: Environment;
+}
+
+export interface IFetchResponse {
+
+}
 
 export interface IMessage {
   description: string;

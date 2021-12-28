@@ -10,18 +10,7 @@ export default {
   collectCoverageFrom: [
     '<rootDir>/src/**/*.ts',
     '!<rootDir>/src/**/enum*.ts',
-    '!<rootDir>/src/**/interface*.ts',
-    '!<rootDir>/src/**/types.ts'
-  ],
-  coveragePathIgnorePatterns: [
-    '<rootDir>/src/config/',
-    '<rootDir>/src/entity/',
-    '<rootDir>/src/models/',
-    '<rootDir>/src/server/',
-    '<rootDir>/src/services/elasticsearch.ts',
-    '<rootDir>/src/services/ngrok.ts',
-    '<rootDir>/src/metrics.ts',
-    '<rootDir>/src/platform/Service.ts'
+    '!<rootDir>/src/**/interface*.ts'
   ],
   coverageReporters: ['text'],
   coverageThreshold: {
@@ -32,11 +21,8 @@ export default {
       statements: 90
     }
   },
-  globals: {
-    clearDB: true,
-    global: true
-  },
   maxWorkers: '50%',
+  preset: 'ts-jest',
   roots: ['src', 'test'],
   setupFiles: [],
   testEnvironment: 'node',

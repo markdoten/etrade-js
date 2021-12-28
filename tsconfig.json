@@ -8,17 +8,18 @@
     "importHelpers": true,
     "lib": [
       "DOM",
-      "ESNext"
+      "es6"
     ],
-    "module": "commonjs",
-    "moduleResolution": "Node",
+    "module": "CommonJS",
+    "moduleResolution": "node",
     "outDir": "lib",
+    "paths": {
+      "@src/*": ["./src/*"],
+      "@test/*": ["./test/*"]
+    },
     "sourceMap": true,
-    "target": "es5"
+    "target": "es6"
   },
-  "include": [
-    "src/**/*"
-  ],
   "exclude": [
     "node_modules"
   ]

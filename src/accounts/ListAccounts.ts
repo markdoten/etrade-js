@@ -1,7 +1,7 @@
 /**
  * @file List Accounts.
  */
-import {fetchWithAuth} from '../session';
+import session from '../session';
 import type {IAccounts} from './interface';
 
 export interface IListAccountsResponse {
@@ -15,4 +15,4 @@ export interface IListAccountsResponse {
  * @returns {Promise<IListAccountsResponse>} - List of accounts.
  */
 export const ListAccounts = (): Promise<IListAccountsResponse> =>
-  fetchWithAuth<IListAccountsResponse>({path: '/accounts/list'});
+  session.request<IListAccountsResponse>({path: '/accounts/list'});

@@ -1,9 +1,9 @@
 /**
  * @file View Portfolio.
  */
-import {fetchWithAuth} from '../session';
 import {MarketSession, SortOrder} from '../enums';
 import {View} from './enums';
+import session from '../session';
 import type {IAccountPortfolio, ITotals} from './interface';
 import type {SortBy} from './enums';
 
@@ -59,7 +59,7 @@ export const ViewPortfolio = ({
   totalsRequired = false,
   view = View.QUICK
 }: IViewPortfolioRequest): Promise<IViewPortfolioResponse> =>
-  fetchWithAuth<IViewPortfolioResponse>({
+  session.request<IViewPortfolioResponse>({
     path: `/accounts/${accountIdKey}/portfolio`,
     query: {
       count,

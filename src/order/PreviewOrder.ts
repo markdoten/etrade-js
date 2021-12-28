@@ -1,7 +1,7 @@
 /**
  * @file Preview Order.
  */
-import {fetchWithAuth} from '../session';
+import session from '../session';
 import type {
   ICashBuyingPowerDetails,
   IDisclosure,
@@ -78,7 +78,7 @@ export const PreviewOrder = ({
   accountIdKey,
   ...body
 }: IPreviewOrderRequest): Promise<IPreviewOrderResponse> =>
-  fetchWithAuth<IPreviewOrderResponse>({
+  session.request<IPreviewOrderResponse>({
     body,
     method: 'POST',
     path: `/accounts/${accountIdKey}/orders/preview`

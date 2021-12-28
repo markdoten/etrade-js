@@ -1,7 +1,7 @@
 /**
  * @file Change Previewed Order.
  */
-import {fetchWithAuth} from '../session';
+import session from '../session';
 import type {
   ICashBuyingPowerDetails,
   IDisclosure,
@@ -82,7 +82,7 @@ export const ChangePreviewedOrder = ({
   orderId,
   ...body
 }: IChangePreviewedOrderRequest): Promise<IChangePreviewedOrderResponse> =>
-  fetchWithAuth<IChangePreviewedOrderResponse>({
+  session.request<IChangePreviewedOrderResponse>({
     body,
     method: 'PUT',
     path: `/accounts/${accountIdKey}/orders/${orderId}/change/preview`

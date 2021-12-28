@@ -1,7 +1,7 @@
 /**
  * @file Delete Alert.
  */
-import {fetchWithAuth} from '../session';
+import session from '../session';
 import type {AlertResult} from './enums';
 import type {IFailedAlerts} from './interface';
 
@@ -29,4 +29,4 @@ export interface IDeleteAlertResponse {
 export const DeleteAlert = ({
   alertIds
 }: IDeleteAlertRequest): Promise<IDeleteAlertResponse> =>
-  fetchWithAuth<IDeleteAlertResponse>({method: 'DELETE', path: `/user/alerts/${alertIds.join(',')}`});
+  session.request<IDeleteAlertResponse>({method: 'DELETE', path: `/user/alerts/${alertIds.join(',')}`});

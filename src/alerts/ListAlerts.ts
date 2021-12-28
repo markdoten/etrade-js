@@ -1,7 +1,7 @@
 /**
  * @file List Alerts.
  */
-import {fetchWithAuth} from '../session';
+import session from '../session';
 import type {AlertCategory, AlertStatus} from './enums';
 import type {IAlert} from './interface';
 import type {SortOrder} from '../enums';
@@ -35,4 +35,4 @@ export interface IListAlertsResponse {
  * @returns {Promise<IListAlertsResponse>} - List of alerts.
  */
 export const ListAlerts = (query: IListAlertsRequest): Promise<IListAlertsResponse> =>
-  fetchWithAuth<IListAlertsResponse>({path: '/user/alerts', query});
+  session.request<IListAlertsResponse>({path: '/user/alerts', query});

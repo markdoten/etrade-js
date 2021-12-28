@@ -1,7 +1,7 @@
 /**
  * @file Cancel Order.
  */
-import {fetchWithAuth} from '../session';
+import session from '../session';
 import type {IMessages} from '../interface';
 
 /* eslint-disable max-len */
@@ -35,7 +35,7 @@ export const CancelOrder = ({
   accountIdKey,
   orderId
 }: ICancelOrderRequest): Promise<ICancelOrderResponse> =>
-  fetchWithAuth<ICancelOrderResponse>({
+  session.request<ICancelOrderResponse>({
     body: {orderId},
     method: 'PUT',
     path: `/accounts/${accountIdKey}/orders/cancel`

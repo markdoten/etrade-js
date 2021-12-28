@@ -1,7 +1,7 @@
 /**
  * @file List Transaction Details.
  */
-import {fetchWithAuth} from '../session';
+import session from '../session';
 import type {IBrokerage, ICategory} from './interface';
 
 export interface IListTransactionDetailsRequest {
@@ -47,5 +47,5 @@ export const ListTransactionDetails = ({
   transactionId
 }: IListTransactionDetailsRequest): Promise<IListTransactionDetailsResponse> => {
   const path = `/accounts/${accountIdKey}/transactions/${transactionId}`;
-  return fetchWithAuth<IListTransactionDetailsResponse>({path, query: {storeId}});
+  return session.request<IListTransactionDetailsResponse>({path, query: {storeId}});
 };

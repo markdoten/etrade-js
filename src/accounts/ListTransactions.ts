@@ -1,7 +1,7 @@
 /**
  * @file List Transactions.
  */
-import {fetchWithAuth} from '../session';
+import session from '../session';
 import type {IBrokerage, ICategory} from './interface';
 
 /* eslint-disable max-len */
@@ -52,5 +52,5 @@ export const ListTransactions = ({
   ...query
 }: IListTransactionsRequest): Promise<IListTransactionsResponse> => {
   const path = `/accounts/${accountIdKey}/transactions`;
-  return fetchWithAuth<IListTransactionsResponse>({path, query});
+  return session.request<IListTransactionsResponse>({path, query});
 };

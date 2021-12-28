@@ -2,76 +2,171 @@
  * @file Session.
  */
 import {Environment} from './enums';
-import AbortController from 'abort-controller';
-import fetch, {AbortError} from 'node-fetch';
-import type {RequestInit} from 'node-fetch';
+import {OAuth} from 'oauth';
+import {titleToCamelProperties} from './util';
+import type {IEtradeConfig, IFetchResponse} from './interface';
 
 const HOSTNAMES = {
   [Environment.LIVE]: 'https://api.etrade.com',
   [Environment.SANDBOX]: 'https://apisb.etrade.com'
 };
 
+const REQUEST_MAX_DURATION = 1000 * 10;
+
 interface IFetchOptions {
-  body?: any;
+  body?: Record<string, any>;
   headers?: string[];
   method?: 'DELETE' | 'GET' | 'POST' | 'PUT';
   path: string;
   query?: any;
-  version?: number;
+  version?: string;
+}
+
+interface IGenerateHeaders {
+  headers: string[];
+  method: string;
+  query?: Record<string, number | string>;
+  url: string;
 }
 
 /**
- * Fetch.
- * @async
- * @param {Object} options - Fetch options.
- * @param {Object} [options.body] - Request body.
- * @param {Object} [options.headers] - List of headers.
- * @param {string} [options.method] - Request path.
- * @param {string} [options.path] - Request path.
- * @param {Object} [options.query] - Request URL query params.
- * @param {number} [options.version] - E*Trade API version.
- * @returns {Promise<any>} - Response.
+ * Session class.
+ * @class
  */
-export async function fetchWithAuth<T>({
-  body = {},
-  headers = [],
-  method = 'GET',
-  path,
-  query = {},
-  version = 1
-}: IFetchOptions): Promise<T> {
-  // TODO: Get env from some config.
-  const env = Environment.SANDBOX;
-  const url = new URL(`${HOSTNAMES[env]}${version ? `/v${version}` : ''}${path}`);
+class Session {
+  public _accessToken: string;
+  public _accessTokenSecret: string;
+  private _consumerKey: string;
+  private _consumerSecret: string;
+  private _environment: Environment;
+  private _oauth = null;
+  private _oauthCallback: string = 'oob';
+  private _oauthNonce: string;
+  private _oauthRequestToken: string;
+  private _oauthRequestTokenSecret: string;
+  private _oauthSignatureMethod: string = 'HMAC-SHA1';
+  private _oauthTimestamp: number;
+  private _oauthVerifier: number;
+  private _version: number = 1;
 
-  Object.keys(query).forEach((key: string) => url.searchParams.set(key, query[key]));
+  /**
+   * Initializes the session.
+   * @param {IEtradeConfig} config - ETrade config object.
+   * @param {string} [config.consumerKey] - Consumer key to set.
+   * @param {string} [config.consumerSecret] - Consumer secret to set.
+   */
+  public initialize({
+    accessToken,
+    accessTokenSecret,
+    consumerKey,
+    consumerSecret,
+    environment = Environment.SANDBOX
+  }: IEtradeConfig): void {
+    this._accessToken = accessToken;
+    this._accessTokenSecret = accessTokenSecret;
+    this._consumerKey = consumerKey;
+    this._consumerSecret = consumerSecret;
+    this._environment = environment;
 
-  const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), 5000);
+    this._oauth = new OAuth(
+      `${HOSTNAMES[environment]}/oauth/request_token`,
+      `${HOSTNAMES[environment]}/oauth/access_token`,
+      consumerKey,
+      consumerSecret,
+      '1.0',
+      undefined,
+      'HMAC-SHA1'
+    );
 
-  const init: RequestInit = {
-    headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json'
-    },
-    method,
-    signal: controller.signal
-  };
+    this._oauth.setClientOptions({
+      accessTokenHttpMethod: 'GET',
+      followRedirects: false,
+      requestTokenHttpMethod: 'GET'
+    });
+  }
 
-  body && (init.body = JSON.stringify(body));
+  /**
+   * Start the oauth process.
+   * @async
+   * @returns {Promise<string>} - String authorize URL.
+   */
+  public async oauthStart(): Promise<string> {
+    return new Promise((res, rej) => {
+      this._oauth.getOAuthRequestToken((error, oAuthToken, oAuthTokenSecret) => {
+        if (error) {
+          return rej(error);
+        }
+        this._oauthRequestToken = oAuthToken;
+        this._oauthRequestTokenSecret = oAuthTokenSecret;
 
-  try {
-    const response = await fetch(url.toString(), init);
+        const key = encodeURIComponent(this._consumerKey);
+        const token = encodeURIComponent(oAuthToken);
+        res(`https://us.etrade.com/e/t/etws/authorize?key=${key}&token=${token}`);
+      });
+    });
+  }
 
-    // TODO: Can I get the URL and query params?
+  /**
+   * Complete the oauth process with the verifier string.
+   * @async
+   * @param {string} verifier - OAuth verifier string.
+   * @returns {Promise<void>} - Complete promise.
+   */
+  public async oauthComplete(verifier: string): Promise<void> {
+    return new Promise((res, rej) => {
+      this._oauth.getOAuthAccessToken(
+        this._oauthRequestToken,
+        this._oauthRequestTokenSecret,
+        verifier,
+        (error, oAuthAccessToken, oAuthAccessTokenSecret) => {
+          if (error) {
+            return rej(error);
+          }
+          this._accessToken = oAuthAccessToken;
+          this._accessTokenSecret = oAuthAccessTokenSecret;
+          res();
+        }
+      );
+    });
+  }
 
-    const data = await response.json();
-    return data as T;
-  } catch (error) {
-    if (error instanceof AbortError) {
-      console.log('request was aborted');
-    }
-  } finally {
-    clearTimeout(timeout);
+  /**
+   * Send an HTTP request.
+   * @async
+   * @param {Object} options - Fetch options.
+   * @param {Object} [options.body] - Request body.
+   * @param {string} [options.method] - Request path.
+   * @param {string} [options.path] - Request path.
+   * @param {Object} [options.query] - Request URL query params.
+   * @param {Object} [options.version] - Endpoint version.
+   * @returns {Promise<IFetchResponse>} - The request promise.
+   */
+  public request<T extends IFetchResponse>({
+    body,
+    method = 'GET',
+    path,
+    query = {},
+    version = '/v1'
+  }: IFetchOptions): Promise<T> {
+    const url = new URL(`${HOSTNAMES[this._environment]}${version}${path}.json`);
+    Object.keys(query).forEach((key: string) => url.searchParams.append(key, query[key]));
+    return new Promise((res, rej) => this._oauth._performSecureRequest(
+      this._accessToken,
+      this._accessTokenSecret,
+      method,
+      url.toString(),
+      null, // extra_params,
+      body,
+      'application/json',
+      (error: Error, response: any): void => {
+        if (error) {
+          return rej(error);
+        }
+        const [data] = Object.values(JSON.parse(response));
+        res(titleToCamelProperties(data) as T);
+      }
+    ));
   }
 }
+
+export default new Session;

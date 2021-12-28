@@ -15,7 +15,9 @@ module.exports = {
     'arrow-body-style': ERROR,
     'arrow-parens': ERROR,
     'eol-last': ERROR,
-    indent: [ERROR, 2],
+    indent: [ERROR, 2, {
+      SwitchCase: 1
+    }],
     'lines-between-class-members': [ERROR, 'always', {exceptAfterSingleLine: true}],
     'max-len': [ERROR, 120],
     'multiline-ternary': [ERROR, 'always-multiline'],

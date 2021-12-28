@@ -1,7 +1,7 @@
 /**
  * @file Get Account Balances.
  */
-import {fetchWithAuth} from '../session';
+import session from '../session';
 import type {AccountType, InstitutionType, OptionLevel} from './enums';
 import type {
   ICash,
@@ -76,5 +76,5 @@ export const GetAccountBalances = ({
 }: IGetAccountBalancesRequest): Promise<IGetAccountBalancesResponse> => {
   const path = `/accounts/${accountIdKey}/balance`;
   const query = {accountType, instType, realTimeNAV};
-  return fetchWithAuth<IGetAccountBalancesResponse>({path, query});
+  return session.request<IGetAccountBalancesResponse>({path, query});
 };

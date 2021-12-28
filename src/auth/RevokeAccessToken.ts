@@ -1,7 +1,7 @@
 /**
  * @file Renew Access Token.
  */
-import {fetchWithAuth} from '../session';
+import session from '../session';
 
 /* eslint-disable max-len */
 
@@ -18,15 +18,4 @@ export interface IRevokeAccessTokenResponse {
  * @returns {Promise<IRevokeAccessTokenResponse>} - Revoked access token.
  */
 export const RevokeAccessToken = (): Promise<IRevokeAccessTokenResponse> =>
-  fetchWithAuth<IRevokeAccessTokenResponse>({
-    headers: [
-      'oauth_consumer_key',
-      'oauth_nonce',
-      'oauth_signature_method',
-      'oauth_signature',
-      'oauth_timestamp',
-      'oauth_token'
-    ],
-    path: '/oauth/revoke_access_token',
-    version: undefined
-  });
+  session.request<IRevokeAccessTokenResponse>({path: '/oauth/revoke_access_token'});

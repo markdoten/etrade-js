@@ -1,7 +1,7 @@
 /**
  * @file View Portfolio.
  */
-import {fetchWithAuth} from '../session';
+import session from '../session';
 import type {DetailFlag} from './enums';
 import type {IMessages} from '../interface';
 import type {IQuoteData} from './interface';
@@ -39,4 +39,4 @@ export const GetQuotes = ({
   symbols,
   ...query
 }: IGetQuotesRequest): Promise<IGetQuotesResponse> =>
-  fetchWithAuth<IGetQuotesResponse>({path: `/market/quote/${symbols.join(',')}`, query});
+  session.request<IGetQuotesResponse>({path: `/market/quote/${symbols.join(',')}`, query});

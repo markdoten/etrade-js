@@ -1,7 +1,7 @@
 /**
  * @file List Orders.
  */
-import {fetchWithAuth} from '../session';
+import session from '../session';
 import type {IMessages} from '../interface';
 import type {IOrder} from './interface';
 import type {MarketSession, SecurityType} from '../enums';
@@ -57,5 +57,5 @@ export const ListOrders = ({
   if (query.symbol && typeof query.symbol !== 'string') {
     query.symbol = query.symbol.join(',');
   }
-  return fetchWithAuth<IListOrdersResponse>({path: `/accounts/${accountIdKey}/orders`, query});
+  return session.request<IListOrdersResponse>({path: `/accounts/${accountIdKey}/orders`, query});
 };

@@ -1,7 +1,7 @@
 /**
  * @file Renew Access Token.
  */
-import {fetchWithAuth} from '../session';
+import session from '../session';
 
 /* eslint-disable max-len */
 
@@ -20,15 +20,4 @@ export interface IRenewAccessTokenResponse {
  * @returns {Promise<IRenewAccessTokenResponse>} - New access token.
  */
 export const RenewAccessToken = (): Promise<IRenewAccessTokenResponse> =>
-  fetchWithAuth<IRenewAccessTokenResponse>({
-    headers: [
-      'oauth_consumer_key',
-      'oauth_nonce',
-      'oauth_signature_method',
-      'oauth_signature',
-      'oauth_timestamp',
-      'oauth_token'
-    ],
-    path: '/oauth/renew_access_token',
-    version: undefined
-  });
+  session.request<IRenewAccessTokenResponse>({path: '/oauth/renew_access_token'});

@@ -1,7 +1,7 @@
 /**
  * @file List Alert Details.
  */
-import {fetchWithAuth} from '../session';
+import session from '../session';
 
 /* eslint-disable max-len */
 
@@ -44,4 +44,4 @@ export const ListAlertDetails = ({
   id,
   ...query
 }: IListAlertDetailsRequest): Promise<IListAlertDetailsResponse> =>
-  fetchWithAuth<IListAlertDetailsResponse>({path: `/user/alerts/${id}`, query});
+  session.request<IListAlertDetailsResponse>({path: `/user/alerts/${id}`, query});

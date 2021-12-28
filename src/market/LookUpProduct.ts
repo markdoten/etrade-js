@@ -1,7 +1,7 @@
 /**
  * @file Look Up Product.
  */
-import {fetchWithAuth} from '../session';
+import session from '../session';
 import type {IData} from './interface';
 
 /* eslint-disable max-len */
@@ -26,4 +26,4 @@ export interface ILookUpProductResponse {
 export const LookUpProduct = ({
   search
 }: ILookUpProductRequest): Promise<ILookUpProductResponse> =>
-  fetchWithAuth<ILookUpProductResponse>({path: `/market/lookup/${search}`});
+  session.request<ILookUpProductResponse>({path: `/market/lookup/${search}`});

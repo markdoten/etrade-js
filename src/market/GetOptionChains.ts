@@ -1,7 +1,7 @@
 /**
  * @file Get Option Chains.
  */
-import {fetchWithAuth} from '../session';
+import session from '../session';
 import type {ChainType, OptionCategory, PriceType} from './enums';
 import type {IOptionChainPair, ISelectedED} from './interface';
 
@@ -52,4 +52,4 @@ export interface IGetOptionChainsResponse {
  * @returns {Promise<IGetOptionChainsResponse>} - List of option chains for a specific underlying instrument.
  */
 export const GetOptionChains = (query: IGetOptionChainsRequest): Promise<IGetOptionChainsResponse> =>
-  fetchWithAuth<IGetOptionChainsResponse>({path: '/market/optionchains', query});
+  session.request<IGetOptionChainsResponse>({path: '/market/optionchains', query});
