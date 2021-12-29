@@ -34,20 +34,14 @@ interface IGenerateHeaders {
  * @class
  */
 class Session {
-  public _accessToken: string;
-  public _accessTokenSecret: string;
   private _consumerKey: string;
   private _consumerSecret: string;
   private _environment: Environment;
   private _oauth = null;
-  private _oauthCallback: string = 'oob';
-  private _oauthNonce: string;
-  private _oauthRequestToken: string;
-  private _oauthRequestTokenSecret: string;
-  private _oauthSignatureMethod: string = 'HMAC-SHA1';
-  private _oauthTimestamp: number;
-  private _oauthVerifier: number;
-  private _version: number = 1;
+  public accessToken: string;
+  public accessTokenSecret: string;
+  public oauthRequestToken: string;
+  public oauthRequestTokenSecret: string;
 
   /**
    * Initializes the session.
@@ -62,8 +56,8 @@ class Session {
     consumerSecret,
     environment = Environment.SANDBOX
   }: IEtradeConfig): void {
-    this._accessToken = accessToken;
-    this._accessTokenSecret = accessTokenSecret;
+    this.accessToken = accessToken;
+    this.accessTokenSecret = accessTokenSecret;
     this._consumerKey = consumerKey;
     this._consumerSecret = consumerSecret;
     this._environment = environment;
@@ -86,6 +80,30 @@ class Session {
   }
 
   /**
+   * Complete the oauth process with the verifier string.
+   * @async
+   * @param {string} verifier - OAuth verifier string.
+   * @returns {Promise<void>} - Complete promise.
+   */
+  public async oauthComplete(verifier: string): Promise<void> {
+    return new Promise((res, rej) => {
+      this._oauth.getOAuthAccessToken(
+        this.oauthRequestToken,
+        this.oauthRequestTokenSecret,
+        verifier,
+        (error, oAuthAccessToken, oAuthAccessTokenSecret) => {
+          if (error) {
+            return rej(error);
+          }
+          this.accessToken = oAuthAccessToken;
+          this.accessTokenSecret = oAuthAccessTokenSecret;
+          res();
+        }
+      );
+    });
+  }
+
+  /**
    * Start the oauth process.
    * @async
    * @returns {Promise<string>} - String authorize URL.
@@ -96,37 +114,13 @@ class Session {
         if (error) {
           return rej(error);
         }
-        this._oauthRequestToken = oAuthToken;
-        this._oauthRequestTokenSecret = oAuthTokenSecret;
+        this.oauthRequestToken = oAuthToken;
+        this.oauthRequestTokenSecret = oAuthTokenSecret;
 
         const key = encodeURIComponent(this._consumerKey);
         const token = encodeURIComponent(oAuthToken);
         res(`https://us.etrade.com/e/t/etws/authorize?key=${key}&token=${token}`);
       });
-    });
-  }
-
-  /**
-   * Complete the oauth process with the verifier string.
-   * @async
-   * @param {string} verifier - OAuth verifier string.
-   * @returns {Promise<void>} - Complete promise.
-   */
-  public async oauthComplete(verifier: string): Promise<void> {
-    return new Promise((res, rej) => {
-      this._oauth.getOAuthAccessToken(
-        this._oauthRequestToken,
-        this._oauthRequestTokenSecret,
-        verifier,
-        (error, oAuthAccessToken, oAuthAccessTokenSecret) => {
-          if (error) {
-            return rej(error);
-          }
-          this._accessToken = oAuthAccessToken;
-          this._accessTokenSecret = oAuthAccessTokenSecret;
-          res();
-        }
-      );
     });
   }
 
@@ -151,8 +145,8 @@ class Session {
     const url = new URL(`${HOSTNAMES[this._environment]}${version}${path}.json`);
     Object.keys(query).forEach((key: string) => url.searchParams.append(key, query[key]));
     return new Promise((res, rej) => this._oauth._performSecureRequest(
-      this._accessToken,
-      this._accessTokenSecret,
+      this.accessToken,
+      this.accessTokenSecret,
       method,
       url.toString(),
       null, // extra_params,

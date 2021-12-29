@@ -17,7 +17,9 @@ export const titleToCamelProperties = (obj: Record<string, any>): Record<string,
   for (const key in _obj) {
     const camelCase = titleToCamel(key);
     _obj[camelCase] = _obj[key];
-    delete _obj[key];
+    if (camelCase !== key) {
+      delete _obj[key];
+    }
     if (typeof _obj[camelCase] === 'object') {
       _obj[camelCase] = titleToCamelProperties(_obj[camelCase]);
     }
@@ -30,4 +32,4 @@ export const titleToCamelProperties = (obj: Record<string, any>): Record<string,
  * @param {string} str - The string to convert to camel case.
  * @returns {string} - Converted string.
  */
-const titleToCamel = (str: string): string => `${str[0].toLowerCase()}${str.substring(1)}`;
+export const titleToCamel = (str: string): string => `${str[0].toLowerCase()}${str.substring(1)}`;
