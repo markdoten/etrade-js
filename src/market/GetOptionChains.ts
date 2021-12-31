@@ -3,6 +3,7 @@
  */
 import session from '../session';
 import type {ChainType, OptionCategory, PriceType} from './enums';
+import type {IFetchResponse} from '../interface';
 import type {IOptionChainPair, ISelectedED} from './interface';
 
 /* eslint-disable max-len */
@@ -32,7 +33,7 @@ export interface IGetOptionChainsRequest {
   symbol: string;
 }
 
-export interface IGetOptionChainsResponse {
+export interface IGetOptionChainsResponse extends IFetchResponse {
   /** The near price in the option chain. */
   nearPrice: number;
   /** Container for an option pair; each option pair in the response has a container. */

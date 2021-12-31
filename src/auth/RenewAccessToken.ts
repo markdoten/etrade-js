@@ -2,16 +2,18 @@
  * @file Renew Access Token.
  */
 import session from '../session';
+import type {IFetchResponse} from '../interface';
 
 /* eslint-disable max-len */
 
-export interface IRenewAccessTokenResponse {
-  /** Returns true if a callback URL is configured for the current consumer key, otherwise false. Callbacks are described under the Authorize Application API. */
-  oauth_callback_confirmed: string;
-  /** The consumer's request token. */
-  oauth_token: string;
-  /** The token secret. */
-  oauth_token_secret: string;
+export interface IRenewAccessTokenResponse extends IFetchResponse {
+  // /** Returns true if a callback URL is configured for the current consumer key, otherwise false. Callbacks are described under the Authorize Application API. */
+  // oauth_callback_confirmed: string;
+  // /** The consumer's request token. */
+  // oauth_token: string;
+  // /** The token secret. */
+  // oauth_token_secret: string;
+  message: string;
 }
 
 /**
@@ -20,4 +22,4 @@ export interface IRenewAccessTokenResponse {
  * @returns {Promise<IRenewAccessTokenResponse>} - New access token.
  */
 export const RenewAccessToken = (): Promise<IRenewAccessTokenResponse> =>
-  session.request<IRenewAccessTokenResponse>({path: '/oauth/renew_access_token'});
+  session.request<IRenewAccessTokenResponse>({isOAuth: true, path: '/oauth/renew_access_token'});

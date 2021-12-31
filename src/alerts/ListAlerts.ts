@@ -4,6 +4,7 @@
 import session from '../session';
 import type {AlertCategory, AlertStatus} from './enums';
 import type {IAlert} from './interface';
+import type {IFetchResponse} from '../interface';
 import type {SortOrder} from '../enums';
 
 /* eslint-disable max-len */
@@ -21,7 +22,7 @@ export interface IListAlertsRequest {
   status?: AlertStatus;
 }
 
-export interface IListAlertsResponse {
+export interface IListAlertsResponse extends IFetchResponse {
   /** The array of alert responses. */
   alerts: IAlert[];
   /** The total number of alerts for the user including READ, UNREAD and DELETED. */

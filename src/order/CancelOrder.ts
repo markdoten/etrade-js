@@ -2,7 +2,7 @@
  * @file Cancel Order.
  */
 import session from '../session';
-import type {IMessages} from '../interface';
+import type {IFetchResponse, IMessages} from '../interface';
 
 /* eslint-disable max-len */
 
@@ -13,7 +13,7 @@ export interface ICancelOrderRequest {
   orderId: number;
 }
 
-export interface ICancelOrderResponse {
+export interface ICancelOrderResponse extends IFetchResponse {
   /** The numeric account ID for the cancelled order. */
   accountId: string;
   /** The time, in Epoch time, that the cancel request was submitted. */

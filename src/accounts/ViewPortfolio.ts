@@ -5,6 +5,7 @@ import {MarketSession, SortOrder} from '../enums';
 import {View} from './enums';
 import session from '../session';
 import type {IAccountPortfolio, ITotals} from './interface';
+import type {IFetchResponse} from '../interface';
 import type {SortBy} from './enums';
 
 /* eslint-disable max-len */
@@ -28,7 +29,7 @@ export interface IViewPortfolioRequest {
   view?: View;
 }
 
-export interface IViewPortfolioResponse {
+export interface IViewPortfolioResponse extends IFetchResponse {
   /** The account portfolio array. */
   accountPortfolio: IAccountPortfolio[];
   /** The portfolio totals. */

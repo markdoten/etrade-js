@@ -3,6 +3,7 @@
  */
 import session from '../session';
 import type {IBrokerage, ICategory} from './interface';
+import type {IFetchResponse} from '../interface';
 
 export interface IListTransactionDetailsRequest {
   /** The unique account key. Retrievable by calling the List Accounts API. */
@@ -13,7 +14,7 @@ export interface IListTransactionDetailsRequest {
   transactionId: string;
 }
 
-export interface IListTransactionDetailsResponse {
+export interface IListTransactionDetailsResponse extends IFetchResponse {
   /** Numeric account ID. */
   accountId: string;
   /** Total cost of transaction, including commission if any. */

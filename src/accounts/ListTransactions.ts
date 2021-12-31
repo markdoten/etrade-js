@@ -3,6 +3,7 @@
  */
 import session from '../session';
 import type {IBrokerage, ICategory} from './interface';
+import type {IFetchResponse} from '../interface';
 
 /* eslint-disable max-len */
 
@@ -21,7 +22,7 @@ export interface IListTransactionsRequest {
   startDate?: string;
 }
 
-export interface IListTransactionsResponse {
+export interface IListTransactionsResponse extends IFetchResponse {
   /** Numeric account ID. */
   accountId: string;
   /** Total cost of transaction, including commission if any. */

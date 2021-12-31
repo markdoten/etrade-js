@@ -4,6 +4,7 @@
 import session from '../session';
 import type {AlertResult} from './enums';
 import type {IFailedAlerts} from './interface';
+import type {IFetchResponse} from '../interface';
 
 /* eslint-disable max-len */
 
@@ -14,7 +15,7 @@ export interface IDeleteAlertRequest {
   alertIds: TAlertId[];
 }
 
-export interface IDeleteAlertResponse {
+export interface IDeleteAlertResponse extends IFetchResponse {
   /** The failed alerts response. */
   failedAlerts: IFailedAlerts;
   /** The result status of the alert. */

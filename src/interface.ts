@@ -14,7 +14,7 @@ export interface IEtradeConfig {
 }
 
 export interface IFetchResponse {
-
+  message?: string;
 }
 
 export interface IMessage {

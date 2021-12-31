@@ -10,7 +10,7 @@ import type {
   IOrderDetail,
   IPreviewId
 } from './interface';
-import type {IMessages, IPortfolioMargin} from '../interface';
+import type {IFetchResponse, IMessages, IPortfolioMargin} from '../interface';
 import type {MarginLevel, OrderType} from './enums';
 
 /* eslint-disable max-len */
@@ -28,7 +28,7 @@ export interface IChangePreviewedOrderRequest {
   orderType: OrderType;
 }
 
-export interface IChangePreviewedOrderResponse {
+export interface IChangePreviewedOrderResponse extends IFetchResponse {
   /** The numeric account ID. */
   accountId: string;
   /** Cash Buying Power Details for the user. */

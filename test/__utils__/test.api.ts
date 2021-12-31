@@ -13,6 +13,7 @@ export interface ITest {
 }
 
 export interface ITestApi {
+  contentType?: string;
   fixture: Record<string, any>,
   fn: Function,
   includeVersion?: boolean,
@@ -23,13 +24,21 @@ export interface ITestApi {
 /**
  * Test the API.
  * @param {Object} options - Options.
+ * @param {Object} [options.contentType] - Content type header.
  * @param {Object} [options.fixture] - API fixture JSON.
  * @param {Function} [options.fn] - The function to test.
  * @param {boolean} [options.includeVersion] - Include version in path.
  * @param {string} [options.method] - The HTTP method.
  * @param {ITest[]} [options.tests] - The tests to run.
  */
-export const testApi = ({fixture, fn, includeVersion = true, method, tests}: ITestApi): void => {
+export const testApi = ({
+  contentType = 'application/json',
+  fixture,
+  fn,
+  includeVersion = true,
+  method,
+  tests
+}: ITestApi): void => {
   let performSecureRequestSpy;
   let setClientOptionsSpy;
 
@@ -65,7 +74,7 @@ export const testApi = ({fixture, fn, includeVersion = true, method, tests}: ITe
           `https://apisb.etrade.com${includeVersion ? '/v1' : ''}${path}`,
           null,
           undefined,
-          'application/json',
+          contentType,
           expect.any(Function)
         );
       })

@@ -2,7 +2,7 @@
  * @file List Orders.
  */
 import session from '../session';
-import type {IMessages} from '../interface';
+import type {IFetchResponse, IMessages} from '../interface';
 import type {IOrder} from './interface';
 import type {MarketSession, SecurityType} from '../enums';
 import type {OrderStatus, TransactionType} from './enums';
@@ -32,7 +32,7 @@ export interface IListOrdersRequest {
   transactionType?: TransactionType;
 }
 
-export interface IListOrdersResponse {
+export interface IListOrdersResponse extends IFetchResponse {
   /** Specifies the desired starting point of the set of items to return. Used for paging as described in the Notes below. */
   marker: string;
   /** The messages associated with the order. */

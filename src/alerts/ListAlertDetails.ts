@@ -2,6 +2,7 @@
  * @file List Alert Details.
  */
 import session from '../session';
+import type {IFetchResponse} from '../interface';
 
 /* eslint-disable max-len */
 
@@ -12,7 +13,7 @@ export interface IListAlertDetailsRequest {
   id: string;
 }
 
-export interface IListAlertDetailsResponse {
+export interface IListAlertDetailsResponse extends IFetchResponse {
   /** The date and time the alert was issued, in Epoch time. */
   createTime: number;
   /** The time the alert was deleted. */

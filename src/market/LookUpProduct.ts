@@ -3,6 +3,7 @@
  */
 import session from '../session';
 import type {IData} from './interface';
+import type {IFetchResponse} from '../interface';
 
 /* eslint-disable max-len */
 
@@ -11,7 +12,7 @@ export interface ILookUpProductRequest {
   search: string;
 }
 
-export interface ILookUpProductResponse {
+export interface ILookUpProductResponse extends IFetchResponse {
   /** The lookup response data. */
   data: IData[];
 }

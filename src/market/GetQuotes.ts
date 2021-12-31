@@ -3,7 +3,7 @@
  */
 import session from '../session';
 import type {DetailFlag} from './enums';
-import type {IMessages} from '../interface';
+import type {IFetchResponse, IMessages} from '../interface';
 import type {IQuoteData} from './interface';
 
 /* eslint-disable max-len */
@@ -21,7 +21,7 @@ export interface IGetQuotesRequest {
   symbols: string[];
 }
 
-export interface IGetQuotesResponse {
+export interface IGetQuotesResponse extends IFetchResponse {
   /** The Quote response Message. */
   messages: IMessages;
   /** The Quote Message Data. */

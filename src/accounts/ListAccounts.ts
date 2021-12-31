@@ -3,8 +3,9 @@
  */
 import session from '../session';
 import type {IAccounts} from './interface';
+import type {IFetchResponse} from '../interface';
 
-export interface IListAccountsResponse {
+export interface IListAccountsResponse extends IFetchResponse {
   /** List of accounts. */
   accounts: IAccounts;
 }

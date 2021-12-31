@@ -16,10 +16,10 @@ const REQUEST_MAX_DURATION = 1000 * 10;
 interface IFetchOptions {
   body?: Record<string, any>;
   headers?: string[];
+  isOAuth?: boolean;
   method?: 'DELETE' | 'GET' | 'POST' | 'PUT';
   path: string;
   query?: any;
-  version?: string;
 }
 
 interface IGenerateHeaders {
@@ -129,20 +129,22 @@ class Session {
    * @async
    * @param {Object} options - Fetch options.
    * @param {Object} [options.body] - Request body.
+   * @param {boolean} [options.isOAuth] - Whether the request is an OAuth request.
    * @param {string} [options.method] - Request path.
    * @param {string} [options.path] - Request path.
    * @param {Object} [options.query] - Request URL query params.
-   * @param {Object} [options.version] - Endpoint version.
    * @returns {Promise<IFetchResponse>} - The request promise.
    */
   public request<T extends IFetchResponse>({
     body,
+    isOAuth = false,
     method = 'GET',
     path,
-    query = {},
-    version = '/v1'
+    query = {}
   }: IFetchOptions): Promise<T> {
-    const url = new URL(`${HOSTNAMES[this._environment]}${version}${path}.json`);
+    const extension = isOAuth ? '' : '.json';
+    const version = isOAuth ? '' : `/v1`;
+    const url = new URL(`${HOSTNAMES[this._environment]}${version}${path}${extension}`);
     Object.keys(query).forEach((key: string) => {
       query[key] === undefined || url.searchParams.append(key, query[key]);
     });
@@ -153,13 +155,19 @@ class Session {
       url.toString(),
       null, // extra_params,
       body,
-      'application/json',
-      (error: Error, response: any): void => {
+      extension ? 'application/json' : null,
+      (error: Error, response: any, result: any): void => {
         if (error) {
           return rej(error);
         }
-        const [data] = Object.values(JSON.parse(response));
-        res(titleToCamelProperties(data || {}) as T);
+        try {
+          const [data] = Object.values(JSON.parse(response));
+          res(titleToCamelProperties(data || {}) as T);
+        } catch (e) {
+          console.log('*** 1:', response);
+          console.log('*** 2:', result);
+          res({message: response as string} as T);
+        }
       }
     ));
   }

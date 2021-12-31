@@ -11,6 +11,7 @@ import type {
   IMargin,
   IOpenCalls
 } from './interface';
+import type {IFetchResponse} from '../interface';
 import type {QuoteMode} from '../enums';
 
 /* eslint-disable max-len */
@@ -24,7 +25,7 @@ export interface IGetAccountBalancesRequest {
   realTimeNAV?: boolean;
 }
 
-export interface IGetAccountBalancesResponse {
+export interface IGetAccountBalancesResponse extends IFetchResponse {
   /** The description of the account for which the balance is requested. */
   accountDesc: string;
   /** The description of the account. */

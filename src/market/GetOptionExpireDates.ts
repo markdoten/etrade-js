@@ -3,6 +3,7 @@
  */
 import session from '../session';
 import type {IExpirationDate} from './interface';
+import type {IFetchResponse} from '../interface';
 
 /* eslint-disable max-len */
 
@@ -13,7 +14,7 @@ export interface IGetOptionExpireDatesRequest {
   symbol: string;
 }
 
-export interface IGetOptionExpireDatesResponse {
+export interface IGetOptionExpireDatesResponse extends IFetchResponse {
   /** The expiration dates for the options. */
   expirationDates: IExpirationDate[];
 }
