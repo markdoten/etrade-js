@@ -1,0 +1,33 @@
+{
+  "transactionId": 123456789,
+  "accountId": "83359700",
+  "transactionDate": 1235895380,
+  "postDate": 1235895380,
+  "amount": 60005,
+  "description": "AAPL Purchase",
+  "category": {
+    "categoryId": "6",
+    "parentId": "5",
+    "categoryName": "Stock",
+    "parentName": "Equity"
+  },
+  "brokerage": {
+    "transactionType": "Debit",
+    "quantity": 100,
+    "price": 600,
+    "settlementCurrency": "USD",
+    "paymentCurrency": "USD",
+    "fee": 5,
+    "memo": "",
+    "checkNo": "",
+    "orderNo": "12345555",
+    "product": {
+      "symbol": "AAPL",
+      "securityType": "EQ",
+      "expiryYear": 0,
+      "expiryMonth": 0,
+      "expiryDay": 0,
+      "strikePrice": 0
+    }
+  }
+}

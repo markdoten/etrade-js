@@ -1,0 +1,50 @@
+{
+  "Accounts": {
+    "Account": [
+      {
+        "accountId": "82314598",
+        "accountIdKey": "dBZOKt9xDrtRSAOl4MSiiA",
+        "accountMode": "IRA",
+        "accountDesc": "Brokerage",
+        "accountName": "NickName-1",
+        "accountType": "MARGIN",
+        "institutionType": "BROKERAGE",
+        "accountStatus": "ACTIVE",
+        "closedDate": 0
+      },
+      {
+        "accountId": "58315636",
+        "accountIdKey": "vQMsebA1H5WltUfDkJP48g",
+        "accountMode": "BROKERAGE",
+        "accountDesc": "Complete Savings",
+        "accountName": "NickName-2",
+        "accountType": "INDIVIDUAL",
+        "institutionType": "BROKERAGE",
+        "accountStatus": "ACTIVE",
+        "closedDate": 0
+      },
+      {
+        "accountId": "70700418",
+        "accountIdKey": "6_Dpy0rmuQ9cu9IbTfvF2A",
+        "accountMode": "CASH",
+        "accountDesc": "INDIVIDUAL",
+        "accountName": "NickName-3",
+        "accountType": "INDIVIDUAL",
+        "institutionType": "BROKERAGE",
+        "accountStatus": "ACTIVE",
+        "closedDate": 0
+      },
+      {
+        "accountId": "83515143",
+        "accountIdKey": "xj1Dc18FTqWPqkEEVUr5rw",
+        "accountMode": "CASH",
+        "accountDesc": "INDIVIDUAL",
+        "accountName": "",
+        "accountType": "CASH",
+        "institutionType": "BROKERAGE",
+        "accountStatus": "CLOSED",
+        "closedDate": 1521027780
+      }
+    ]
+  }
+}

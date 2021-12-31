@@ -1,0 +1,28 @@
+{
+  "accountId": "83353535",
+  "accountType": "MARGIN",
+  "optionLevel": "LEVEL_4",
+  "accountDescription": "",
+  "cash": {
+    "fundsForOpenOrdersCash": 0,
+    "moneyMktBalance": 0
+  },
+  "computed": {
+    "cashAvailableForInvestment": 0,
+    "cashAvailableForWithdrawal": 0,
+    "netCash": -740.450013,
+    "cashBalance": 0,
+    "settledCashForInvestment": 0,
+    "unSettledCashForInvestment": 0,
+    "fundsWithheldFromPurchasePower": 0,
+    "fundsWithheldFromWithdrawal": 0,
+    "openCalls": {
+      "cashCall": 0
+    },
+    "realTimeValues": {
+      "totalAccountValue": 0,
+      "netMv": -454.22,
+      "netMvLong": 0
+    }
+  }
+}

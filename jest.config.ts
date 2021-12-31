@@ -8,9 +8,16 @@ export default {
   clearMocks: true,
   collectCoverage: true,
   collectCoverageFrom: [
-    '<rootDir>/src/**/*.ts',
-    '!<rootDir>/src/**/enum*.ts',
-    '!<rootDir>/src/**/interface*.ts'
+    '<rootDir>/src/**/*.ts'
+  ],
+  coveragePathIgnorePatterns: [
+    '<rootDir>/src/accounts/index.ts',
+    '<rootDir>/src/alerts/index.ts',
+    '<rootDir>/src/auth/index.ts',
+    '<rootDir>/src/market/index.ts',
+    '<rootDir>/src/order/index.ts',
+    'enums.ts',
+    'interface.ts'
   ],
   coverageReporters: ['text'],
   coverageThreshold: {

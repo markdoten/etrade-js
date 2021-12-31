@@ -37,15 +37,19 @@ app.get('/etrade/auth/start', async (req: Request, res: Response) =>
 app.get('/etrade/auth/code', async (req: Request, res: Response) => {
   await etrade.auth.completeOAuth(req.query.oauth_verifier.toString());
   const {accounts: {account}} = await etrade.accounts.ListAccounts();
-  console.log(await etrade.accounts.ViewPortfolio({
-    accountIdKey: account[0].accountIdKey,
-    count: 10,
-    sortBy: etrade.accounts.SortBy.SYMBOL
-  }));
+  res.send(account[0].accountIdKey);
 });
 
-app.get('/test/:function', async (req: Request, res: Response) => {
-
+app.post('/test/:folder/:func', async (req: Request, res: Response) => {
+  const {folder, func} = req.params;
+  try {
+    const data = await etrade[folder][func](req.body);
+    console.log(JSON.stringify(data, null, 2));
+    res.send(data);
+  } catch (err) {
+    console.error(err);
+    res.status(500).send(err);
+  }
 });
 
 app.listen(PORT);

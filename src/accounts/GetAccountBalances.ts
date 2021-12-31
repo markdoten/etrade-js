@@ -1,8 +1,9 @@
 /**
  * @file Get Account Balances.
  */
+import {InstitutionType} from './enums';
 import session from '../session';
-import type {AccountType, InstitutionType, OptionLevel} from './enums';
+import type {AccountType, OptionLevel} from './enums';
 import type {
   ICash,
   IComputedBalance,
@@ -19,8 +20,6 @@ export interface IGetAccountBalancesRequest {
   accountIdKey: string;
   /** The registered account type. */
   accountType?: AccountType;
-  /** The account institution type for which the balance or information is requested. */
-  instType: InstitutionType;
   /** Default is false. If true, fetches real time balance. */
   realTimeNAV?: boolean;
 }
@@ -64,17 +63,15 @@ export interface IGetAccountBalancesResponse {
  * @param {IGetAccountBalancesRequest} request - The request object.
  * @param {string} [request.accountIdKey] - The unique account key.
  * @param {string} [request.accountType] - The registered account type.
- * @param {string} [request.instType] - The account institution type for which the balance or information is requested.
  * @param {boolean} [request.realTimeNAV] - Default is false. If true, fetches real time balance.
  * @returns {Promise<IGetAccountBalancesResponse>} - List of accounts.
  */
 export const GetAccountBalances = ({
   accountIdKey,
   accountType,
-  instType,
   realTimeNAV = false
 }: IGetAccountBalancesRequest): Promise<IGetAccountBalancesResponse> => {
   const path = `/accounts/${accountIdKey}/balance`;
-  const query = {accountType, instType, realTimeNAV};
+  const query = {accountType, instType: InstitutionType.BROKERAGE, realTimeNAV};
   return session.request<IGetAccountBalancesResponse>({path, query});
 };

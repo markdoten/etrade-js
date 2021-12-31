@@ -131,5 +131,20 @@ describe('session', () => {
         titleCase: 'abc'
       });
     });
+
+    it('adds query parameters to the URL', async () => {
+      performSecureRequestSpy.mockImplementation((a, b, c, d, e, f, g, callback) => callback(null, '{}'));
+      await session.request({path: '/some/api/path', query: {param1: 'value1', param2: undefined}});
+      expect(performSecureRequestSpy).toHaveBeenCalledWith(
+        expect.any(String),
+        expect.any(String),
+        expect.any(String),
+        'https://apisb.etrade.com/v1/some/api/path.json?param1=value1',
+        null,
+        undefined,
+        'application/json',
+        expect.any(Function)
+      );
+    });
   });
 });

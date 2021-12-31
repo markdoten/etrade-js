@@ -143,7 +143,9 @@ class Session {
     version = '/v1'
   }: IFetchOptions): Promise<T> {
     const url = new URL(`${HOSTNAMES[this._environment]}${version}${path}.json`);
-    Object.keys(query).forEach((key: string) => url.searchParams.append(key, query[key]));
+    Object.keys(query).forEach((key: string) => {
+      query[key] === undefined || url.searchParams.append(key, query[key]);
+    });
     return new Promise((res, rej) => this._oauth._performSecureRequest(
       this.accessToken,
       this.accessTokenSecret,
@@ -157,7 +159,7 @@ class Session {
           return rej(error);
         }
         const [data] = Object.values(JSON.parse(response));
-        res(titleToCamelProperties(data) as T);
+        res(titleToCamelProperties(data || {}) as T);
       }
     ));
   }
