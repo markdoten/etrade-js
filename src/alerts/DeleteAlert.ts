@@ -7,9 +7,11 @@ import type {IFailedAlerts} from './interface';
 
 /* eslint-disable max-len */
 
+type TAlertId = number | string;
+
 export interface IDeleteAlertRequest {
   /** List of alert IDs. */
-  alertIds: string[];
+  alertIds: TAlertId[];
 }
 
 export interface IDeleteAlertResponse {

@@ -6,6 +6,8 @@ import {testApi} from '../__utils__/test.api';
 import {GetAccountBalances as TestFn} from '../../src/accounts/GetAccountBalances';
 import fixture from '../__fixtures__/accounts/GetAccountBalances.json';
 
+/* eslint-disable max-len */
+
 describe('GetAccountBalances', () => testApi({fixture, fn: TestFn, method: 'GET', tests: [
   {
     args: {accountIdKey: 'key', accountType: AccountType.MARGIN, realTimeNAV: true},

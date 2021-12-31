@@ -5,6 +5,8 @@ import {testApi} from '../__utils__/test.api';
 import {ListTransactionDetails as TestFn} from '../../src/accounts/ListTransactionDetails';
 import fixture from '../__fixtures__/accounts/ListTransactionDetails.json';
 
+/* eslint-disable max-len */
+
 describe('ListTransactionDetails', () => testApi({fixture, fn: TestFn, method: 'GET', tests: [
   {
     args: {accountIdKey: 'key', storeId: 'storeId', transactionId: 'tranId'},
