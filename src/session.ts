@@ -154,7 +154,7 @@ class Session {
       method,
       url.toString(),
       null, // extra_params,
-      body,
+      body ? JSON.stringify(body) : undefined,
       extension ? 'application/json' : null,
       (error: Error, response: any, result: any): void => {
         if (error) {
@@ -164,8 +164,6 @@ class Session {
           const [data] = Object.values(JSON.parse(response));
           res(titleToCamelProperties(data || {}) as T);
         } catch (e) {
-          console.log('*** 1:', response);
-          console.log('*** 2:', result);
           res({message: response as string} as T);
         }
       }

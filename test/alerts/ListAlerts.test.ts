@@ -9,7 +9,7 @@ import fixture from '../__fixtures__/alerts/ListAlerts.json';
 
 /* eslint-disable max-len */
 
-describe('ListAlerts', () => testApi({fixture, fn: TestFn, method: 'GET', tests: [
+describe('ListAlerts', () => testApi({fixture, fn: TestFn, tests: [
   {
     args: {
       category: AlertCategory.ACCOUNT,

@@ -1,0 +1,45 @@
+{
+  "expirationDate": [
+    {
+      "year": 2012,
+      "month": 11,
+      "day": 23,
+      "expiryType": "WEEKLY"
+    },
+    {
+      "year": 2012,
+      "month": 12,
+      "day": 22,
+      "expiryType": "MONTHLY"
+    },
+    {
+      "year": 2013,
+      "month": 1,
+      "day": 19,
+      "expiryType": "MONTHLY"
+    },
+    {
+      "year": 2013,
+      "month": 3,
+      "day": 16,
+      "expiryType": "MONTHLY"
+    },
+    {
+      "year": 2013,
+      "month": 6,
+      "day": 22
+    },
+    {
+      "year": 2014,
+      "month": 1,
+      "day": 18,
+      "expiryType": "MONTHLY"
+    },
+    {
+      "year": 2015,
+      "month": 1,
+      "day": 17,
+      "expiryType": "DAILY"
+    }
+  ]
+}

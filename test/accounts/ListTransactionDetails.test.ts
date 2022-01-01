@@ -7,7 +7,7 @@ import fixture from '../__fixtures__/accounts/ListTransactionDetails.json';
 
 /* eslint-disable max-len */
 
-describe('ListTransactionDetails', () => testApi({fixture, fn: TestFn, method: 'GET', tests: [
+describe('ListTransactionDetails', () => testApi({fixture, fn: TestFn, tests: [
   {
     args: {accountIdKey: 'key', storeId: 'storeId', transactionId: 'tranId'},
     path: '/accounts/key/transactions/tranId.json?storeId=storeId',

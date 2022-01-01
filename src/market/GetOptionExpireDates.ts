@@ -2,6 +2,7 @@
  * @file Get Option Expire Dates.
  */
 import session from '../session';
+import type {ExpiryType} from './enums';
 import type {IExpirationDate} from './interface';
 import type {IFetchResponse} from '../interface';
 
@@ -9,7 +10,7 @@ import type {IFetchResponse} from '../interface';
 
 export interface IGetOptionExpireDatesRequest {
   /** Expiration type of the option. */
-  expiryType?: string;
+  expiryType?: ExpiryType;
   /** The symbol in the request. */
   symbol: string;
 }

@@ -71,10 +71,10 @@ export interface IPlaceChangedOrderResponse extends IFetchResponse {
 export const PlaceChangedOrder = ({
   accountIdKey,
   orderId,
-  ...body
+  ...PlaceOrderRequest
 }: IPlaceChangedOrderRequest): Promise<IPlaceChangedOrderResponse> =>
   session.request<IPlaceChangedOrderResponse>({
-    body,
+    body: {PlaceOrderRequest},
     method: 'PUT',
     path: `/accounts/${accountIdKey}/orders/${orderId}/change/place`
   });

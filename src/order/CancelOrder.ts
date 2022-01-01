@@ -36,7 +36,7 @@ export const CancelOrder = ({
   orderId
 }: ICancelOrderRequest): Promise<ICancelOrderResponse> =>
   session.request<ICancelOrderResponse>({
-    body: {orderId},
+    body: {CancelOrderRequest: {orderId}},
     method: 'PUT',
     path: `/accounts/${accountIdKey}/orders/cancel`
   });

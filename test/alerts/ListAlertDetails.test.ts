@@ -7,7 +7,7 @@ import fixture from '../__fixtures__/alerts/ListAlertDetails.json';
 
 /* eslint-disable max-len */
 
-describe('ListAlertDetails', () => testApi({fixture, fn: TestFn, method: 'GET', tests: [
+describe('ListAlertDetails', () => testApi({fixture, fn: TestFn, tests: [
   {
     args: {htmlTags: true, id: 'id1'},
     path: '/user/alerts/id1.json?htmlTags=true',

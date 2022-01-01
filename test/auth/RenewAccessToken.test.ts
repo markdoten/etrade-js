@@ -12,7 +12,6 @@ describe('RenewAccessToken', () => testApi({
   fixture,
   fn: TestFn,
   includeVersion: false,
-  method: 'GET',
   tests: [
     {
       args: undefined,

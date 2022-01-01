@@ -76,10 +76,10 @@ export interface IPreviewOrderResponse extends IFetchResponse {
  */
 export const PreviewOrder = ({
   accountIdKey,
-  ...body
+  ...PreviewOrderRequest
 }: IPreviewOrderRequest): Promise<IPreviewOrderResponse> =>
   session.request<IPreviewOrderResponse>({
-    body,
+    body: {PreviewOrderRequest},
     method: 'POST',
     path: `/accounts/${accountIdKey}/orders/preview`
   });

@@ -12,11 +12,11 @@ export interface IGetOptionChainsRequest {
   /** The type of option chain. Default: CALLPUT. */
   chainType?: ChainType;
   /** Indicates the expiry day corresponding to which the optionchain needs to be fetched. */
-  expiryDay?: string;
+  expiryDay?: number;
   /** Indicates the expiry month corresponding to which the optionchain needs to be fetched. */
-  expiryMonth?: string;
+  expiryMonth?: number;
   /** Indicates the expiry year corresponding to which the optionchain needs to be fetched. */
-  expiryYear?: string;
+  expiryYear?: number;
   /** The include weekly options request. Default: false. */
   includeWeekly?: boolean;
   /** Indicates number of strikes for which the optionchain needs to be fetched. */
@@ -28,7 +28,7 @@ export interface IGetOptionChainsRequest {
   /** The skip adjusted request. Default: true. */
   skipAdjusted?: boolean;
   /** The optionchians fetched will have strike price nearer to this value. */
-  strikePriceNear?: string;
+  strikePriceNear?: number;
   /** The market symbol for the instrument; for example, GOOG. */
   symbol: string;
 }

@@ -7,6 +7,7 @@ import session from '../../src/session';
 
 export interface ITest {
   args: any;
+  body?: Record<string, any>;
   error?: string;
   path: string;
   title: string;
@@ -17,7 +18,7 @@ export interface ITestApi {
   fixture: Record<string, any>,
   fn: Function,
   includeVersion?: boolean,
-  method: string,
+  method?: string,
   tests: ITest[]
 }
 
@@ -36,7 +37,7 @@ export const testApi = ({
   fixture,
   fn,
   includeVersion = true,
-  method,
+  method = 'GET',
   tests
 }: ITestApi): void => {
   let performSecureRequestSpy;
@@ -56,7 +57,7 @@ export const testApi = ({
     session.accessTokenSecret = 'access-token-secret';
   });
 
-  tests.forEach(({args, error, path, title}: ITest): void => it(title, () => {
+  tests.forEach(({args, body, error, path, title}: ITest): void => it(title, () => {
     let threwError = false;
 
     performSecureRequestSpy.mockImplementation((...args) => {
@@ -73,7 +74,7 @@ export const testApi = ({
           method,
           `https://apisb.etrade.com${includeVersion ? '/v1' : ''}${path}`,
           null,
-          undefined,
+          body ? JSON.stringify(body) : undefined,
           contentType,
           expect.any(Function)
         );

@@ -9,7 +9,7 @@ import fixture from '../__fixtures__/accounts/ViewPortfolio.json';
 
 /* eslint-disable max-len */
 
-describe('ViewPortfolio', () => testApi({fixture, fn: TestFn, method: 'GET', tests: [
+describe('ViewPortfolio', () => testApi({fixture, fn: TestFn, tests: [
   {
     args: {
       accountIdKey: 'key',

@@ -132,6 +132,11 @@ describe('session', () => {
       });
     });
 
+    it('returns a message object if the response is not an object', async () => {
+      performSecureRequestSpy.mockImplementation((a, b, c, d, e, f, g, callback) => callback(null, 'some message'));
+      expect(await session.request({path: '/some/api/path'})).toEqual({message: 'some message'});
+    });
+
     it('adds query parameters to the URL', async () => {
       performSecureRequestSpy.mockImplementation((a, b, c, d, e, f, g, callback) => callback(null, '{}'));
       await session.request({path: '/some/api/path', query: {param1: 'value1', param2: undefined}});

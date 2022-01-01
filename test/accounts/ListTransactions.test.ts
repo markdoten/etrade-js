@@ -7,7 +7,7 @@ import fixture from '../__fixtures__/accounts/ListTransactions.json';
 
 /* eslint-disable max-len */
 
-describe('ListTransactions', () => testApi({fixture, fn: TestFn, method: 'GET', tests: [
+describe('ListTransactions', () => testApi({fixture, fn: TestFn, tests: [
   {
     args: {
       accountIdKey: 'key',

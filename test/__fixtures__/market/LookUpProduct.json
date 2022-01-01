@@ -1,0 +1,44 @@
+{
+  "data": [
+    {
+      "symbol": "A",
+      "description": "AGILENT TECHNOLOGIES INC COM"
+    },
+    {
+      "symbol": "AA",
+      "description": "ALCOA INC COM"
+    },
+    {
+      "symbol": "AU",
+      "description": "ANGLOGOLD ASHANTI LTD SPONSORED ADR"
+    },
+    {
+      "symbol": "AAPL",
+      "description": "APPLE INC COM"
+    },
+    {
+      "symbol": "AAUKF",
+      "description": "ANGLO AMERICAN PLC SHS"
+    },
+    {
+      "symbol": "AAUKY",
+      "description": "ANGLO AMERN PLC ADR NEW"
+    },
+    {
+      "symbol": "AB",
+      "description": "ALLIANCEBERNSTEIN HOLDING LP UNIT LTD PARTN"
+    },
+    {
+      "symbol": "ABT",
+      "description": "ABBOTT LABS COM"
+    },
+    {
+      "symbol": "ABV",
+      "description": "COMPANHIA DE BEBIDAS DAS AMERS SPON ADR PFD"
+    },
+    {
+      "symbol": "ABX",
+      "description": "BARRICK GOLD CORP COM"
+    }
+  ]
+}

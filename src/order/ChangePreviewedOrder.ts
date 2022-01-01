@@ -80,10 +80,10 @@ export interface IChangePreviewedOrderResponse extends IFetchResponse {
 export const ChangePreviewedOrder = ({
   accountIdKey,
   orderId,
-  ...body
+  ...PreviewOrderRequest
 }: IChangePreviewedOrderRequest): Promise<IChangePreviewedOrderResponse> =>
   session.request<IChangePreviewedOrderResponse>({
-    body,
+    body: {PreviewOrderRequest},
     method: 'PUT',
     path: `/accounts/${accountIdKey}/orders/${orderId}/change/preview`
   });

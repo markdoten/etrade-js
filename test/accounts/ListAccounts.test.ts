@@ -7,7 +7,7 @@ import fixture from '../__fixtures__/accounts/ListAccounts.json';
 
 /* eslint-disable max-len */
 
-describe('ListAccounts', () => testApi({fixture, fn: TestFn, method: 'GET', tests: [
+describe('ListAccounts', () => testApi({fixture, fn: TestFn, tests: [
   {
     args: undefined,
     path: '/accounts/list.json',

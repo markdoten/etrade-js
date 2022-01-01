@@ -8,7 +8,7 @@ import fixture from '../__fixtures__/accounts/GetAccountBalances.json';
 
 /* eslint-disable max-len */
 
-describe('GetAccountBalances', () => testApi({fixture, fn: TestFn, method: 'GET', tests: [
+describe('GetAccountBalances', () => testApi({fixture, fn: TestFn, tests: [
   {
     args: {accountIdKey: 'key', accountType: AccountType.MARGIN, realTimeNAV: true},
     path: '/accounts/key/balance.json?accountType=MARGIN&instType=BROKERAGE&realTimeNAV=true',
