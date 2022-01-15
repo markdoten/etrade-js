@@ -50,7 +50,7 @@ export interface IViewPortfolioResponse extends IFetchResponse {
  * @param {string} [request.view] - The view query.
  * @returns {Promise<IViewPortfolioResponse>} - Provides portfolio information for a selected brokerage account.
  */
-export const ViewPortfolio = ({
+export default ({
   accountIdKey,
   count,
   lotsRequired = false,

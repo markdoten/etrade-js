@@ -42,7 +42,7 @@ export interface IListTransactionDetailsResponse extends IFetchResponse {
  * @param {string} [request.transactionId] - Transaction Id.
  * @returns {Promise<IListTransactionDetailsResponse>} - Transaction details.
  */
-export const ListTransactionDetails = ({
+export default ({
   accountIdKey,
   storeId,
   transactionId

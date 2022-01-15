@@ -67,7 +67,7 @@ export interface IGetAccountBalancesResponse extends IFetchResponse {
  * @param {boolean} [request.realTimeNAV] - Default is false. If true, fetches real time balance.
  * @returns {Promise<IGetAccountBalancesResponse>} - List of accounts.
  */
-export const GetAccountBalances = ({
+export default ({
   accountIdKey,
   accountType,
   realTimeNAV = false

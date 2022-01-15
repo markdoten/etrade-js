@@ -42,15 +42,15 @@ export interface IPortfolioMargin {
 }
 
 export interface IProduct {
-  callPut: 'CALL' | 'PUT';
-  expiryDay: number;
-  expiryMonth: number;
-  expiryType: string;
-  expiryYear: number;
-  productId: IProductId;
-  securitySubType: string;
+  callPut?: 'CALL' | 'PUT';
+  expiryDay?: number;
+  expiryMonth?: number;
+  expiryType?: string;
+  expiryYear?: number;
+  productId?: IProductId;
+  securitySubType?: string;
   securityType: SecurityType;
-  strikePrice: number;
+  strikePrice?: number;
   symbol: string;
 }
 

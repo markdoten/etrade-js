@@ -148,26 +148,43 @@ class Session {
     Object.keys(query).forEach((key: string) => {
       query[key] === undefined || url.searchParams.append(key, query[key]);
     });
-    return new Promise((res, rej) => this._oauth._performSecureRequest(
-      this.accessToken,
-      this.accessTokenSecret,
-      method,
-      url.toString(),
-      null, // extra_params,
-      body ? JSON.stringify(body) : undefined,
-      extension ? 'application/json' : null,
-      (error: Error, response: any, result: any): void => {
-        if (error) {
-          return rej(error);
+
+    console.log('***:', url.toString(), JSON.stringify(body, null, 2));
+
+    return new Promise((res, rej) =>
+      this._oauth._performSecureRequest(
+        this.accessToken,
+        this.accessTokenSecret,
+        method,
+        url.toString(),
+        null, // extra_params,
+        body ? JSON.stringify(body) : undefined,
+        extension ? 'application/json' : null,
+        (error: Error, response: any, result: any): void => {
+          if (error) {
+            return rej(error);
+          }
+          try {
+            const [data] = Object.values(JSON.parse(response));
+            res(titleToCamelProperties(data || {}) as T);
+          } catch (e) {
+            res({message: response as string} as T);
+          }
         }
-        try {
-          const [data] = Object.values(JSON.parse(response));
-          res(titleToCamelProperties(data || {}) as T);
-        } catch (e) {
-          res({message: response as string} as T);
-        }
-      }
-    ));
+      )
+    );
+  }
+
+  /**
+   * JSON format of this class.
+   * @returns {Object} - JSON format of this class.
+   */
+  public toJSON(): Record<string, any> {
+    return {
+      accessToken: this.accessToken,
+      accessTokenSecret: this.accessTokenSecret,
+      environment: this._environment
+    };
   }
 }
 

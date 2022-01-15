@@ -68,7 +68,7 @@ export interface IPlaceChangedOrderResponse extends IFetchResponse {
  * @param {string} [request.orderId] - The order Id.
  * @returns {Promise<IPlaceChangedOrderResponse>} - Status of the order.
  */
-export const PlaceChangedOrder = ({
+export default ({
   accountIdKey,
   orderId,
   ...PlaceOrderRequest

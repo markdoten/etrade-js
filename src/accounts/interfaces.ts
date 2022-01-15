@@ -1,9 +1,9 @@
 /**
  * @file Account interface.
  */
-import type {AccountType} from './enums';
-import type {IPortfolioMargin, IProduct} from '../interface';
 import type {QuoteStatus} from '../enums';
+import type {IPortfolioMargin, IProduct} from '../interfaces';
+import type {AccountType} from './enums';
 
 /* eslint-disable max-len */
 
@@ -17,7 +17,7 @@ export interface IAccount {
   accountType: AccountType;
   closedDate: number;
   institutionType: string;
-  instNo:	number;
+  instNo: number;
 }
 
 export interface IAccountPortfolio {

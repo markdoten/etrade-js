@@ -4,10 +4,8 @@
 .idea/
 .yarn/
 /lib/
-build/
-config/ngrok/ngrok.conf
-grafana-provisioning/
 iv.json
 node_modules/
+session.json
 temp/
 tmp/

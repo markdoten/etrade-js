@@ -19,5 +19,8 @@ export interface IRevokeAccessTokenResponse extends IFetchResponse {
  * @async
  * @returns {Promise<IRevokeAccessTokenResponse>} - Revoked access token.
  */
-export const RevokeAccessToken = (): Promise<IRevokeAccessTokenResponse> =>
-  session.request<IRevokeAccessTokenResponse>({isOAuth: true, path: '/oauth/revoke_access_token'});
+export default (): Promise<IRevokeAccessTokenResponse> =>
+  session.request<IRevokeAccessTokenResponse>({
+    isOAuth: true,
+    path: '/oauth/revoke_access_token'
+  });

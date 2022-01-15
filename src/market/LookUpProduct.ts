@@ -24,7 +24,5 @@ export interface ILookUpProductResponse extends IFetchResponse {
  * @param {string} [request.search] - The search request.
  * @returns {Promise<ILookUpProductResponse>} - Information about market events.
  */
-export const LookUpProduct = ({
-  search
-}: ILookUpProductRequest): Promise<ILookUpProductResponse> =>
+export default ({search}: ILookUpProductRequest): Promise<ILookUpProductResponse> =>
   session.request<ILookUpProductResponse>({path: `/market/lookup/${search}`});

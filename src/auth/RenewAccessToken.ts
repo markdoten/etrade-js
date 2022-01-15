@@ -21,5 +21,8 @@ export interface IRenewAccessTokenResponse extends IFetchResponse {
  * @async
  * @returns {Promise<IRenewAccessTokenResponse>} - New access token.
  */
-export const RenewAccessToken = (): Promise<IRenewAccessTokenResponse> =>
-  session.request<IRenewAccessTokenResponse>({isOAuth: true, path: '/oauth/renew_access_token'});
+export default (): Promise<IRenewAccessTokenResponse> =>
+  session.request<IRenewAccessTokenResponse>({
+    isOAuth: true,
+    path: '/oauth/renew_access_token'
+  });

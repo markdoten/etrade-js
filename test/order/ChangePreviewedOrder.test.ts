@@ -1,6 +1,7 @@
 /**
  * @file ChangePreviewedOrder tests.
  */
+import {createOrder} from "../../src/order/utils/create";
 import {OrderType} from '../../src/order/enums';
 import {testApi} from '../__utils__/test.api';
 import {ChangePreviewedOrder as TestFn} from '../../src/order/ChangePreviewedOrder';
@@ -10,7 +11,7 @@ import fixture from '../__fixtures__/order/ChangePreviewedOrder.json';
 
 const testBody = {
   clientOrderId: 'client-order-id',
-  order: [{}],
+  Order: [createOrder({accountId: '83710800', quantity: 10, symbol: 'ADBE'})],
   orderType: OrderType.EQ
 };
 

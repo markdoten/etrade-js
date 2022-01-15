@@ -48,10 +48,7 @@ export interface IListTransactionsResponse extends IFetchResponse {
  * @param {string} [request.accountIdKey] - The unique account key.
  * @returns {Promise<IListTransactionsResponse>} - Get all transactions for the specified account.
  */
-export const ListTransactions = ({
-  accountIdKey,
-  ...query
-}: IListTransactionsRequest): Promise<IListTransactionsResponse> => {
+export default ({accountIdKey, ...query}: IListTransactionsRequest): Promise<IListTransactionsResponse> => {
   const path = `/accounts/${accountIdKey}/transactions`;
   return session.request<IListTransactionsResponse>({path, query});
 };

@@ -2,6 +2,7 @@
  * @file PlaceChangedOrder tests.
  */
 import {CashMargin, OrderType} from '../../src/order/enums';
+import {createOrder} from "../../src/order/utils/create";
 import {testApi} from '../__utils__/test.api';
 import {PlaceChangedOrder as TestFn} from '../../src/order/PlaceChangedOrder';
 import fixture from '../__fixtures__/order/PlaceChangedOrder.json';
@@ -10,7 +11,7 @@ import fixture from '../__fixtures__/order/PlaceChangedOrder.json';
 
 const testBody = {
   clientOrderId: 'client-order-id',
-  order: [{}],
+  Order: [createOrder({accountId: '83710800', quantity: 10, symbol: 'ADBE'})],
   orderType: OrderType.EQ,
   previewIds: [{
     cashMargin: CashMargin.CASH,

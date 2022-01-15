@@ -35,5 +35,5 @@ export interface IListAlertsResponse extends IFetchResponse {
  * @param {IListAlertsRequest} query - The request object.
  * @returns {Promise<IListAlertsResponse>} - List of alerts.
  */
-export const ListAlerts = (query: IListAlertsRequest): Promise<IListAlertsResponse> =>
+export default (query: IListAlertsRequest): Promise<IListAlertsResponse> =>
   session.request<IListAlertsResponse>({path: '/user/alerts', query});

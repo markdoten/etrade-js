@@ -35,8 +35,8 @@ export interface IGetQuotesResponse extends IFetchResponse {
  * @param {string[]} [request.symbols] - One or more (comma-separated) symbols for equities or options, up to a maximum of 25. Symbols for equities are simple, for example, GOOG. Symbols for options are more complex, consisting of six elements separated by colons, in this format: underlier:year:month:day:optionType:strikePrice.
  * @returns {Promise<IGetQuotesResponse>} - Portfolio information for a selected brokerage account.
  */
-export const GetQuotes = ({
-  symbols,
-  ...query
-}: IGetQuotesRequest): Promise<IGetQuotesResponse> =>
-  session.request<IGetQuotesResponse>({path: `/market/quote/${symbols.join(',')}`, query});
+export default ({symbols, ...query}: IGetQuotesRequest): Promise<IGetQuotesResponse> =>
+  session.request<IGetQuotesResponse>({
+    path: `/market/quote/${symbols.join(',')}`,
+    query
+  });

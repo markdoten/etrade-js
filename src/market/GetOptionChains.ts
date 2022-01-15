@@ -52,5 +52,8 @@ export interface IGetOptionChainsResponse extends IFetchResponse {
  * @param {IGetOptionChainsRequest} query - The request object.
  * @returns {Promise<IGetOptionChainsResponse>} - List of option chains for a specific underlying instrument.
  */
-export const GetOptionChains = (query: IGetOptionChainsRequest): Promise<IGetOptionChainsResponse> =>
-  session.request<IGetOptionChainsResponse>({path: '/market/optionchains', query});
+export default (query: IGetOptionChainsRequest): Promise<IGetOptionChainsResponse> =>
+  session.request<IGetOptionChainsResponse>({
+    path: '/market/optionchains',
+    query
+  });

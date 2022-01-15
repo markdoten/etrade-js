@@ -29,7 +29,8 @@ export interface IDeleteAlertResponse extends IFetchResponse {
  * @param {string} [request.id] - The alert ID value. Alert id whose details are needed.
  * @returns {Promise<IDeleteAlertResponse>} - Details for an alert.
  */
-export const DeleteAlert = ({
-  alertIds
-}: IDeleteAlertRequest): Promise<IDeleteAlertResponse> =>
-  session.request<IDeleteAlertResponse>({method: 'DELETE', path: `/user/alerts/${alertIds.join(',')}`});
+export default ({alertIds}: IDeleteAlertRequest): Promise<IDeleteAlertResponse> =>
+  session.request<IDeleteAlertResponse>({
+    method: 'DELETE',
+    path: `/user/alerts/${alertIds.join(',')}`
+  });

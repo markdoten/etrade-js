@@ -1,9 +1,9 @@
 /**
  * @file Market interface.
  */
-import type {ExpiryType, OptionCategory} from './enums';
-import type {IProduct} from '../interface';
 import type {QuoteStatus} from '../enums';
+import type {IProduct} from '../interfaces';
+import type {ExpiryType, OptionCategory} from './enums';
 
 /* eslint-disable max-len */
 
@@ -132,7 +132,7 @@ export interface IMutualFund {
   etradeEarlyRedemptionFee: string;
   exchangeCode: string;
   exchangeName: string;
-  frontEndSalesCharges:	ISaleChargeValues[];
+  frontEndSalesCharges: ISaleChargeValues[];
   fundFamily: string;
   fundInceptionDate: number;
   fundName: string;

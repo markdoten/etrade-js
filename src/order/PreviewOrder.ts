@@ -74,10 +74,7 @@ export interface IPreviewOrderResponse extends IFetchResponse {
  * @param {string} [request.accountIdKey] - The unique account key. Retrievable by calling the List Accounts API.
  * @returns {Promise<IPreviewOrderResponse>} - Order details.
  */
-export const PreviewOrder = ({
-  accountIdKey,
-  ...PreviewOrderRequest
-}: IPreviewOrderRequest): Promise<IPreviewOrderResponse> =>
+export default ({accountIdKey, ...PreviewOrderRequest}: IPreviewOrderRequest): Promise<IPreviewOrderResponse> =>
   session.request<IPreviewOrderResponse>({
     body: {PreviewOrderRequest},
     method: 'POST',

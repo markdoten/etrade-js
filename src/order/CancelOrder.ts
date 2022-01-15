@@ -31,10 +31,7 @@ export interface ICancelOrderResponse extends IFetchResponse {
  * @param {string} [request.accountIdKey] - The unique account key. Retrievable by calling the List Accounts API.
  * @returns {Promise<ICancelOrderResponse>} - Order status.
  */
-export const CancelOrder = ({
-  accountIdKey,
-  orderId
-}: ICancelOrderRequest): Promise<ICancelOrderResponse> =>
+export default ({accountIdKey, orderId}: ICancelOrderRequest): Promise<ICancelOrderResponse> =>
   session.request<ICancelOrderResponse>({
     body: {CancelOrderRequest: {orderId}},
     method: 'PUT',

@@ -15,5 +15,4 @@ export interface IListAccountsResponse extends IFetchResponse {
  * @async
  * @returns {Promise<IListAccountsResponse>} - List of accounts.
  */
-export const ListAccounts = (): Promise<IListAccountsResponse> =>
-  session.request<IListAccountsResponse>({path: '/accounts/list'});
+export default (): Promise<IListAccountsResponse> => session.request<IListAccountsResponse>({path: '/accounts/list'});

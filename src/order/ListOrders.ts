@@ -50,10 +50,7 @@ export interface IListOrdersResponse extends IFetchResponse {
  * @param {string} [request.accountIdKey] - The unique account key. Retrievable by calling the List Accounts API.
  * @returns {Promise<IListOrdersResponse>} - Order details.
  */
-export const ListOrders = ({
-  accountIdKey,
-  ...query
-}: IListOrdersRequest): Promise<IListOrdersResponse> => {
+export default ({accountIdKey, ...query}: IListOrdersRequest): Promise<IListOrdersResponse> => {
   if (query.symbol && typeof query.symbol !== 'string') {
     query.symbol = query.symbol.join(',');
   }

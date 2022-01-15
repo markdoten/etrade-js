@@ -65,10 +65,7 @@ export interface IPlaceOrderResponse extends IFetchResponse {
  * @param {string} [request.accountIdKey] - The unique account key. Retrievable by calling the List Accounts API.
  * @returns {Promise<IPlaceOrderResponse>} - Status of the order.
  */
-export const PlaceOrder = ({
-  accountIdKey,
-  ...PlaceOrderRequest
-}: IPlaceOrderRequest): Promise<IPlaceOrderResponse> =>
+export default ({accountIdKey, ...PlaceOrderRequest}: IPlaceOrderRequest): Promise<IPlaceOrderResponse> =>
   session.request<IPlaceOrderResponse>({
     body: {PlaceOrderRequest},
     method: 'POST',

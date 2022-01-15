@@ -157,7 +157,7 @@ export enum PositionQuantity {
 export enum ReInvestOption {
   CURRENT_HOLDING = 'CURRENT_HOLDING',
   DEPOSIT = 'DEPOSIT',
-  REINVEST = 'REINVEST',
+  REINVEST = 'REINVEST'
 }
 
 export enum QuantityType {

@@ -1,6 +1,8 @@
 /**
  * @file Order interface.
  */
+import type {Currency, MarketSession} from '../enums';
+import type {IMessages, IProduct} from '../interfaces';
 import type {
   CashMargin,
   ConditionFollowPrice,
@@ -17,10 +19,9 @@ import type {
   PositionQuantity,
   QuantityType,
   ReInvestOption,
-  RoutingDestination
+  RoutingDestination,
+  SecurityType
 } from './enums';
-import type {Currency, MarketSession} from '../enums';
-import type {IMessages, IProduct} from '../interface';
 
 export interface ICashBuyingPowerDetails {
   /** Settled Cash that has gone through the settlement process and now belongs to the customer's cash balance. */
@@ -63,27 +64,27 @@ export interface IEvents {
 }
 
 export interface IInstrument {
-  ask: number;
-  averageExecutionPrice: number;
-  bid: number;
-  cancelQuantity: number;
-  currency: Currency;
-  estimatedCommission: number;
-  estimatedFees: number;
-  filledQuantity: number;
-  lastprice: number;
-  lots: ILots;
-  mfQuantity: IMFQuantity;
-  mfTransaction: MFTransaction;
-  orderAction: OrderAction;
-  orderedQuantity: number;
-  osiKey: string;
-  product: IProduct;
-  quantity: number;
-  quantityType: QuantityType;
-  reserveOrder: boolean;
-  reserveQuantity: number;
-  symbolDescription: string;
+  ask?: number;
+  averageExecutionPrice?: number;
+  bid?: number;
+  cancelQuantity?: number;
+  currency?: Currency;
+  estimatedCommission?: number;
+  estimatedFees?: number;
+  filledQuantity?: number;
+  lastprice?: number;
+  lots?: ILots;
+  mfQuantity?: IMFQuantity;
+  mfTransaction?: MFTransaction;
+  orderAction?: OrderAction;
+  orderedQuantity?: number;
+  osiKey?: string;
+  Product?: IProduct;
+  quantity?: number;
+  quantityType?: QuantityType;
+  reserveOrder?: boolean;
+  reserveQuantity?: number;
+  symbolDescription?: string;
 }
 
 export interface ILot {
@@ -132,55 +133,55 @@ export interface IOrderBuyPowerEffect {
 }
 
 export interface IOrderDetail {
-  accountId: string;
-  aipFlag: boolean;
-  allOrNone: boolean;
-  bracketedLimitPrice: number;
-  conditionFollowPrice: ConditionFollowPrice;
-  conditionPrice: number;
-  conditionSecurityType: string;
-  conditionSymbol: string;
-  conditionType: ConditionType;
-  egQual: EgQual;
-  estimatedCommission: number;
-  estimatedFees: number;
-  estimatedTotalAmount: number;
-  executedTime: number;
-  gcd: number;
-  initialStopPrice: number;
-  instrument: IInstrument[];
-  investmentAmount: number;
-  limitPrice: number;
-  marketSession: MarketSession;
-  messages: IMessages;
-  mfpriceType: string;
-  netAsk: number;
-  netBid: number;
-  netPrice: number;
-  offsetType: OffsetType;
-  offsetValue: number;
-  orderNumber: number;
-  orderTerm: OrderTerm;
-  orderType: OrderType;
-  orderValue: number;
-  overrideRestrictedCd: number;
-  placedTime: number;
-  positionQuantity: PositionQuantity;
-  preClearanceCode: string;
-  previewId: number;
-  previewTime: number;
-  priceType: OrderPriceType;
-  priceValue: string;
-  ratio: string;
-  reInvestOption: ReInvestOption;
-  replacedByOrderId: number;
-  replacesOrderId: number;
-  routingDestination: RoutingDestination;
-  status: OrderStatus;
-  stopLimitPrice: number;
-  stopPrice: number;
-  trailPrice: number;
-  triggerPrice: number;
+  accountId?: string;
+  aipFlag?: boolean;
+  allOrNone?: boolean;
+  bracketedLimitPrice?: number;
+  conditionFollowPrice?: ConditionFollowPrice;
+  conditionPrice?: number;
+  conditionSecurityType?: SecurityType;
+  conditionSymbol?: string;
+  conditionType?: ConditionType;
+  egQual?: EgQual;
+  estimatedCommission?: number;
+  estimatedFees?: number;
+  estimatedTotalAmount?: number;
+  executedTime?: number;
+  gcd?: number;
+  initialStopPrice?: number;
+  Instrument?: IInstrument[];
+  investmentAmount?: number;
+  limitPrice?: number;
+  marketSession?: MarketSession;
+  messages?: IMessages;
+  mfpriceType?: string;
+  netAsk?: number;
+  netBid?: number;
+  netPrice?: number;
+  offsetType?: OffsetType;
+  offsetValue?: number;
+  orderNumber?: number;
+  orderTerm?: OrderTerm;
+  orderType?: OrderType;
+  orderValue?: number;
+  overrideRestrictedCd?: number;
+  placedTime?: number;
+  positionQuantity?: PositionQuantity;
+  preClearanceCode?: string;
+  previewId?: number;
+  previewTime?: number;
+  priceType?: OrderPriceType;
+  priceValue?: string;
+  ratio?: string;
+  reInvestOption?: ReInvestOption;
+  replacedByOrderId?: number;
+  replacesOrderId?: number;
+  routingDestination?: RoutingDestination;
+  status?: OrderStatus;
+  stopLimitPrice?: number;
+  stopPrice?: number;
+  trailPrice?: number;
+  triggerPrice?: number;
 }
 
 export interface IOrderId {

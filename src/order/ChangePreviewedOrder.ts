@@ -77,7 +77,7 @@ export interface IChangePreviewedOrderResponse extends IFetchResponse {
  * @param {string} [request.orderId] - The order Id.
  * @returns {Promise<IChangePreviewedOrderResponse>} - Order status.
  */
-export const ChangePreviewedOrder = ({
+export default ({
   accountIdKey,
   orderId,
   ...PreviewOrderRequest
