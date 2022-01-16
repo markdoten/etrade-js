@@ -1,11 +1,11 @@
 /**
  * @file View Portfolio.
  */
-import { MarketSession, SortOrder } from '@src/enums';
-import { View } from '@src/accounts/enums';
-import type { IAccountPortfolio, ITotals } from '@src/accounts/interfaces';
-import type { IFetchResponse } from '@src/interfaces';
-import type { SortBy } from '@src/accounts/enums';
+import { MarketSession, SortOrder } from '../../enums';
+import { View } from '../../accounts/enums';
+import type { IAccountPortfolio, ITotals } from '../../accounts/interfaces';
+import type { IFetchResponse } from '../../interfaces';
+import type { SortBy } from '../../accounts/enums';
 export interface IViewPortfolioRequest {
     /** The unique account key. Retrievable by calling the List Accounts API. */
     accountIdKey: string;

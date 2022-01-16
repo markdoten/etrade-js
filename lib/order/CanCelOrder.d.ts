@@ -1,4 +1,4 @@
-import type { IFetchResponse, IMessages } from '@src/interfaces';
+import type { IFetchResponse, IMessages } from '../../interfaces';
 export interface ICancelOrderRequest {
     /** The unique account key. Retrievable by calling the List Accounts API. */
     accountIdKey: string;

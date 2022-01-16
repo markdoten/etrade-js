@@ -1,5 +1,5 @@
-import type { IBrokerage, ICategory } from '@src/accounts/interfaces';
-import type { IFetchResponse } from '@src/interfaces';
+import type { IBrokerage, ICategory } from '../../accounts/interfaces';
+import type { IFetchResponse } from '../../interfaces';
 export interface IListTransactionDetailsRequest {
     /** The unique account key. Retrievable by calling the List Accounts API. */
     accountIdKey: string;

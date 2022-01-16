@@ -1,6 +1,6 @@
-import type { ChainType, OptionCategory, PriceType } from '@src/market/enums';
-import type { IFetchResponse } from '@src/interfaces';
-import type { IOptionChainPair, ISelectedED } from '@src/market/interfaces';
+import type { ChainType, OptionCategory, PriceType } from '../../market/enums';
+import type { IFetchResponse } from '../../interfaces';
+import type { IOptionChainPair, ISelectedED } from '../../market/interfaces';
 export interface IGetOptionChainsRequest {
     /** The type of option chain. Default: CALLPUT. */
     chainType?: ChainType;

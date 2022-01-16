@@ -1,15 +1,15 @@
 /**
  * @file Account interface.
  */
-import type { AccountType } from '@src/accounts/enums';
-import type { IPortfolioMargin, IProduct } from '@src/interfaces';
-import type { QuoteStatus } from '@src/enums';
-export { IFetchResponse, IPortfolioMargin, IProduct } from '@src/interfaces';
-export { IGetAccountBalancesRequest, IGetAccountBalancesResponse } from '@src/accounts/GetAccountBalances';
-export { IListAccountsResponse } from '@src/accounts/ListAccounts';
-export { IListTransactionDetailsRequest, IListTransactionDetailsResponse } from '@src/accounts/ListTransactionDetails';
-export { IListTransactionsRequest, IListTransactionsResponse } from '@src/accounts/ListTransactions';
-export { IViewPortfolioRequest, IViewPortfolioResponse } from '@src/accounts/ViewPortfolio';
+import type { AccountType } from '../../accounts/enums';
+import type { IPortfolioMargin, IProduct } from '../../interfaces';
+import type { QuoteStatus } from '../../enums';
+export { IFetchResponse, IPortfolioMargin, IProduct } from '../../interfaces';
+export { IGetAccountBalancesRequest, IGetAccountBalancesResponse } from '../../accounts/GetAccountBalances';
+export { IListAccountsResponse } from '../../accounts/ListAccounts';
+export { IListTransactionDetailsRequest, IListTransactionDetailsResponse } from '../../accounts/ListTransactionDetails';
+export { IListTransactionsRequest, IListTransactionsResponse } from '../../accounts/ListTransactions';
+export { IViewPortfolioRequest, IViewPortfolioResponse } from '../../accounts/ViewPortfolio';
 export interface IAccount {
     accountDesc: string;
     accountId: string;

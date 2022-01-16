@@ -1,6 +1,6 @@
-import type { AlertResult } from '@src/alerts/enums';
-import type { IFailedAlerts } from '@src/alerts/interfaces';
-import type { IFetchResponse } from '@src/interfaces';
+import type { AlertResult } from '../../alerts/enums';
+import type { IFailedAlerts } from '../../alerts/interfaces';
+import type { IFetchResponse } from '../../interfaces';
 declare type TAlertId = number | string;
 export interface IDeleteAlertRequest {
     /** List of alert IDs. */

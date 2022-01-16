@@ -1,7 +1,7 @@
 {
   "name": "etrade-ts",
   "packageManager": "yarn@3.1.1",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "engines": {
@@ -11,7 +11,7 @@
     "lib"
   ],
   "scripts": {
-    "build": "tsc && ts-node ./scripts/lib.ts",
+    "build": "tsc && tscpaths -p tsconfig.json -s ./src -o ./lib && ts-node ./scripts/lib.ts",
     "clean": "rimraf node_modules",
     "lint": "eslint . --ext .ts",
     "lint:fix": "eslint . --fix --ext .ts",
@@ -44,6 +44,7 @@
     "rimraf": "^3.0.2",
     "ts-jest": "27.1.2",
     "ts-node": "^10.4.0",
-    "tsconfig-paths": "^3.4.1"
+    "tsconfig-paths": "^3.4.1",
+    "tscpaths": "^0.0.9"
   }
 }

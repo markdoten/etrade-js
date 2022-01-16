@@ -1,11 +1,11 @@
 /**
  * @file Alerts interface.
  */
-import type { AlertStatus } from '@src/alerts/enums';
-export { IDeleteAlertRequest, IDeleteAlertResponse } from '@src/alerts/DeleteAlert';
-export { IFetchResponse } from '@src/interfaces';
-export { IListAlertDetailsRequest, IListAlertDetailsResponse } from '@src/alerts/ListAlertDetails';
-export { IListAlertsRequest, IListAlertsResponse } from '@src/alerts/ListAlerts';
+import type { AlertStatus } from '../../alerts/enums';
+export { IDeleteAlertRequest, IDeleteAlertResponse } from '../../alerts/DeleteAlert';
+export { IFetchResponse } from '../../interfaces';
+export { IListAlertDetailsRequest, IListAlertDetailsResponse } from '../../alerts/ListAlertDetails';
+export { IListAlertsRequest, IListAlertsResponse } from '../../alerts/ListAlerts';
 export interface IAlert {
     /** The date and time the alert was issued, in Epoch time. */
     createTime: number;
