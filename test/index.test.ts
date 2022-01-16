@@ -1,12 +1,12 @@
 /**
  * @file Main index test.
  */
-import * as accountsEnums from '@src/accounts/enums';
-import * as alertsEnums from '@src/alerts/enums';
-import * as marketEnums from '@src/market/enums';
-import * as orderEnums from '@src/order/enums';
-import ETrade, {accounts, alerts, auth, market, order} from '@src/index';
-import session from '@src/session';
+import * as accountsEnums from '../src/accounts/enums';
+import * as alertsEnums from '../src/alerts/enums';
+import * as marketEnums from '../src/market/enums';
+import * as orderEnums from '../src/order/enums';
+import ETrade, {accounts, alerts, auth, market, order} from '../src/index';
+import session from '../src/session';
 
 describe('ETrade', () => {
   let sdk;

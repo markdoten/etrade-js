@@ -1,6 +1,6 @@
 /**
  * @file Auth interface.
  */
-export { IFetchResponse } from '../../interfaces';
-export { IRenewAccessTokenResponse } from '../../auth/RenewAccessToken';
-export { IRevokeAccessTokenResponse } from '../../auth/RevokeAccessToken';
+export { IFetchResponse } from '../interfaces';
+export { IRenewAccessTokenResponse } from './RenewAccessToken';
+export { IRevokeAccessTokenResponse } from './RevokeAccessToken';

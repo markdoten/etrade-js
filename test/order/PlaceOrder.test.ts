@@ -1,11 +1,11 @@
 /**
  * @file PlaceOrder tests.
  */
-import {CashMargin, OrderType} from '@src/order/enums';
+import {CashMargin, OrderType} from '../../src/order/enums';
 import {createOrder} from "../../src/order/utils/create";
-import {testApi} from '@test/__utils__/test.api';
-import fixture from '@test/__fixtures__/order/PlaceOrder.json';
-import PlaceOrder from '@src/order/PlaceOrder';
+import {testApi} from '../__utils__/test.api';
+import fixture from '../__fixtures__/order/PlaceOrder.json';
+import PlaceOrder from '../../src/order/PlaceOrder';
 
 /* eslint-disable max-len */
 

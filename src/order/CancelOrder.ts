@@ -1,8 +1,8 @@
 /**
  * @file Cancel Order.
  */
-import session from '@src/session';
-import type {IFetchResponse, IMessages} from '@src/interfaces';
+import session from '../session';
+import type {IFetchResponse, IMessages} from '../interfaces';
 
 /* eslint-disable max-len */
 

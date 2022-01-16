@@ -1,6 +1,6 @@
-import type { IDisclosure, IOrderDetail, IOrderId, IPreviewId } from '../../order/interfaces';
-import type { IFetchResponse, IMessages, IPortfolioMargin } from '../../interfaces';
-import type { MarginLevel, OrderType } from '../../order/enums';
+import type { IDisclosure, IOrderDetail, IOrderId, IPreviewId } from './interfaces';
+import type { IFetchResponse, IMessages, IPortfolioMargin } from '../interfaces';
+import type { MarginLevel, OrderType } from './enums';
 export interface IPlaceOrderRequest {
     /** The unique account key. Retrievable by calling the List Accounts API. */
     accountIdKey: string;

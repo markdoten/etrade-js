@@ -1,17 +1,17 @@
 /**
  * @file E-Trade API.
  */
-import * as Accounts from '@src/accounts';
-import * as Alerts from '@src/alerts';
-import * as Auth from '@src/auth';
-import * as Market from '@src/market';
-import * as Order from '@src/order';
+import * as Accounts from './accounts';
+import * as Alerts from './alerts';
+import * as Auth from './auth';
+import * as Market from './market';
+import * as Order from './order';
 import Emitter from 'events';
-import session from '@src/session';
-import type {IEtradeConfig} from '@src/interfaces';
+import session from './session';
+import type {IEtradeConfig} from './interfaces';
 
-export * as enums from '@src/enums';
-export * as interfaces from '@src/interfaces';
+export * as enums from './enums';
+export * as interfaces from './interfaces';
 
 const {functions: AccountsFunctions, ...AccountsTypes} = Accounts;
 export const accounts = AccountsTypes;

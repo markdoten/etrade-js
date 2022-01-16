@@ -2,15 +2,15 @@
 /**
  * @file E-Trade API.
  */
-import * as Accounts from '../accounts';
-import * as Alerts from '../alerts';
-import * as Auth from '../auth';
-import * as Market from '../market';
-import * as Order from '../order';
+import * as Accounts from './accounts';
+import * as Alerts from './alerts';
+import * as Auth from './auth';
+import * as Market from './market';
+import * as Order from './order';
 import Emitter from 'events';
-import type { IEtradeConfig } from '../interfaces';
-export * as enums from '../enums';
-export * as interfaces from '../interfaces';
+import type { IEtradeConfig } from './interfaces';
+export * as enums from './enums';
+export * as interfaces from './interfaces';
 export declare const accounts: {
     enums: typeof Accounts.enums;
     interfaces: typeof Accounts.interfaces;

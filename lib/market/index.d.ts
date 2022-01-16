@@ -1,8 +1,8 @@
-export * as enums from '../../market/enums';
-export * as interfaces from '../../market/interfaces';
+export * as enums from './enums';
+export * as interfaces from './interfaces';
 export declare const functions: {
-    GetOptionChains: (query: import("../../market/GetOptionChains").IGetOptionChainsRequest) => Promise<import("../../market/GetOptionChains").IGetOptionChainsResponse>;
-    GetOptionExpireDates: (query: import("../../market/GetOptionExpireDates").IGetOptionExpireDatesRequest) => Promise<import("../../market/GetOptionExpireDates").IGetOptionExpireDatesResponse>;
-    GetQuotes: ({ symbols, ...query }: import("../../market/GetQuotes").IGetQuotesRequest) => Promise<import("../../market/GetQuotes").IGetQuotesResponse>;
-    LookUpProduct: ({ search }: import("../../market/LookUpProduct").ILookUpProductRequest) => Promise<import("../../market/LookUpProduct").ILookUpProductResponse>;
+    GetOptionChains: (query: import("./GetOptionChains").IGetOptionChainsRequest) => Promise<import("./GetOptionChains").IGetOptionChainsResponse>;
+    GetOptionExpireDates: (query: import("./GetOptionExpireDates").IGetOptionExpireDatesRequest) => Promise<import("./GetOptionExpireDates").IGetOptionExpireDatesResponse>;
+    GetQuotes: ({ symbols, ...query }: import("./GetQuotes").IGetQuotesRequest) => Promise<import("./GetQuotes").IGetQuotesResponse>;
+    LookUpProduct: ({ search }: import("./LookUpProduct").ILookUpProductRequest) => Promise<import("./LookUpProduct").ILookUpProductResponse>;
 };

@@ -1,10 +1,10 @@
 /**
  * @file GetAccountBalances tests.
  */
-import {AccountType} from '@src/accounts/enums';
-import {testApi} from '@test/__utils__/test.api';
-import fixture from '@test/__fixtures__/accounts/GetAccountBalances.json';
-import GetAccountBalances from '@src/accounts/GetAccountBalances';
+import {AccountType} from '../../src/accounts/enums';
+import {testApi} from '../__utils__/test.api';
+import fixture from '../__fixtures__/accounts/GetAccountBalances.json';
+import GetAccountBalances from '../../src/accounts/GetAccountBalances';
 
 /* eslint-disable max-len */
 

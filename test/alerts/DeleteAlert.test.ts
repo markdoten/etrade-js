@@ -1,9 +1,9 @@
 /**
  * @file DeleteAlert tests.
  */
-import {testApi} from '@test/__utils__/test.api';
-import DeleteAlert from '@src/alerts/DeleteAlert';
-import fixture from '@test/__fixtures__/alerts/DeleteAlert.json';
+import {testApi} from '../__utils__/test.api';
+import DeleteAlert from '../../src/alerts/DeleteAlert';
+import fixture from '../__fixtures__/alerts/DeleteAlert.json';
 
 /* eslint-disable max-len */
 

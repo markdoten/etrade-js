@@ -1,11 +1,11 @@
 /**
  * @file Get Account Balances.
  */
-import { InstitutionType } from '../../accounts/enums';
-import type { AccountType, OptionLevel } from '../../accounts/enums';
-import type { ICash, IComputedBalance, ILending, IMargin, IOpenCalls } from '../../accounts/interfaces';
-import type { IFetchResponse } from '../../interfaces';
-import type { QuoteMode } from '../../enums';
+import { InstitutionType } from './enums';
+import type { AccountType, OptionLevel } from './enums';
+import type { ICash, IComputedBalance, ILending, IMargin, IOpenCalls } from './interfaces';
+import type { IFetchResponse } from '../interfaces';
+import type { QuoteMode } from '../enums';
 export interface IGetAccountBalancesRequest {
     /** The unique account key. */
     accountIdKey: string;

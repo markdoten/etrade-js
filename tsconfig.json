@@ -14,10 +14,6 @@
     "module": "CommonJS",
     "moduleResolution": "node",
     "outDir": "lib",
-    "paths": {
-      "@src/*": ["./src/*"],
-      "@test/*": ["./test/*"]
-    },
     "resolveJsonModule": true,
     "sourceMap": true,
     "target": "es6"

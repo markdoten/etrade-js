@@ -1,9 +1,9 @@
 /**
  * @file CancelOrder tests.
  */
-import {testApi} from '@test/__utils__/test.api';
-import CancelOrder from '@src/order/CancelOrder';
-import fixture from '@test/__fixtures__/order/CancelOrder.json';
+import {testApi} from '../__utils__/test.api';
+import CancelOrder from '../../src/order/CancelOrder';
+import fixture from '../__fixtures__/order/CancelOrder.json';
 
 /* eslint-disable max-len */
 

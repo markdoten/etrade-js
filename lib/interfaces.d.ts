@@ -1,7 +1,7 @@
 /**
  * @file General interface.
  */
-import type { Environment, MessageType, SecurityType, TypeCode } from '../enums';
+import type { Environment, MessageType, SecurityType, TypeCode } from './enums';
 export interface IEtradeConfig {
     accessToken?: string;
     accessTokenSecret?: string;

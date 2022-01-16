@@ -1,15 +1,15 @@
 /**
  * @file Market interface.
  */
-import type {ExpiryType, OptionCategory} from '@src/market/enums';
-import type {IProduct} from '@src/interfaces';
-import type {QuoteStatus} from '@src/enums';
+import type {ExpiryType, OptionCategory} from './enums';
+import type {IProduct} from '../interfaces';
+import type {QuoteStatus} from '../enums';
 
-export {IFetchResponse, IMessages} from '@src/interfaces';
-export {IGetOptionChainsRequest, IGetOptionChainsResponse} from '@src/market/GetOptionChains';
-export {IGetOptionExpireDatesRequest, IGetOptionExpireDatesResponse} from '@src/market/GetOptionExpireDates';
-export {IGetQuotesRequest, IGetQuotesResponse} from '@src/market/GetQuotes';
-export {ILookUpProductRequest, ILookUpProductResponse} from '@src/market/LookUpProduct';
+export {IFetchResponse, IMessages} from '../interfaces';
+export {IGetOptionChainsRequest, IGetOptionChainsResponse} from './GetOptionChains';
+export {IGetOptionExpireDatesRequest, IGetOptionExpireDatesResponse} from './GetOptionExpireDates';
+export {IGetQuotesRequest, IGetQuotesResponse} from './GetQuotes';
+export {ILookUpProductRequest, ILookUpProductResponse} from './LookUpProduct';
 
 /* eslint-disable max-len */
 

@@ -1,11 +1,11 @@
 /**
  * @file ListOrders tests.
  */
-import {MarketSession, SecurityType} from '@src/enums';
-import {OrderStatus, TransactionType} from '@src/order/enums';
-import {testApi} from '@test/__utils__/test.api';
-import fixture from '@test/__fixtures__/order/ListOrders.json';
-import ListOrders from '@src/order/ListOrders';
+import {MarketSession, SecurityType} from '../../src/enums';
+import {OrderStatus, TransactionType} from '../../src/order/enums';
+import {testApi} from '../__utils__/test.api';
+import fixture from '../__fixtures__/order/ListOrders.json';
+import ListOrders from '../../src/order/ListOrders';
 
 /* eslint-disable max-len */
 

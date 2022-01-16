@@ -1,7 +1,7 @@
 /**
  * @file Alerts enums.
  */
-export { SortOrder } from '../../enums';
+export { SortOrder } from '../enums';
 export declare enum AlertCategory {
     ACCOUNT = "ACCOUNT",
     STOCK = "STOCK"

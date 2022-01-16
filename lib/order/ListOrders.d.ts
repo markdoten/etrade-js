@@ -1,7 +1,7 @@
-import type { IFetchResponse, IMessages } from '../../interfaces';
-import type { IOrder } from '../../order/interfaces';
-import type { MarketSession, SecurityType } from '../../enums';
-import type { OrderStatus, TransactionType } from '../../order/enums';
+import type { IFetchResponse, IMessages } from '../interfaces';
+import type { IOrder } from './interfaces';
+import type { MarketSession, SecurityType } from '../enums';
+import type { OrderStatus, TransactionType } from './enums';
 export interface IListOrdersRequest {
     /** The unique account key. Retrievable by calling the List Accounts API. */
     accountIdKey: string;

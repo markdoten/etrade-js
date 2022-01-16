@@ -1,6 +1,6 @@
-import type { ICashBuyingPowerDetails, IDisclosure, IDtBuyingPowerDetails, IMarginBuyingPowerDetails, IOrderDetail, IPreviewId } from '../../order/interfaces';
-import type { IFetchResponse, IMessages, IPortfolioMargin } from '../../interfaces';
-import type { MarginLevel, OrderType } from '../../order/enums';
+import type { ICashBuyingPowerDetails, IDisclosure, IDtBuyingPowerDetails, IMarginBuyingPowerDetails, IOrderDetail, IPreviewId } from './interfaces';
+import type { IFetchResponse, IMessages, IPortfolioMargin } from '../interfaces';
+import type { MarginLevel, OrderType } from './enums';
 export interface IPreviewOrderRequest {
     /** The unique account key. Retrievable by calling the List Accounts API. */
     accountIdKey: string;

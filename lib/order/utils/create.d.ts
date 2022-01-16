@@ -1,6 +1,6 @@
-import { OrderAction, OrderPriceType, OrderTerm, SecurityType } from '../../../order/enums';
-import type { IInstrument, IOrderDetail } from '../../../order/interfaces';
-import type { IProduct } from '../../../interfaces';
+import { OrderAction, OrderPriceType, OrderTerm, SecurityType } from '../enums';
+import type { IInstrument, IOrderDetail } from '../interfaces';
+import type { IProduct } from '../../interfaces';
 export interface IOrderParams {
     accountId: string;
     allOrNone?: boolean;

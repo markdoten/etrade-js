@@ -1,7 +1,7 @@
-import type { AlertCategory, AlertStatus } from '../../alerts/enums';
-import type { IAlert } from '../../alerts/interfaces';
-import type { IFetchResponse } from '../../interfaces';
-import type { SortOrder } from '../../enums';
+import type { AlertCategory, AlertStatus } from './enums';
+import type { IAlert } from './interfaces';
+import type { IFetchResponse } from '../interfaces';
+import type { SortOrder } from '../enums';
 export interface IListAlertsRequest {
     /** The alert category. */
     category?: AlertCategory;

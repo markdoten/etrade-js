@@ -1,6 +1,6 @@
-import type { ExpiryType } from '../../market/enums';
-import type { IExpirationDate } from '../../market/interfaces';
-import type { IFetchResponse } from '../../interfaces';
+import type { ExpiryType } from './enums';
+import type { IExpirationDate } from './interfaces';
+import type { IFetchResponse } from '../interfaces';
 export interface IGetOptionExpireDatesRequest {
     /** Expiration type of the option. */
     expiryType?: ExpiryType;

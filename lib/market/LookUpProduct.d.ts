@@ -1,5 +1,5 @@
-import type { IData } from '../../market/interfaces';
-import type { IFetchResponse } from '../../interfaces';
+import type { IData } from './interfaces';
+import type { IFetchResponse } from '../interfaces';
 export interface ILookUpProductRequest {
     /** The search request. */
     search: string;

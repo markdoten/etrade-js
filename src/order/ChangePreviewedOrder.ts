@@ -1,7 +1,7 @@
 /**
  * @file Change Previewed Order.
  */
-import session from '@src/session';
+import session from '../session';
 import type {
   ICashBuyingPowerDetails,
   IDisclosure,
@@ -9,9 +9,9 @@ import type {
   IMarginBuyingPowerDetails,
   IOrderDetail,
   IPreviewId
-} from '@src/order/interfaces';
-import type {IFetchResponse, IMessages, IPortfolioMargin} from '@src/interfaces';
-import type {MarginLevel, OrderType} from '@src/order/enums';
+} from './interfaces';
+import type {IFetchResponse, IMessages, IPortfolioMargin} from '../interfaces';
+import type {MarginLevel, OrderType} from './enums';
 
 /* eslint-disable max-len */
 

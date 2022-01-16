@@ -1,10 +1,10 @@
 /**
  * @file GetQuotes tests.
  */
-import {DetailFlag} from '@src/market/enums';
-import {testApi} from '@test/__utils__/test.api';
-import fixture from '@test/__fixtures__/market/GetQuotes.json';
-import GetQuotes from '@src/market/GetQuotes';
+import {DetailFlag} from '../../src/market/enums';
+import {testApi} from '../__utils__/test.api';
+import fixture from '../__fixtures__/market/GetQuotes.json';
+import GetQuotes from '../../src/market/GetQuotes';
 
 /* eslint-disable max-len */
 

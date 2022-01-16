@@ -1,10 +1,10 @@
 /**
  * @file Session.
  */
-import {Environment} from '@src/enums';
+import {Environment} from './enums';
 import {OAuth} from 'oauth';
-import {titleToCamelProperties} from '@src/util';
-import type {IEtradeConfig, IFetchResponse} from '@src/interfaces';
+import {titleToCamelProperties} from './util';
+import type {IEtradeConfig, IFetchResponse} from './interfaces';
 
 const HOSTNAMES = {
   [Environment.LIVE]: 'https://api.etrade.com',

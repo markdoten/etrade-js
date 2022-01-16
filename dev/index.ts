@@ -3,8 +3,8 @@
  */
 require('dotenv').config();
 import {promises as fs} from 'fs';
-import Etrade from '@src/index';
-import etradeSession from '@src/session';
+import Etrade from '../src/index';
+import etradeSession from '../src/session';
 import express from 'express';
 import session from 'express-session';
 import type {Cookie} from 'express-session';

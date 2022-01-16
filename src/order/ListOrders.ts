@@ -1,11 +1,11 @@
 /**
  * @file List Orders.
  */
-import session from '@src/session';
-import type {IFetchResponse, IMessages} from '@src/interfaces';
-import type {IOrder} from '@src/order/interfaces';
-import type {MarketSession, SecurityType} from '@src/enums';
-import type {OrderStatus, TransactionType} from '@src/order/enums';
+import session from '../session';
+import type {IFetchResponse, IMessages} from '../interfaces';
+import type {IOrder} from './interfaces';
+import type {MarketSession, SecurityType} from '../enums';
+import type {OrderStatus, TransactionType} from './enums';
 
 /* eslint-disable max-len */
 

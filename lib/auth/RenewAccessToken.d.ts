@@ -1,4 +1,4 @@
-import type { IFetchResponse } from '../../interfaces';
+import type { IFetchResponse } from '../interfaces';
 export interface IRenewAccessTokenResponse extends IFetchResponse {
     message: string;
 }

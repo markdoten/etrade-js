@@ -1,4 +1,4 @@
-import type { IFetchResponse } from '../../interfaces';
+import type { IFetchResponse } from '../interfaces';
 export interface IListAlertDetailsRequest {
     /** The HTML tags on the alert. By default it is false. If set to true, it returns the alert details msgText with html tags. */
     htmlTags?: string;

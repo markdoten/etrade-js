@@ -1,6 +1,6 @@
-import type { DetailFlag } from '../../market/enums';
-import type { IFetchResponse, IMessages } from '../../interfaces';
-import type { IQuoteData } from '../../market/interfaces';
+import type { DetailFlag } from './enums';
+import type { IFetchResponse, IMessages } from '../interfaces';
+import type { IQuoteData } from './interfaces';
 export interface IGetQuotesRequest {
     /** Determines the market fields returned from a quote request. */
     detailFlag?: DetailFlag;

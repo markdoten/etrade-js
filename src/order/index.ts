@@ -1,16 +1,16 @@
 /**
  * @file Order.
  */
-import {createOrder} from '@src/order/utils/create';
-import CancelOrder from '@src/order/CancelOrder';
-import ChangePreviewedOrder from '@src/order/ChangePreviewedOrder';
-import ListOrders from '@src/order/ListOrders';
-import PlaceChangedOrder from '@src/order/PlaceChangedOrder';
-import PlaceOrder from '@src/order/PlaceOrder';
-import PreviewOrder from '@src/order/PreviewOrder';
+import {createOrder} from './utils/create';
+import CancelOrder from './CancelOrder';
+import ChangePreviewedOrder from './ChangePreviewedOrder';
+import ListOrders from './ListOrders';
+import PlaceChangedOrder from './PlaceChangedOrder';
+import PlaceOrder from './PlaceOrder';
+import PreviewOrder from './PreviewOrder';
 
-export * as enums from '@src/order/enums';
-export * as interfaces from '@src/order/interfaces';
+export * as enums from './enums';
+export * as interfaces from './interfaces';
 
 export const functions = {
   BuildOrder: createOrder,

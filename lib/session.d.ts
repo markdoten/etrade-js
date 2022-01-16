@@ -1,4 +1,4 @@
-import type { IEtradeConfig, IFetchResponse } from '../interfaces';
+import type { IEtradeConfig, IFetchResponse } from './interfaces';
 interface IFetchOptions {
     body?: Record<string, any>;
     headers?: string[];
