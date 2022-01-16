@@ -10,6 +10,9 @@ import Emitter from 'events';
 import session from '@src/session';
 import type {IEtradeConfig} from '@src/interfaces';
 
+export * as enums from '@src/enums';
+export * as interfaces from '@src/interfaces';
+
 const {functions: AccountsFunctions, ...AccountsTypes} = Accounts;
 export const accounts = AccountsTypes;
 
