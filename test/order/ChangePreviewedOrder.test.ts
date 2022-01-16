@@ -2,10 +2,10 @@
  * @file ChangePreviewedOrder tests.
  */
 import {createOrder} from "../../src/order/utils/create";
-import {OrderType} from '../../src/order/enums';
-import {testApi} from '../__utils__/test.api';
-import ChangePreviewedOrder from '../../src/order/ChangePreviewedOrder';
-import fixture from '../__fixtures__/order/ChangePreviewedOrder.json';
+import {OrderType} from '@src/order/enums';
+import {testApi} from '@test/__utils__/test.api';
+import ChangePreviewedOrder from '@src/order/ChangePreviewedOrder';
+import fixture from '@test/__fixtures__/order/ChangePreviewedOrder.json';
 
 /* eslint-disable max-len */
 

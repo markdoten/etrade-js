@@ -1,10 +1,10 @@
 /**
  * @file GetOptionExpireDates tests.
  */
-import {ExpiryType} from '../../src/market/enums';
-import {testApi} from '../__utils__/test.api';
-import fixture from '../__fixtures__/market/GetOptionExpireDates.json';
-import GetOptionExpireDates from '../../src/market/GetOptionExpireDates';
+import {ExpiryType} from '@src/market/enums';
+import {testApi} from '@test/__utils__/test.api';
+import fixture from '@test/__fixtures__/market/GetOptionExpireDates.json';
+import GetOptionExpireDates from '@src/market/GetOptionExpireDates';
 
 /* eslint-disable max-len */
 

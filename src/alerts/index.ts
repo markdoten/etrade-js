@@ -1,12 +1,12 @@
 /**
  * @file Alerts.
  */
-import DeleteAlert from './DeleteAlert';
-import ListAlertDetails from './ListAlertDetails';
-import ListAlerts from './ListAlerts';
+import DeleteAlert from '@src/alerts/DeleteAlert';
+import ListAlertDetails from '@src/alerts/ListAlertDetails';
+import ListAlerts from '@src/alerts/ListAlerts';
 
-export * as enums from './enums';
-export * as interfaces from './interfaces';
+export * as enums from '@src/alerts/enums';
+export * as interfaces from '@src/alerts/interfaces';
 
 export const functions = {
   DeleteAlert,

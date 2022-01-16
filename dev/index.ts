@@ -2,7 +2,9 @@
  * @file Development Express server configuration.
  */
 require('dotenv').config();
-import Etrade from '../src';
+import {promises as fs} from 'fs';
+import Etrade from '@src/index';
+import etradeSession from '@src/session';
 import express from 'express';
 import session from 'express-session';
 import type {Cookie} from 'express-session';
@@ -22,10 +24,18 @@ app.set('trust proxy', 1);
 sess.cookie.secure = true;
 app.use(session(sess));
 
-const etrade = new Etrade({
-  consumerKey: process.env.ETRADE_CONSUMER_KEY,
-  consumerSecret: process.env.ETRADE_CONSUMER_SECRET
-});
+let etrade: Etrade;
+let sessionData: any;
+
+fs.readFile('session.json', 'utf8')
+  .then((data: any) => (sessionData = JSON.parse(data)))
+  .finally(() => {
+    etrade = new Etrade({
+      ...(sessionData || {}),
+      consumerKey: process.env.ETRADE_CONSUMER_KEY,
+      consumerSecret: process.env.ETRADE_CONSUMER_SECRET
+    });
+  });
 
 app.get('/ping', async (req: Request, res: Response) => {
   res.send('pong');
@@ -37,6 +47,7 @@ app.get('/etrade/auth/start', async (req: Request, res: Response) =>
 app.get('/etrade/auth/code', async (req: Request, res: Response) => {
   await etrade.auth.completeOAuth(req.query.oauth_verifier.toString());
   const {accounts: {account}} = await etrade.accounts.ListAccounts();
+  fs.writeFile('session.json', JSON.stringify(etradeSession.toJSON(), null, 2));
   res.send(account[0].accountIdKey);
 });
 

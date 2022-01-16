@@ -29,6 +29,10 @@ export default {
     }
   },
   maxWorkers: '50%',
+  moduleNameMapper: {
+    '^@src/(.*)$': '<rootDir>/src/$1',
+    '^@test/(.*)$': '<rootDir>/test/$1',
+  },
   preset: 'ts-jest',
   roots: ['src', 'test'],
   setupFiles: [],

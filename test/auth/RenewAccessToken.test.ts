@@ -1,9 +1,9 @@
 /**
  * @file RenewAccessToken tests.
  */
-import {testApi} from '../__utils__/test.api';
-import fixture from '../__fixtures__/auth/RenewAccessToken.json';
-import RenewAccessToken from '../../src/auth/RenewAccessToken';
+import {testApi} from '@test/__utils__/test.api';
+import fixture from '@test/__fixtures__/auth/RenewAccessToken.json';
+import RenewAccessToken from '@src/auth/RenewAccessToken';
 
 /* eslint-disable max-len */
 

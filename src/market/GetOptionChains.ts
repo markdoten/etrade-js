@@ -1,10 +1,10 @@
 /**
  * @file Get Option Chains.
  */
-import session from '../session';
-import type {ChainType, OptionCategory, PriceType} from './enums';
-import type {IFetchResponse} from '../interfaces';
-import type {IOptionChainPair, ISelectedED} from './interfaces';
+import session from '@src/session';
+import type {ChainType, OptionCategory, PriceType} from '@src/market/enums';
+import type {IFetchResponse} from '@src/interfaces';
+import type {IOptionChainPair, ISelectedED} from '@src/market/interfaces';
 
 /* eslint-disable max-len */
 

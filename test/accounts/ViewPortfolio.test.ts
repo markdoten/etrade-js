@@ -1,11 +1,11 @@
 /**
  * @file ViewPortfolio tests.
  */
-import {MarketSession, SortOrder} from '../../src/enums';
-import {SortBy, View} from '../../src/accounts/enums';
-import {testApi} from '../__utils__/test.api';
-import fixture from '../__fixtures__/accounts/ViewPortfolio.json';
-import ViewPortfolio from '../../src/accounts/ViewPortfolio';
+import {MarketSession, SortOrder} from '@src/enums';
+import {SortBy, View} from '@src/accounts/enums';
+import {testApi} from '@test/__utils__/test.api';
+import fixture from '@test/__fixtures__/accounts/ViewPortfolio.json';
+import ViewPortfolio from '@src/accounts/ViewPortfolio';
 
 /* eslint-disable max-len */
 

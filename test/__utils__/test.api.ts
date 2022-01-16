@@ -1,9 +1,9 @@
 /**
  * @file Test functions.
  */
-import {titleToCamelProperties} from '../../src/util';
+import {titleToCamelProperties} from '@src/util';
 import oauth from 'oauth';
-import session from '../../src/session';
+import session from '@src/session';
 
 export interface ITest {
   args: any;

@@ -1,10 +1,10 @@
 /**
  * @file GetOptionChains tests.
  */
-import {ChainType, OptionCategory, PriceType} from '../../src/market/enums';
-import {testApi} from '../__utils__/test.api';
-import fixture from '../__fixtures__/market/GetOptionChains.json';
-import GetOptionChains from '../../src/market/GetOptionChains';
+import {ChainType, OptionCategory, PriceType} from '@src/market/enums';
+import {testApi} from '@test/__utils__/test.api';
+import fixture from '@test/__fixtures__/market/GetOptionChains.json';
+import GetOptionChains from '@src/market/GetOptionChains';
 
 /* eslint-disable max-len */
 

@@ -1,9 +1,9 @@
 /**
  * @file Look Up Product.
  */
-import session from '../session';
-import type {IData} from './interfaces';
-import type {IFetchResponse} from '../interfaces';
+import session from '@src/session';
+import type {IData} from '@src/market/interfaces';
+import type {IFetchResponse} from '@src/interfaces';
 
 /* eslint-disable max-len */
 

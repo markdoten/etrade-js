@@ -1,9 +1,9 @@
 /**
  * @file List Accounts.
  */
-import session from '../session';
-import type {IAccounts} from './interfaces';
-import type {IFetchResponse} from '../interfaces';
+import session from '@src/session';
+import type {IAccounts} from '@src/accounts/interfaces';
+import type {IFetchResponse} from '@src/interfaces';
 
 export interface IListAccountsResponse extends IFetchResponse {
   /** List of accounts. */

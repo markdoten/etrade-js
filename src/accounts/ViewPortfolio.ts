@@ -1,12 +1,12 @@
 /**
  * @file View Portfolio.
  */
-import {MarketSession, SortOrder} from '../enums';
-import {View} from './enums';
-import session from '../session';
-import type {IAccountPortfolio, ITotals} from './interfaces';
-import type {IFetchResponse} from '../interfaces';
-import type {SortBy} from './enums';
+import {MarketSession, SortOrder} from '@src/enums';
+import {View} from '@src/accounts/enums';
+import session from '@src/session';
+import type {IAccountPortfolio, ITotals} from '@src/accounts/interfaces';
+import type {IFetchResponse} from '@src/interfaces';
+import type {SortBy} from '@src/accounts/enums';
 
 /* eslint-disable max-len */
 

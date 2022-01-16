@@ -1,7 +1,7 @@
 /**
  * @file Accounts Enums.
  */
-export {MarketSession, QuoteMode, SortOrder} from '../enums';
+export {MarketSession, QuoteMode, SortOrder} from '@src/enums';
 
 export enum AccountType {
   AMMCHK = 'AMMCHK',

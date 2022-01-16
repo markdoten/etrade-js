@@ -1,10 +1,10 @@
 /**
  * @file Create order object.
  */
-import {MarketSession} from '../../enums';
-import {OrderAction, OrderPriceType, OrderTerm, QuantityType, SecurityType} from '../enums';
-import type {IInstrument, IOrderDetail} from '../interfaces';
-import type {IProduct} from '../../interfaces';
+import {MarketSession} from '@src/enums';
+import {OrderAction, OrderPriceType, OrderTerm, QuantityType, SecurityType} from '@src/order/enums';
+import type {IInstrument, IOrderDetail} from '@src/order/interfaces';
+import type {IProduct} from '@src/interfaces';
 
 export interface IOrderParams {
   accountId: string;

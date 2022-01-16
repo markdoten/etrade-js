@@ -1,9 +1,9 @@
 /**
  * @file Session tests.
  */
-import {Environment} from '../src/enums';
+import {Environment} from '@src/enums';
 import oauth from 'oauth';
-import session from '../src/session';
+import session from '@src/session';
 
 describe('session', () => {
   let getOAuthAccessTokenSpy;

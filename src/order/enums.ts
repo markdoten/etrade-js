@@ -1,7 +1,7 @@
 /**
  * @file Order enums.
  */
-export {MarketSession} from '../enums';
+export {MarketSession} from '@src/enums';
 
 export enum CashMargin {
   CASH = 'CASH',

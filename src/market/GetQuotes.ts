@@ -1,10 +1,10 @@
 /**
  * @file View Portfolio.
  */
-import session from '../session';
-import type {DetailFlag} from './enums';
-import type {IFetchResponse, IMessages} from '../interfaces';
-import type {IQuoteData} from './interfaces';
+import session from '@src/session';
+import type {DetailFlag} from '@src/market/enums';
+import type {IFetchResponse, IMessages} from '@src/interfaces';
+import type {IQuoteData} from '@src/market/interfaces';
 
 /* eslint-disable max-len */
 

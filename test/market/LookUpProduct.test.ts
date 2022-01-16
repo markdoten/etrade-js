@@ -1,9 +1,9 @@
 /**
  * @file LookUpProduct tests.
  */
-import {testApi} from '../__utils__/test.api';
-import fixture from '../__fixtures__/market/LookUpProduct.json';
-import LookUpProduct from '../../src/market/LookUpProduct';
+import {testApi} from '@test/__utils__/test.api';
+import fixture from '@test/__fixtures__/market/LookUpProduct.json';
+import LookUpProduct from '@src/market/LookUpProduct';
 
 /* eslint-disable max-len */
 

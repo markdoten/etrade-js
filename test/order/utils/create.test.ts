@@ -1,9 +1,9 @@
 /**
  * @file CreateOrder tests.
  */
-import {createOrder} from '../../../src/order/utils/create';
-import {MarketSession} from '../../../src/enums';
-import {OrderAction, OrderPriceType, OrderTerm, QuantityType, SecurityType} from '../../../src/order/enums';
+import {createOrder} from '@src/order/utils/create';
+import {MarketSession} from '@src/enums';
+import {OrderAction, OrderPriceType, OrderTerm, QuantityType, SecurityType} from '@src/order/enums';
 
 describe('createOrder', () => {
   it('creates an order with defaults', () => {

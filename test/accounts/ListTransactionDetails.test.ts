@@ -1,9 +1,9 @@
 /**
  * @file ListTransactionDetails tests.
  */
-import {testApi} from '../__utils__/test.api';
-import fixture from '../__fixtures__/accounts/ListTransactionDetails.json';
-import ListTransactionDetails from '../../src/accounts/ListTransactionDetails';
+import {testApi} from '@test/__utils__/test.api';
+import fixture from '@test/__fixtures__/accounts/ListTransactionDetails.json';
+import ListTransactionDetails from '@src/accounts/ListTransactionDetails';
 
 /* eslint-disable max-len */
 

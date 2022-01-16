@@ -1,10 +1,10 @@
 /**
  * @file Get Option Expire Dates.
  */
-import session from '../session';
-import type {ExpiryType} from './enums';
-import type {IExpirationDate} from './interfaces';
-import type {IFetchResponse} from '../interfaces';
+import session from '@src/session';
+import type {ExpiryType} from '@src/market/enums';
+import type {IExpirationDate} from '@src/market/interfaces';
+import type {IFetchResponse} from '@src/interfaces';
 
 /* eslint-disable max-len */
 

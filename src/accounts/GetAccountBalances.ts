@@ -1,18 +1,18 @@
 /**
  * @file Get Account Balances.
  */
-import {InstitutionType} from './enums';
-import session from '../session';
-import type {AccountType, OptionLevel} from './enums';
+import {InstitutionType} from '@src/accounts/enums';
+import session from '@src/session';
+import type {AccountType, OptionLevel} from '@src/accounts/enums';
 import type {
   ICash,
   IComputedBalance,
   ILending,
   IMargin,
   IOpenCalls
-} from './interfaces';
-import type {IFetchResponse} from '../interfaces';
-import type {QuoteMode} from '../enums';
+} from '@src/accounts/interfaces';
+import type {IFetchResponse} from '@src/interfaces';
+import type {QuoteMode} from '@src/enums';
 
 /* eslint-disable max-len */
 

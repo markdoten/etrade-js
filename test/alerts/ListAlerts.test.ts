@@ -1,11 +1,11 @@
 /**
  * @file ListAlerts tests.
  */
-import {AlertCategory, AlertStatus} from '../../src/alerts/enums';
-import {SortOrder} from '../../src/enums';
-import {testApi} from '../__utils__/test.api';
-import fixture from '../__fixtures__/alerts/ListAlerts.json';
-import ListAlerts from '../../src/alerts/ListAlerts';
+import {AlertCategory, AlertStatus} from '@src/alerts/enums';
+import {SortOrder} from '@src/enums';
+import {testApi} from '@test/__utils__/test.api';
+import fixture from '@test/__fixtures__/alerts/ListAlerts.json';
+import ListAlerts from '@src/alerts/ListAlerts';
 
 /* eslint-disable max-len */
 

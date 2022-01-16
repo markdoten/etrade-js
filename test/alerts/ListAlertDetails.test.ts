@@ -1,9 +1,9 @@
 /**
  * @file ListAlertDetails tests.
  */
-import {testApi} from '../__utils__/test.api';
-import fixture from '../__fixtures__/alerts/ListAlertDetails.json';
-import ListAlertDetails from '../../src/alerts/ListAlertDetails';
+import {testApi} from '@test/__utils__/test.api';
+import fixture from '@test/__fixtures__/alerts/ListAlertDetails.json';
+import ListAlertDetails from '@src/alerts/ListAlertDetails';
 
 /* eslint-disable max-len */
 

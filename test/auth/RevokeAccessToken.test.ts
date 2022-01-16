@@ -1,9 +1,9 @@
 /**
  * @file RevokeAccessToken tests.
  */
-import {testApi} from '../__utils__/test.api';
-import fixture from '../__fixtures__/auth/RevokeAccessToken.json';
-import RevokeAccessToken from '../../src/auth/RevokeAccessToken';
+import {testApi} from '@test/__utils__/test.api';
+import fixture from '@test/__fixtures__/auth/RevokeAccessToken.json';
+import RevokeAccessToken from '@src/auth/RevokeAccessToken';
 
 /* eslint-disable max-len */
 

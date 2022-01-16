@@ -1,10 +1,10 @@
 /**
  * @file Delete Alert.
  */
-import session from '../session';
-import type {AlertResult} from './enums';
-import type {IFailedAlerts} from './interfaces';
-import type {IFetchResponse} from '../interfaces';
+import session from '@src/session';
+import type {AlertResult} from '@src/alerts/enums';
+import type {IFailedAlerts} from '@src/alerts/interfaces';
+import type {IFetchResponse} from '@src/interfaces';
 
 /* eslint-disable max-len */
 

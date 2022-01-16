@@ -1,7 +1,7 @@
 /**
  * @file General interface.
  */
-import type {Environment, MessageType, SecurityType, TypeCode} from './enums';
+import type {Environment, MessageType, SecurityType, TypeCode} from '@src/enums';
 
 /* eslint-disable max-len */
 

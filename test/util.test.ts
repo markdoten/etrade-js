@@ -1,7 +1,7 @@
 /**
  * @file Utility tests.
  */
-import {titleToCamel, titleToCamelProperties} from '../src/util';
+import {titleToCamel, titleToCamelProperties} from '@src/util';
 
 describe('titleToCamel', () => {
   it('converts title case to camel case', () => {

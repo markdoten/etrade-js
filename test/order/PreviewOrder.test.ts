@@ -2,10 +2,10 @@
  * @file PreviewOrder tests.
  */
 import {createOrder} from "../../src/order/utils/create";
-import {OrderType} from '../../src/order/enums';
-import {testApi} from '../__utils__/test.api';
-import fixture from '../__fixtures__/order/PreviewOrder.json';
-import PreviewOrder from '../../src/order/PreviewOrder';
+import {OrderType} from '@src/order/enums';
+import {testApi} from '@test/__utils__/test.api';
+import fixture from '@test/__fixtures__/order/PreviewOrder.json';
+import PreviewOrder from '@src/order/PreviewOrder';
 
 /* eslint-disable max-len */
 
