@@ -1,0 +1,1 @@
+{"version":3,"file":"RevokeAccessToken.js","sourceRoot":"","sources":["../../../src/auth/RevokeAccessToken.ts"],"names":[],"mappings":";;;AAAA;;GAEG;AACH,wEAAmC;AAanC;;;;GAIG;AACH,kBAAe,GAAwC,EAAE,CACvD,iBAAO,CAAC,OAAO,CAA6B;IAC1C,OAAO,EAAE,IAAI;IACb,IAAI,EAAE,4BAA4B;CACnC,CAAC,CAAC"}

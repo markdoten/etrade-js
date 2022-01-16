@@ -3,7 +3,6 @@
 .env
 .idea/
 .yarn/
-/lib/
 iv.json
 node_modules/
 session.json

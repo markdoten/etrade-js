@@ -1,10 +1,9 @@
 {
   "name": "etrade-js",
   "packageManager": "yarn@3.1.1",
-  "version": "0.0.1",
-  "main": "src/index",
-  "types": "lib/index",
-  "private": true,
+  "version": "1.0.0",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
   "engines": {
     "node": "16.x"
   },
@@ -12,10 +11,10 @@
     "lib"
   ],
   "scripts": {
-    "build": "tsc",
-    "clean": "rimraf lib node_modules",
-    "lint:fix": "eslint . --fix --ext .ts",
+    "build": "tsc && ts-node ./scripts/lib.ts",
+    "clean": "rimraf node_modules",
     "lint": "eslint . --ext .ts",
+    "lint:fix": "eslint . --fix --ext .ts",
     "start": "ts-node ./dev/index.ts",
     "start:watch": "nodemon",
     "test": "jest"
