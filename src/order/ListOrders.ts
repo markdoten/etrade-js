@@ -2,8 +2,8 @@
  * @file List Orders.
  */
 import session from '../session';
-import type {IFetchResponse, IMessages} from '../interface';
-import type {IOrder} from './interface';
+import type {IFetchResponse, IMessages} from '../interfaces';
+import type {IOrder} from './interfaces';
 import type {MarketSession, SecurityType} from '../enums';
 import type {OrderStatus, TransactionType} from './enums';
 

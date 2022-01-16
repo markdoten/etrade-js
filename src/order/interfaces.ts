@@ -1,8 +1,6 @@
 /**
  * @file Order interface.
  */
-import type {Currency, MarketSession} from '../enums';
-import type {IMessages, IProduct} from '../interfaces';
 import type {
   CashMargin,
   ConditionFollowPrice,
@@ -22,6 +20,17 @@ import type {
   RoutingDestination,
   SecurityType
 } from './enums';
+import type {Currency, MarketSession} from '../enums';
+import type {IMessages, IProduct} from '../interfaces';
+
+export {ICancelOrderRequest, ICancelOrderResponse} from './CanCelOrder';
+export {IChangePreviewedOrderRequest, IChangePreviewedOrderResponse} from './ChangePreviewedOrder';
+export {IFetchResponse, IMessages, IPortfolioMargin, IProduct} from '../interfaces';
+export {IListOrdersRequest, IListOrdersResponse} from './ListOrders';
+export {IOrderParams} from './utils/create';
+export {IPlaceChangedOrderRequest, IPlaceChangedOrderResponse} from './PlaceChangedOrder';
+export {IPlaceOrderRequest, IPlaceOrderResponse} from './PlaceOrder';
+export {IPreviewOrderRequest, IPreviewOrderResponse} from './PreviewOrder';
 
 export interface ICashBuyingPowerDetails {
   /** Settled Cash that has gone through the settlement process and now belongs to the customer's cash balance. */

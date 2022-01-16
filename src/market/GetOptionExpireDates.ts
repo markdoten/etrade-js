@@ -3,8 +3,8 @@
  */
 import session from '../session';
 import type {ExpiryType} from './enums';
-import type {IExpirationDate} from './interface';
-import type {IFetchResponse} from '../interface';
+import type {IExpirationDate} from './interfaces';
+import type {IFetchResponse} from '../interfaces';
 
 /* eslint-disable max-len */
 

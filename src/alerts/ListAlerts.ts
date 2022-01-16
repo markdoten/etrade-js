@@ -3,8 +3,8 @@
  */
 import session from '../session';
 import type {AlertCategory, AlertStatus} from './enums';
-import type {IAlert} from './interface';
-import type {IFetchResponse} from '../interface';
+import type {IAlert} from './interfaces';
+import type {IFetchResponse} from '../interfaces';
 import type {SortOrder} from '../enums';
 
 /* eslint-disable max-len */

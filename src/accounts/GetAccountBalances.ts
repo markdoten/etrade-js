@@ -10,8 +10,8 @@ import type {
   ILending,
   IMargin,
   IOpenCalls
-} from './interface';
-import type {IFetchResponse} from '../interface';
+} from './interfaces';
+import type {IFetchResponse} from '../interfaces';
 import type {QuoteMode} from '../enums';
 
 /* eslint-disable max-len */

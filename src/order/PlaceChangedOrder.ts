@@ -2,8 +2,8 @@
  * @file Place Changed Order.
  */
 import session from '../session';
-import type {IDisclosure, IOrderDetail, IOrderId, IPreviewId} from './interface';
-import type {IFetchResponse, IMessages, IPortfolioMargin} from '../interface';
+import type {IDisclosure, IOrderDetail, IOrderId, IPreviewId} from './interfaces';
+import type {IFetchResponse, IMessages, IPortfolioMargin} from '../interfaces';
 import type {MarginLevel, OrderType} from './enums';
 
 /* eslint-disable max-len */

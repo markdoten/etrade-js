@@ -3,12 +3,12 @@
  */
 import {DetailFlag} from '../../src/market/enums';
 import {testApi} from '../__utils__/test.api';
-import {GetQuotes as TestFn} from '../../src/market/GetQuotes';
 import fixture from '../__fixtures__/market/GetQuotes.json';
+import GetQuotes from '../../src/market/GetQuotes';
 
 /* eslint-disable max-len */
 
-describe('GetQuotes', () => testApi({fixture, fn: TestFn, tests: [
+describe('GetQuotes', () => testApi({fixture, fn: GetQuotes, tests: [
   {
     args: {
       detailFlag: DetailFlag.INTRADAY,

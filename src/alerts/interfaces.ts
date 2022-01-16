@@ -3,6 +3,11 @@
  */
 import type {AlertStatus} from './enums';
 
+export {IDeleteAlertRequest, IDeleteAlertResponse} from './DeleteAlert';
+export {IFetchResponse} from '../interfaces';
+export {IListAlertDetailsRequest, IListAlertDetailsResponse} from './ListAlertDetails';
+export {IListAlertsRequest, IListAlertsResponse} from './ListAlerts';
+
 export interface IAlert {
   /** The date and time the alert was issued, in Epoch time. */
   createTime: number;

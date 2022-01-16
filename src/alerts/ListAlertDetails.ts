@@ -2,7 +2,7 @@
  * @file List Alert Details.
  */
 import session from '../session';
-import type {IFetchResponse} from '../interface';
+import type {IFetchResponse} from '../interfaces';
 
 /* eslint-disable max-len */
 

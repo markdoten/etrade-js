@@ -1,19 +1,16 @@
 /**
  * @file Order.
  */
-import CancelOrder, * as CancelInterfaces from './CancelOrder';
-import ChangePreviewedOrder, * as ChangePreviewedOrderInterfaces from './ChangePreviewedOrder';
-import ListOrders, * as ListOrdersInterfaces from './ListOrders';
-import PlaceChangedOrder, * as PlaceChangedOrderInterfaces from './PlaceChangedOrder';
-import PlaceOrder, * as PlaceOrderInterfaces from './PlaceOrder';
-import PreviewOrder, * as PreviewOrderInterfaces from './PreviewOrder';
-import * as orderEnums from './enums';
-import * as orderInterfaces from './interfaces';
-import {IOrderParams, createOrder} from './utils/create';
+import {createOrder} from './utils/create';
+import CancelOrder from './CancelOrder';
+import ChangePreviewedOrder from './ChangePreviewedOrder';
+import ListOrders from './ListOrders';
+import PlaceChangedOrder from './PlaceChangedOrder';
+import PlaceOrder from './PlaceOrder';
+import PreviewOrder from './PreviewOrder';
 
-export const enums = {
-  ...orderEnums
-};
+export * as enums from './enums';
+export * as interfaces from './interfaces';
 
 export const functions = {
   BuildOrder: createOrder,
@@ -23,15 +20,4 @@ export const functions = {
   PlaceChangedOrder,
   PlaceOrder,
   PreviewOrder
-};
-
-export const interfaces = {
-  ...CancelInterfaces,
-  ...ChangePreviewedOrderInterfaces,
-  ...ListOrdersInterfaces,
-  ...PlaceChangedOrderInterfaces,
-  ...PlaceOrderInterfaces,
-  ...PreviewOrderInterfaces,
-  ...orderInterfaces,
-  IOrderParams
 };

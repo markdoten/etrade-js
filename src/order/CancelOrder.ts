@@ -2,7 +2,7 @@
  * @file Cancel Order.
  */
 import session from '../session';
-import type {IFetchResponse, IMessages} from '../interface';
+import type {IFetchResponse, IMessages} from '../interfaces';
 
 /* eslint-disable max-len */
 

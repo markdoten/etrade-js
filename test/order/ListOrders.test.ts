@@ -4,12 +4,12 @@
 import {MarketSession, SecurityType} from '../../src/enums';
 import {OrderStatus, TransactionType} from '../../src/order/enums';
 import {testApi} from '../__utils__/test.api';
-import {ListOrders as TestFn} from '../../src/order/ListOrders';
 import fixture from '../__fixtures__/order/ListOrders.json';
+import ListOrders from '../../src/order/ListOrders';
 
 /* eslint-disable max-len */
 
-describe('ListOrders', () => testApi({fixture, fn: TestFn, tests: [
+describe('ListOrders', () => testApi({fixture, fn: ListOrders, tests: [
   {
     args: {
       accountIdKey: 'key',

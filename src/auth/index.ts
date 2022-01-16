@@ -1,17 +1,13 @@
 /**
  * @file Authentication.
  */
-import RenewAccessToken, * as RenewAccessTokenInterfaces from './RenewAccessToken';
-import RevokeAccessToken, * as RevokeAccessTokenInterfaces from './RevokeAccessToken';
+import RenewAccessToken from './RenewAccessToken';
+import RevokeAccessToken from './RevokeAccessToken';
 
 export const enums = {};
+export * as interfaces from './interfaces';
 
 export const functions = {
   RenewAccessToken,
   RevokeAccessToken
-};
-
-export const interfaces = {
-  ...RenewAccessTokenInterfaces,
-  ...RevokeAccessTokenInterfaces
 };

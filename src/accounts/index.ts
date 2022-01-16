@@ -1,17 +1,14 @@
 /**
  * @file Accounts.
  */
-import GetAccountBalances, * as GetAccountBalancesInterfaces from './GetAccountBalances';
-import ListAccounts, * as ListAccountsInterfaces from './ListAccounts';
-import ListTransactionDetails, * as ListTransactionDetailsInterfaces from './ListTransactionDetails';
-import ListTransactions, * as ListTransactionsInterfaces from './ListTransactions';
-import ViewPortfolio, * as ViewPortfolioInterfaces from './ViewPortfolio';
-import * as accountEnums from './enums';
-import * as accountInterfaces from './interfaces';
+import GetAccountBalances from './GetAccountBalances';
+import ListAccounts from './ListAccounts';
+import ListTransactionDetails from './ListTransactionDetails';
+import ListTransactions from './ListTransactions';
+import ViewPortfolio from './ViewPortfolio';
 
-export const enums = {
-  ...accountEnums
-};
+export * as enums from './enums';
+export * as interfaces from './interfaces';
 
 export const functions = {
   GetAccountBalances,
@@ -19,13 +16,4 @@ export const functions = {
   ListTransactionDetails,
   ListTransactions,
   ViewPortfolio
-};
-
-export const interfaces = {
-  ...GetAccountBalancesInterfaces,
-  ...ListAccountsInterfaces,
-  ...ListTransactionDetailsInterfaces,
-  ...ListTransactionsInterfaces,
-  ...ViewPortfolioInterfaces,
-  ...accountInterfaces
 };

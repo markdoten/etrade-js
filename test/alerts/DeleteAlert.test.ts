@@ -2,12 +2,12 @@
  * @file DeleteAlert tests.
  */
 import {testApi} from '../__utils__/test.api';
-import {DeleteAlert as TestFn} from '../../src/alerts/DeleteAlert';
+import DeleteAlert from '../../src/alerts/DeleteAlert';
 import fixture from '../__fixtures__/alerts/DeleteAlert.json';
 
 /* eslint-disable max-len */
 
-describe('DeleteAlert', () => testApi({fixture, fn: TestFn, method: 'DELETE', tests: [
+describe('DeleteAlert', () => testApi({fixture, fn: DeleteAlert, method: 'DELETE', tests: [
   {
     args: {alertIds: ['id1', 'id2', 'id3']},
     path: '/user/alerts/id1,id2,id3.json',

@@ -2,7 +2,7 @@
  * @file Renew Access Token.
  */
 import session from '../session';
-import type {IFetchResponse} from '../interface';
+import type {IFetchResponse} from '../interfaces';
 
 /* eslint-disable max-len */
 

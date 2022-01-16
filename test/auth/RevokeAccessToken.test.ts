@@ -2,15 +2,15 @@
  * @file RevokeAccessToken tests.
  */
 import {testApi} from '../__utils__/test.api';
-import {RevokeAccessToken as TestFn} from '../../src/auth/RevokeAccessToken';
 import fixture from '../__fixtures__/auth/RevokeAccessToken.json';
+import RevokeAccessToken from '../../src/auth/RevokeAccessToken';
 
 /* eslint-disable max-len */
 
 describe('RevokeAccessToken', () => testApi({
   contentType: null,
   fixture,
-  fn: TestFn,
+  fn: RevokeAccessToken,
   includeVersion: false,
   tests: [
     {

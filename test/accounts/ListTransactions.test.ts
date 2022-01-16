@@ -2,12 +2,12 @@
  * @file ListTransactions tests.
  */
 import {testApi} from '../__utils__/test.api';
-import {ListTransactions as TestFn} from '../../src/accounts/ListTransactions';
 import fixture from '../__fixtures__/accounts/ListTransactions.json';
+import ListTransactions from '../../src/accounts/ListTransactions';
 
 /* eslint-disable max-len */
 
-describe('ListTransactions', () => testApi({fixture, fn: TestFn, tests: [
+describe('ListTransactions', () => testApi({fixture, fn: ListTransactions, tests: [
   {
     args: {
       accountIdKey: 'key',

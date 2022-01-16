@@ -2,15 +2,15 @@
  * @file RenewAccessToken tests.
  */
 import {testApi} from '../__utils__/test.api';
-import {RenewAccessToken as TestFn} from '../../src/auth/RenewAccessToken';
 import fixture from '../__fixtures__/auth/RenewAccessToken.json';
+import RenewAccessToken from '../../src/auth/RenewAccessToken';
 
 /* eslint-disable max-len */
 
 describe('RenewAccessToken', () => testApi({
   contentType: null,
   fixture,
-  fn: TestFn,
+  fn: RenewAccessToken,
   includeVersion: false,
   tests: [
     {

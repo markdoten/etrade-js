@@ -3,8 +3,8 @@
  */
 import session from '../session';
 import type {ChainType, OptionCategory, PriceType} from './enums';
-import type {IFetchResponse} from '../interface';
-import type {IOptionChainPair, ISelectedED} from './interface';
+import type {IFetchResponse} from '../interfaces';
+import type {IOptionChainPair, ISelectedED} from './interfaces';
 
 /* eslint-disable max-len */
 

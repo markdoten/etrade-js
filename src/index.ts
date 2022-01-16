@@ -4,17 +4,17 @@
 import * as Accounts from './accounts';
 import * as Alerts from './alerts';
 import * as Auth from './auth';
-import type {IEtradeConfig} from './interfaces';
 import * as Market from './market';
 import * as Order from './order';
-import session from './session';
 import Emitter from 'events';
+import session from './session';
+import type {IEtradeConfig} from './interfaces';
 
 const {functions: AccountsFunctions, ...AccountsTypes} = Accounts;
-export const account = AccountsTypes;
+export const accounts = AccountsTypes;
 
 const {functions: AlertsFunctions, ...AlertsTypes} = Alerts;
-export const alert = AlertsTypes;
+export const alerts = AlertsTypes;
 
 const {functions: AuthFunctions, ...AuthTypes} = Auth;
 export const auth = AuthTypes;

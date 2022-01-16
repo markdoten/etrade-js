@@ -4,8 +4,8 @@
 import {MarketSession, SortOrder} from '../enums';
 import {View} from './enums';
 import session from '../session';
-import type {IAccountPortfolio, ITotals} from './interface';
-import type {IFetchResponse} from '../interface';
+import type {IAccountPortfolio, ITotals} from './interfaces';
+import type {IFetchResponse} from '../interfaces';
 import type {SortBy} from './enums';
 
 /* eslint-disable max-len */

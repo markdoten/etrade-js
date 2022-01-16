@@ -2,8 +2,8 @@
  * @file List Transactions.
  */
 import session from '../session';
-import type {IBrokerage, ICategory} from './interface';
-import type {IFetchResponse} from '../interface';
+import type {IBrokerage, ICategory} from './interfaces';
+import type {IFetchResponse} from '../interfaces';
 
 /* eslint-disable max-len */
 

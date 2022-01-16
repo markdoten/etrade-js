@@ -2,12 +2,12 @@
  * @file ListAccounts tests.
  */
 import {testApi} from '../__utils__/test.api';
-import {ListAccounts as TestFn} from '../../src/accounts/ListAccounts';
 import fixture from '../__fixtures__/accounts/ListAccounts.json';
+import ListAccounts from '../../src/accounts/ListAccounts';
 
 /* eslint-disable max-len */
 
-describe('ListAccounts', () => testApi({fixture, fn: TestFn, tests: [
+describe('ListAccounts', () => testApi({fixture, fn: ListAccounts, tests: [
   {
     args: undefined,
     path: '/accounts/list.json',

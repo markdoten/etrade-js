@@ -2,14 +2,14 @@
  * @file CancelOrder tests.
  */
 import {testApi} from '../__utils__/test.api';
-import {CancelOrder as TestFn} from '../../src/order/CancelOrder';
+import CancelOrder from '../../src/order/CancelOrder';
 import fixture from '../__fixtures__/order/CancelOrder.json';
 
 /* eslint-disable max-len */
 
 const testBody = {orderId: 'order-id'};
 
-describe('CancelOrder', () => testApi({fixture, fn: TestFn, method: 'PUT', tests: [
+describe('CancelOrder', () => testApi({fixture, fn: CancelOrder, method: 'PUT', tests: [
   {
     args: {accountIdKey: 'key', ...testBody},
     body: {CancelOrderRequest: testBody},

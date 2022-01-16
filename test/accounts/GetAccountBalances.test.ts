@@ -3,12 +3,12 @@
  */
 import {AccountType} from '../../src/accounts/enums';
 import {testApi} from '../__utils__/test.api';
-import {GetAccountBalances as TestFn} from '../../src/accounts/GetAccountBalances';
 import fixture from '../__fixtures__/accounts/GetAccountBalances.json';
+import GetAccountBalances from '../../src/accounts/GetAccountBalances';
 
 /* eslint-disable max-len */
 
-describe('GetAccountBalances', () => testApi({fixture, fn: TestFn, tests: [
+describe('GetAccountBalances', () => testApi({fixture, fn: GetAccountBalances, tests: [
   {
     args: {accountIdKey: 'key', accountType: AccountType.MARGIN, realTimeNAV: true},
     path: '/accounts/key/balance.json?accountType=MARGIN&instType=BROKERAGE&realTimeNAV=true',

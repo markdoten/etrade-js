@@ -3,12 +3,12 @@
  */
 import {ChainType, OptionCategory, PriceType} from '../../src/market/enums';
 import {testApi} from '../__utils__/test.api';
-import {GetOptionChains as TestFn} from '../../src/market/GetOptionChains';
 import fixture from '../__fixtures__/market/GetOptionChains.json';
+import GetOptionChains from '../../src/market/GetOptionChains';
 
 /* eslint-disable max-len */
 
-describe('GetOptionChains', () => testApi({fixture, fn: TestFn, tests: [
+describe('GetOptionChains', () => testApi({fixture, fn: GetOptionChains, tests: [
   {
     args: {
       chainType: ChainType.CALLPUT,

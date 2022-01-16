@@ -4,7 +4,7 @@
 import {createOrder} from "../../src/order/utils/create";
 import {OrderType} from '../../src/order/enums';
 import {testApi} from '../__utils__/test.api';
-import {ChangePreviewedOrder as TestFn} from '../../src/order/ChangePreviewedOrder';
+import ChangePreviewedOrder from '../../src/order/ChangePreviewedOrder';
 import fixture from '../__fixtures__/order/ChangePreviewedOrder.json';
 
 /* eslint-disable max-len */
@@ -15,7 +15,7 @@ const testBody = {
   orderType: OrderType.EQ
 };
 
-describe('ChangePreviewedOrder', () => testApi({fixture, fn: TestFn, method: 'PUT', tests: [
+describe('ChangePreviewedOrder', () => testApi({fixture, fn: ChangePreviewedOrder, method: 'PUT', tests: [
   {
     args: {accountIdKey: 'key', orderId: 'order-id', ...testBody},
     body: {PreviewOrderRequest: testBody},

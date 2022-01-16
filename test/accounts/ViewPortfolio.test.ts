@@ -4,12 +4,12 @@
 import {MarketSession, SortOrder} from '../../src/enums';
 import {SortBy, View} from '../../src/accounts/enums';
 import {testApi} from '../__utils__/test.api';
-import {ViewPortfolio as TestFn} from '../../src/accounts/ViewPortfolio';
 import fixture from '../__fixtures__/accounts/ViewPortfolio.json';
+import ViewPortfolio from '../../src/accounts/ViewPortfolio';
 
 /* eslint-disable max-len */
 
-describe('ViewPortfolio', () => testApi({fixture, fn: TestFn, tests: [
+describe('ViewPortfolio', () => testApi({fixture, fn: ViewPortfolio, tests: [
   {
     args: {
       accountIdKey: 'key',

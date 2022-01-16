@@ -3,8 +3,8 @@
  */
 import session from '../session';
 import type {DetailFlag} from './enums';
-import type {IFetchResponse, IMessages} from '../interface';
-import type {IQuoteData} from './interface';
+import type {IFetchResponse, IMessages} from '../interfaces';
+import type {IQuoteData} from './interfaces';
 
 /* eslint-disable max-len */
 

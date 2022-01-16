@@ -9,8 +9,8 @@ import type {
   IMarginBuyingPowerDetails,
   IOrderDetail,
   IPreviewId
-} from './interface';
-import type {IFetchResponse, IMessages, IPortfolioMargin} from '../interface';
+} from './interfaces';
+import type {IFetchResponse, IMessages, IPortfolioMargin} from '../interfaces';
 import type {MarginLevel, OrderType} from './enums';
 
 /* eslint-disable max-len */

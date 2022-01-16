@@ -2,8 +2,8 @@
  * @file List Transaction Details.
  */
 import session from '../session';
-import type {IBrokerage, ICategory} from './interface';
-import type {IFetchResponse} from '../interface';
+import type {IBrokerage, ICategory} from './interfaces';
+import type {IFetchResponse} from '../interfaces';
 
 export interface IListTransactionDetailsRequest {
   /** The unique account key. Retrievable by calling the List Accounts API. */

@@ -3,8 +3,8 @@
  */
 import session from '../session';
 import type {AlertResult} from './enums';
-import type {IFailedAlerts} from './interface';
-import type {IFetchResponse} from '../interface';
+import type {IFailedAlerts} from './interfaces';
+import type {IFetchResponse} from '../interfaces';
 
 /* eslint-disable max-len */
 

@@ -4,7 +4,7 @@
 import {Environment} from './enums';
 import {OAuth} from 'oauth';
 import {titleToCamelProperties} from './util';
-import type {IEtradeConfig, IFetchResponse} from './interface';
+import type {IEtradeConfig, IFetchResponse} from './interfaces';
 
 const HOSTNAMES = {
   [Environment.LIVE]: 'https://api.etrade.com',
@@ -148,9 +148,6 @@ class Session {
     Object.keys(query).forEach((key: string) => {
       query[key] === undefined || url.searchParams.append(key, query[key]);
     });
-
-    console.log('***:', url.toString(), JSON.stringify(body, null, 2));
-
     return new Promise((res, rej) =>
       this._oauth._performSecureRequest(
         this.accessToken,

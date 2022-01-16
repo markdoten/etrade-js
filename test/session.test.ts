@@ -1,6 +1,7 @@
 /**
  * @file Session tests.
  */
+import {Environment} from '../src/enums';
 import oauth from 'oauth';
 import session from '../src/session';
 
@@ -150,6 +151,22 @@ describe('session', () => {
         'application/json',
         expect.any(Function)
       );
+    });
+  });
+
+  describe('toJSON', () => {
+    it('returns required information', () => {
+      const props = {
+        accessToken: 'access-token',
+        accessTokenSecret: 'access-secret',
+        environment: Environment.LIVE
+      };
+      session.initialize({
+        ...props,
+        consumerKey: 'key',
+        consumerSecret: 'secret'
+      });
+      expect(session.toJSON()).toEqual(props);
     });
   });
 });

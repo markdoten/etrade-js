@@ -4,12 +4,12 @@
 import {AlertCategory, AlertStatus} from '../../src/alerts/enums';
 import {SortOrder} from '../../src/enums';
 import {testApi} from '../__utils__/test.api';
-import {ListAlerts as TestFn} from '../../src/alerts/ListAlerts';
 import fixture from '../__fixtures__/alerts/ListAlerts.json';
+import ListAlerts from '../../src/alerts/ListAlerts';
 
 /* eslint-disable max-len */
 
-describe('ListAlerts', () => testApi({fixture, fn: TestFn, tests: [
+describe('ListAlerts', () => testApi({fixture, fn: ListAlerts, tests: [
   {
     args: {
       category: AlertCategory.ACCOUNT,

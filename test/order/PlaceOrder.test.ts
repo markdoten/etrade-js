@@ -4,8 +4,8 @@
 import {CashMargin, OrderType} from '../../src/order/enums';
 import {createOrder} from "../../src/order/utils/create";
 import {testApi} from '../__utils__/test.api';
-import {PlaceOrder as TestFn} from '../../src/order/PlaceOrder';
 import fixture from '../__fixtures__/order/PlaceOrder.json';
+import PlaceOrder from '../../src/order/PlaceOrder';
 
 /* eslint-disable max-len */
 
@@ -19,7 +19,7 @@ const testBody = {
   }]
 };
 
-describe('PlaceOrder', () => testApi({fixture, fn: TestFn, method: 'POST', tests: [
+describe('PlaceOrder', () => testApi({fixture, fn: PlaceOrder, method: 'POST', tests: [
   {
     args: {accountIdKey: 'key', ...testBody},
     body: {PlaceOrderRequest: testBody},
