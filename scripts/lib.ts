@@ -39,4 +39,6 @@ const rimrafPromise = (path: string, options: any): Promise<void> => new Promise
   for (const item of items) {
     await fs.rename(path.join(srcPath, item.name), path.join(BASE_PATH, item.name));
   }
+
+  await rimrafPromise(srcPath, {});
 })();
