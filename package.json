@@ -7,9 +7,6 @@
   "engines": {
     "node": "16.x"
   },
-  "files": [
-    "lib"
-  ],
   "scripts": {
     "build": "tsc && ts-node ./scripts/lib.ts",
     "clean": "rimraf node_modules",
