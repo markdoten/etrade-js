@@ -12,14 +12,14 @@ interface IFetchOptions {
  * @class
  */
 declare class Session {
+    private _accessToken;
+    private _accessTokenSecret;
     private _consumerKey;
     private _consumerSecret;
     private _environment;
     private _oauth;
-    accessToken: string;
-    accessTokenSecret: string;
-    oauthRequestToken: string;
-    oauthRequestTokenSecret: string;
+    private _oauthRequestToken;
+    private _oauthRequestTokenSecret;
     /**
      * Initializes the session.
      * @param {IEtradeConfig} config - ETrade config object.
@@ -52,6 +52,12 @@ declare class Session {
      * @returns {Promise<IFetchResponse>} - The request promise.
      */
     request<T extends IFetchResponse>({ body, isOAuth, method, path, query }: IFetchOptions): Promise<T>;
+    /**
+     * Set access token and access token secret.
+     * @param {string} accessToken - The access token.
+     * @param {string} accessTokenSecret - The access token secret.
+     */
+    setToken(accessToken: string, accessTokenSecret: string): void;
     /**
      * JSON format of this class.
      * @returns {Object} - JSON format of this class.

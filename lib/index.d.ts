@@ -74,4 +74,10 @@ export default class ETrade extends Emitter {
      * @param {IEtradeConfig} config - The configuration object.
      */
     constructor(config: IEtradeConfig);
+    /**
+     * Set the access token and secret.
+     * @param {string} accessToken - The access token.
+     * @param {string} accessTokenSecret - The access token secret.
+     */
+    setToken(accessToken: string, accessTokenSecret: string): void;
 }
