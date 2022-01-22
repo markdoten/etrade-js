@@ -4,8 +4,8 @@
 .idea/
 .yarn/
 iv.json
+dev/session.json
 build/
 node_modules/
-session.json
 temp/
 tmp/
