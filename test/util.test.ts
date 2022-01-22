@@ -23,7 +23,10 @@ describe('titleToCamelProperties', () => {
               Level5: 'value5'
             }
           }
-        }
+        },
+        level22: [
+          {level3: 'value3', Level31: 'value31'},
+        ]
       }
     })).toEqual({
       level1: {
@@ -32,10 +35,13 @@ describe('titleToCamelProperties', () => {
           level3: {
             level4: 'wat',
             level41: {
-              Level5: 'value5'
+              level5: 'value5'
             }
           }
-        }
+        },
+        level22: [
+          {level3: 'value3', level31: 'value31'},
+        ]
       }
     });
   });

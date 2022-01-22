@@ -48,8 +48,8 @@ describe('session', () => {
 
   describe('oauthComplete', () => {
     beforeEach(() => {
-      session.oauthRequestToken = 'token';
-      session.oauthRequestTokenSecret = 'secret';
+      (session as any)._oauthRequestToken = 'token';
+      (session as any)._oauthRequestTokenSecret = 'secret';
     });
 
     it('rejects promise with an error', (done: Function) => {
@@ -65,8 +65,8 @@ describe('session', () => {
       getOAuthAccessTokenSpy.mockImplementation((token, secret, verifier, callback) =>
         callback(null, 'access-token', 'access-token-secret'));
       await session.oauthComplete('code');
-      expect(session.accessToken).toBe('access-token');
-      expect(session.accessTokenSecret).toBe('access-token-secret');
+      expect((session as any)._accessToken).toBe('access-token');
+      expect((session as any)._accessTokenSecret).toBe('access-token-secret');
     });
   });
 
@@ -83,16 +83,13 @@ describe('session', () => {
     it('returns the authorize url', async () => {
       getOAuthRequestTokenSpy.mockImplementation((callback) => callback(null, 'request-token', 'request-token-secret'));
       expect(await session.oauthStart()).toBe('https://us.etrade.com/e/t/etws/authorize?key=key&token=request-token');
-      expect(session.oauthRequestToken).toBe('request-token');
-      expect(session.oauthRequestTokenSecret).toBe('request-token-secret');
+      expect((session as any)._oauthRequestToken).toBe('request-token');
+      expect((session as any)._oauthRequestTokenSecret).toBe('request-token-secret');
     });
   });
 
   describe('request', () => {
-    beforeEach(() => {
-      session.accessToken = 'access-token';
-      session.accessTokenSecret = 'access-token-secret';
-    });
+    beforeEach(() => session.setToken('access-token', 'access-token-secret'));
 
     it('rejects promise with an error', (done: Function) => {
       performSecureRequestSpy.mockImplementation((a, b, c, d, e, f, g, callback) => callback('some error'));
@@ -117,7 +114,7 @@ describe('session', () => {
         AccountListResponse: {
           Accounts: {
             Account: [
-              {prop1: 'value1', prop2: 'value2'},
+              {prop1: 'value1', Prop2: 'value2'},
               {prop3: 'value3', prop4: 'value4'}
             ]
           },
@@ -151,6 +148,14 @@ describe('session', () => {
         'application/json',
         expect.any(Function)
       );
+    });
+  });
+
+  describe('setToken', () => {
+    it('sets the access token and secret', () => {
+      session.setToken('access-token', 'access-token-secret');
+      expect((session as any)._accessToken).toBe('access-token');
+      expect((session as any)._accessTokenSecret).toBe('access-token-secret');
     });
   });
 

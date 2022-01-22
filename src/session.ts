@@ -34,14 +34,14 @@ interface IGenerateHeaders {
  * @class
  */
 class Session {
+  private _accessToken: string;
+  private _accessTokenSecret: string;
   private _consumerKey: string;
   private _consumerSecret: string;
   private _environment: Environment;
   private _oauth = null;
-  public accessToken: string;
-  public accessTokenSecret: string;
-  public oauthRequestToken: string;
-  public oauthRequestTokenSecret: string;
+  private _oauthRequestToken: string;
+  private _oauthRequestTokenSecret: string;
 
   /**
    * Initializes the session.
@@ -56,8 +56,8 @@ class Session {
     consumerSecret,
     environment = Environment.SANDBOX
   }: IEtradeConfig): void {
-    this.accessToken = accessToken;
-    this.accessTokenSecret = accessTokenSecret;
+    this._accessToken = accessToken;
+    this._accessTokenSecret = accessTokenSecret;
     this._consumerKey = consumerKey;
     this._consumerSecret = consumerSecret;
     this._environment = environment;
@@ -88,15 +88,15 @@ class Session {
   public async oauthComplete(verifier: string): Promise<void> {
     return new Promise((res, rej) => {
       this._oauth.getOAuthAccessToken(
-        this.oauthRequestToken,
-        this.oauthRequestTokenSecret,
+        this._oauthRequestToken,
+        this._oauthRequestTokenSecret,
         verifier,
         (error, oAuthAccessToken, oAuthAccessTokenSecret) => {
           if (error) {
             return rej(error);
           }
-          this.accessToken = oAuthAccessToken;
-          this.accessTokenSecret = oAuthAccessTokenSecret;
+          this._accessToken = oAuthAccessToken;
+          this._accessTokenSecret = oAuthAccessTokenSecret;
           res();
         }
       );
@@ -114,8 +114,8 @@ class Session {
         if (error) {
           return rej(error);
         }
-        this.oauthRequestToken = oAuthToken;
-        this.oauthRequestTokenSecret = oAuthTokenSecret;
+        this._oauthRequestToken = oAuthToken;
+        this._oauthRequestTokenSecret = oAuthTokenSecret;
 
         const key = encodeURIComponent(this._consumerKey);
         const token = encodeURIComponent(oAuthToken);
@@ -150,8 +150,8 @@ class Session {
     });
     return new Promise((res, rej) =>
       this._oauth._performSecureRequest(
-        this.accessToken,
-        this.accessTokenSecret,
+        this._accessToken,
+        this._accessTokenSecret,
         method,
         url.toString(),
         null, // extra_params,
@@ -173,13 +173,23 @@ class Session {
   }
 
   /**
+   * Set access token and access token secret.
+   * @param {string} accessToken - The access token.
+   * @param {string} accessTokenSecret - The access token secret.
+   */
+  public setToken(accessToken: string, accessTokenSecret: string): void {
+    this._accessToken = accessToken;
+    this._accessTokenSecret = accessTokenSecret;
+  }
+
+  /**
    * JSON format of this class.
    * @returns {Object} - JSON format of this class.
    */
   public toJSON(): Record<string, any> {
     return {
-      accessToken: this.accessToken,
-      accessTokenSecret: this.accessTokenSecret,
+      accessToken: this._accessToken,
+      accessTokenSecret: this._accessTokenSecret,
       environment: this._environment
     };
   }

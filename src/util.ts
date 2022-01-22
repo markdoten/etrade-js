@@ -9,10 +9,6 @@
  * @returns {Object} - Converted object.
  */
 export const titleToCamelProperties = (obj: Record<string, any>): Record<string, any> => {
-  // If there are no title cased keys, no more processing to be done.
-  if (!Object.keys(obj).some((key: string): boolean => /[A-Z]/.test(key[0]))) {
-    return obj;
-  }
   const _obj = {...obj};
   for (const key in _obj) {
     const camelCase = titleToCamel(key);
@@ -20,7 +16,9 @@ export const titleToCamelProperties = (obj: Record<string, any>): Record<string,
     if (camelCase !== key) {
       delete _obj[key];
     }
-    if (typeof _obj[camelCase] === 'object') {
+    if (Array.isArray(_obj[camelCase])) {
+      _obj[camelCase] = _obj[camelCase].map((obj: any) => titleToCamelProperties(obj));
+    } else if (typeof _obj[camelCase] === 'object') {
       _obj[camelCase] = titleToCamelProperties(_obj[camelCase]);
     }
   }

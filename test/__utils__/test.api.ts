@@ -52,9 +52,12 @@ export const testApi = ({
       setClientOptions: setClientOptionsSpy
     }));
 
-    session.initialize({consumerKey: 'key', consumerSecret: 'secret'});
-    session.accessToken = 'access-token';
-    session.accessTokenSecret = 'access-token-secret';
+    session.initialize({
+      accessToken: 'access-token',
+      accessTokenSecret: 'access-token-secret',
+      consumerKey: 'key',
+      consumerSecret: 'secret'
+    });
   });
 
   tests.forEach(({args, body, error, path, title}: ITest): void => it(title, () => {

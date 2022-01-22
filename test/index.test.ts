@@ -94,4 +94,14 @@ describe('ETrade', () => {
     sdk.auth.startOAuth();
     expect(session.oauthStart).toHaveBeenCalledWith();
   });
+
+  describe('setToken', () => {
+    it('sets the token and secret on the session', () => {
+      expect((session as any)._accessToken).toBeUndefined();
+      expect((session as any)._accessTokenSecret).toBeUndefined();
+      sdk.setToken('access-token', 'access-token-secret');
+      expect((session as any)._accessToken).toBe('access-token');
+      expect((session as any)._accessTokenSecret).toBe('access-token-secret');
+    });
+  });
 });

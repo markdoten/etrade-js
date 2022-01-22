@@ -52,4 +52,13 @@ export default class ETrade extends Emitter {
     super();
     session.initialize(config);
   }
+
+  /**
+   * Set the access token and secret.
+   * @param {string} accessToken - The access token.
+   * @param {string} accessTokenSecret - The access token secret.
+   */
+  public setToken(accessToken: string, accessTokenSecret: string): void {
+    session.setToken(accessToken, accessTokenSecret);
+  }
 }
