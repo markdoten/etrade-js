@@ -61,10 +61,10 @@ export interface IGetAccountBalancesResponse extends IFetchResponse {
 /**
  * Returns a list of E*TRADE accounts for the current user.
  * @async
- * @param {IGetAccountBalancesRequest} request - The request object.
- * @param {string} [request.accountIdKey] - The unique account key.
- * @param {string} [request.accountType] - The registered account type.
- * @param {boolean} [request.realTimeNAV] - Default is false. If true, fetches real time balance.
+ * @param request - The request object.
+ * @param [request.accountIdKey] - The unique account key.
+ * @param [request.accountType] - The registered account type.
+ * @param [request.realTimeNAV] - Default is false. If true, fetches real time balance.
  * @returns {Promise<IGetAccountBalancesResponse>} - List of accounts.
  */
 export default ({

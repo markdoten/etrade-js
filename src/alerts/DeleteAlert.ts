@@ -25,8 +25,8 @@ export interface IDeleteAlertResponse extends IFetchResponse {
 /**
  * Returns the details for an alert.
  * @async
- * @param {IDeleteAlertRequest} request - The request object.
- * @param {string} [request.id] - The alert ID value. Alert id whose details are needed.
+ * @param request - The request object.
+ * @param [request.alertIds] - List of alert IDs.
  * @returns {Promise<IDeleteAlertResponse>} - Details for an alert.
  */
 export default ({alertIds}: IDeleteAlertRequest): Promise<IDeleteAlertResponse> =>

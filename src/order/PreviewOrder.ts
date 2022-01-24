@@ -70,8 +70,8 @@ export interface IPreviewOrderResponse extends IFetchResponse {
 /**
  * Submit an order request for preview before placing it.
  * @async
- * @param {IPreviewOrderRequest} request - The request object.
- * @param {string} [request.accountIdKey] - The unique account key. Retrievable by calling the List Accounts API.
+ * @param request - The request object.
+ * @param [request.accountIdKey] - The unique account key. Retrievable by calling the List Accounts API.
  * @returns {Promise<IPreviewOrderResponse>} - Order details.
  */
 export default ({accountIdKey, ...PreviewOrderRequest}: IPreviewOrderRequest): Promise<IPreviewOrderResponse> =>

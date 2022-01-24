@@ -90,7 +90,6 @@ module.exports = {
     'jsdoc/require-param': ERROR,
     'jsdoc/require-param-description': ERROR,
     'jsdoc/require-param-name': ERROR,
-    'jsdoc/require-param-type': ERROR,
     'jsdoc/require-property': ERROR,
     'jsdoc/require-property-description': ERROR,
     'jsdoc/require-property-name': ERROR,

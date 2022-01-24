@@ -32,7 +32,7 @@ export interface IListAlertsResponse extends IFetchResponse {
 /**
  * Returns a list of alerts.
  * @async
- * @param {IListAlertsRequest} query - The request object.
+ * @param query - The request object.
  * @returns {Promise<IListAlertsResponse>} - List of alerts.
  */
 export default (query: IListAlertsRequest): Promise<IListAlertsResponse> =>

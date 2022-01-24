@@ -23,8 +23,8 @@ const cleanLib = async (): Promise<void> => {
 
 /**
  * Rimraf promise version.
- * @param {string} path - Path to the file or folder to delete.
- * @param {Object} options - Options to pass to rimraf.
+ * @param path - Path to the file or folder to delete.
+ * @param options - Options to pass to rimraf.
  * @returns {Promise<void>} - Promise that resolves when the file or folder is deleted.
  */
 const rimrafPromise = (path: string, options: any): Promise<void> => new Promise((res, rej) => {

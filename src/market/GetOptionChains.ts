@@ -49,7 +49,7 @@ export interface IGetOptionChainsResponse extends IFetchResponse {
 /**
  * Returns a list of option chains for a specific underlying instrument.
  * @async
- * @param {IGetOptionChainsRequest} query - The request object.
+ * @param query - The request object.
  * @returns {Promise<IGetOptionChainsResponse>} - List of option chains for a specific underlying instrument.
  */
 export default (query: IGetOptionChainsRequest): Promise<IGetOptionChainsResponse> =>

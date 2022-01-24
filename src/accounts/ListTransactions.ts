@@ -44,8 +44,8 @@ export interface IListTransactionsResponse extends IFetchResponse {
 /**
  * Returns a list of E*TRADE accounts for the current user.
  * @async
- * @param {IListTransactionsRequest} request - The request object.
- * @param {string} [request.accountIdKey] - The unique account key.
+ * @param request - The request object.
+ * @param [request.accountIdKey] - The unique account key.
  * @returns {Promise<IListTransactionsResponse>} - Get all transactions for the specified account.
  */
 export default ({accountIdKey, ...query}: IListTransactionsRequest): Promise<IListTransactionsResponse> => {

@@ -30,7 +30,8 @@ export default {
   },
   maxWorkers: '50%',
   preset: 'ts-jest',
-  roots: ['src', 'test'],
+  rootDir: '..',
+  roots: ['<rootDir>/src/', '<rootDir>/test/'],
   setupFiles: [],
   testEnvironment: 'node',
   verbose: true

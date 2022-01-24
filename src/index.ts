@@ -46,7 +46,7 @@ export default class ETrade extends Emitter {
 
   /**
    * E-Trade API constructor.
-   * @param {IEtradeConfig} config - The configuration object.
+   * @param config - The configuration object.
    */
   constructor(config: IEtradeConfig) {
     super();
@@ -55,8 +55,8 @@ export default class ETrade extends Emitter {
 
   /**
    * Set the access token and secret.
-   * @param {string} accessToken - The access token.
-   * @param {string} accessTokenSecret - The access token secret.
+   * @param accessToken - The access token.
+   * @param accessTokenSecret - The access token secret.
    */
   public setToken(accessToken: string, accessTokenSecret: string): void {
     session.setToken(accessToken, accessTokenSecret);

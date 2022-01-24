@@ -37,8 +37,8 @@ export interface IListAlertDetailsResponse extends IFetchResponse {
 /**
  * Returns the details for an alert.
  * @async
- * @param {IListAlertDetailsRequest} request - The request object.
- * @param {string} [request.id] - The alert ID value. Alert id whose details are needed.
+ * @param request - The request object.
+ * @param [request.id] - The alert ID value. Alert id whose details are needed.
  * @returns {Promise<IListAlertDetailsResponse>} - Details for an alert.
  */
 export default ({id, ...query}: IListAlertDetailsRequest): Promise<IListAlertDetailsResponse> =>

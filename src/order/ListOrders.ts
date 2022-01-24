@@ -46,8 +46,8 @@ export interface IListOrdersResponse extends IFetchResponse {
 /**
  * Returns the order details for a selected brokerage account based on the search criteria provided.
  * @async
- * @param {IListOrdersRequest} request - The request object.
- * @param {string} [request.accountIdKey] - The unique account key. Retrievable by calling the List Accounts API.
+ * @param request - The request object.
+ * @param [request.accountIdKey] - The unique account key. Retrievable by calling the List Accounts API.
  * @returns {Promise<IListOrdersResponse>} - Order details.
  */
 export default ({accountIdKey, ...query}: IListOrdersRequest): Promise<IListOrdersResponse> => {

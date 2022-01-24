@@ -24,13 +24,13 @@ export interface ITestApi {
 
 /**
  * Test the API.
- * @param {Object} options - Options.
- * @param {Object} [options.contentType] - Content type header.
- * @param {Object} [options.fixture] - API fixture JSON.
- * @param {Function} [options.fn] - The function to test.
- * @param {boolean} [options.includeVersion] - Include version in path.
- * @param {string} [options.method] - The HTTP method.
- * @param {ITest[]} [options.tests] - The tests to run.
+ * @param options - Options.
+ * @param [options.contentType] - Content type header.
+ * @param [options.fixture] - API fixture JSON.
+ * @param [options.fn] - The function to test.
+ * @param [options.includeVersion] - Include version in path.
+ * @param [options.method] - The HTTP method.
+ * @param [options.tests] - The tests to run.
  */
 export const testApi = ({
   contentType = 'application/json',

@@ -27,8 +27,9 @@ export interface ICancelOrderResponse extends IFetchResponse {
 /**
  * Cancel an existing order.
  * @async
- * @param {ICancelOrderRequest} request - The request object.
- * @param {string} [request.accountIdKey] - The unique account key. Retrievable by calling the List Accounts API.
+ * @param request - The request object.
+ * @param [request.accountIdKey] - The unique account key. Retrievable by calling the List Accounts API.
+ * @param [request.orderId] - Order confirmation Id for the order placed.
  * @returns {Promise<ICancelOrderResponse>} - Order status.
  */
 export default ({accountIdKey, orderId}: ICancelOrderRequest): Promise<ICancelOrderResponse> =>

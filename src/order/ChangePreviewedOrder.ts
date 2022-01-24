@@ -72,9 +72,9 @@ export interface IChangePreviewedOrderResponse extends IFetchResponse {
 /**
  * Change a previewed order.
  * @async
- * @param {IChangePreviewedOrderRequest} request - The request object.
- * @param {string} [request.accountIdKey] - The unique account key. Retrievable by calling the List Accounts API.
- * @param {string} [request.orderId] - The order Id.
+ * @param request - The request object.
+ * @param [request.accountIdKey] - The unique account key. Retrievable by calling the List Accounts API.
+ * @param [request.orderId] - The order Id.
  * @returns {Promise<IChangePreviewedOrderResponse>} - Order status.
  */
 export default ({
