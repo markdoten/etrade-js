@@ -24,7 +24,7 @@ declare const _default: (query: IListAlertsRequest) => Promise<IListAlertsRespon
 /**
  * Returns a list of alerts.
  * @async
- * @param {IListAlertsRequest} query - The request object.
+ * @param query - The request object.
  * @returns {Promise<IListAlertsResponse>} - List of alerts.
  */
 export default _default;

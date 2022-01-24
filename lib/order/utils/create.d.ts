@@ -18,16 +18,16 @@ export interface IOrderParams {
 }
 /**
  * Create the order detail object.
- * @param {Object} params - Order parameters.
- * @param {string} [params.accountId] - Account ID.
- * @param {boolean} [params.allOrNone] - All or none.
- * @param {OrderAction} [params.orderAction] - Order action.
- * @param {OrderTerm} [params.orderTerm] - Order term.
- * @param {Object} [params.override] - Override instrument or product.
- * @param {OrderPriceType} [params.priceType] - Order price type.
- * @param {number} [params.quantity] - Quantity.
- * @param {SecurityType} [params.securityType] - Security type.
- * @param {string} [params.symbol] - Symbol.
+ * @param params - Order parameters.
+ * @param [params.accountId] - Account ID.
+ * @param [params.allOrNone] - All or none.
+ * @param [params.orderAction] - Order action.
+ * @param [params.orderTerm] - Order term.
+ * @param [params.override] - Override instrument or product.
+ * @param [params.priceType] - Order price type.
+ * @param [params.quantity] - Quantity.
+ * @param [params.securityType] - Security type.
+ * @param [params.symbol] - Symbol.
  * @returns {IOrderDetail} - Order detail object.
  */
 export declare const createOrder: ({ accountId, allOrNone, orderAction, orderTerm, override, priceType, quantity, securityType, symbol }: IOrderParams) => IOrderDetail;

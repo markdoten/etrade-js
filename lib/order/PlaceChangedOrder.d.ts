@@ -55,9 +55,9 @@ declare const _default: ({ accountIdKey, orderId, ...PlaceOrderRequest }: IPlace
 /**
  * Submit an order after it has been successfully modified.
  * @async
- * @param {IPlaceChangedOrderRequest} request - The request object.
- * @param {string} [request.accountIdKey] - The unique account key. Retrievable by calling the List Accounts API.
- * @param {string} [request.orderId] - The order Id.
+ * @param request - The request object.
+ * @param [request.accountIdKey] - The unique account key. Retrievable by calling the List Accounts API.
+ * @param [request.orderId] - The order Id.
  * @returns {Promise<IPlaceChangedOrderResponse>} - Status of the order.
  */
 export default _default;

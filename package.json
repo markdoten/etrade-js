@@ -1,6 +1,5 @@
 {
   "name": "etrade-ts",
-  "packageManager": "yarn@3.1.1",
   "version": "1.0.3",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
@@ -17,7 +16,7 @@
     "lint:fix": "eslint --config ./config/.eslintrc.js --fix --ext .ts --ignore-path ./config/.eslintignore .",
     "start": "ts-node ./dev/index.ts",
     "start:watch": "nodemon --config ./config/nodemon.json",
-    "test": "jest --config ./config/jest.config.js"
+    "test": "jest --config ./config/jest.config.ts"
   },
   "dependencies": {
     "abort-controller": "^3.0.0",

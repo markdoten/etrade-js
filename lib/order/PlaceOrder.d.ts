@@ -53,8 +53,8 @@ declare const _default: ({ accountIdKey, ...PlaceOrderRequest }: IPlaceOrderRequ
 /**
  * Submit an order after it has been successfully previewed.
  * @async
- * @param {IPlaceOrderRequest} request - The request object.
- * @param {string} [request.accountIdKey] - The unique account key. Retrievable by calling the List Accounts API.
+ * @param request - The request object.
+ * @param [request.accountIdKey] - The unique account key. Retrievable by calling the List Accounts API.
  * @returns {Promise<IPlaceOrderResponse>} - Status of the order.
  */
 export default _default;

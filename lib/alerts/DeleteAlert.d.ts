@@ -16,8 +16,8 @@ declare const _default: ({ alertIds }: IDeleteAlertRequest) => Promise<IDeleteAl
 /**
  * Returns the details for an alert.
  * @async
- * @param {IDeleteAlertRequest} request - The request object.
- * @param {string} [request.id] - The alert ID value. Alert id whose details are needed.
+ * @param request - The request object.
+ * @param [request.alertIds] - List of alert IDs.
  * @returns {Promise<IDeleteAlertResponse>} - Details for an alert.
  */
 export default _default;

@@ -12,8 +12,8 @@ declare const _default: ({ search }: ILookUpProductRequest) => Promise<ILookUpPr
 /**
  * Returns information about market events.
  * @async
- * @param {ILookUpProductRequest} request - The request object.
- * @param {string} [request.search] - The search request.
+ * @param request - The request object.
+ * @param [request.search] - The search request.
  * @returns {Promise<ILookUpProductResponse>} - Information about market events.
  */
 export default _default;

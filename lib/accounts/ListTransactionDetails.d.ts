@@ -30,10 +30,10 @@ declare const _default: ({ accountIdKey, storeId, transactionId }: IListTransact
 /**
  * Get transaction details for the specified transaction (transactionId).
  * @async
- * @param {IListTransactionDetailsRequest} request - The request object.
- * @param {string} [request.accountIdKey] - The unique account key.
- * @param {number} [request.storeId] - Storage location for older transactions.
- * @param {string} [request.transactionId] - Transaction Id.
+ * @param request - The request object.
+ * @param [request.accountIdKey] - The unique account key.
+ * @param [request.storeId] - Storage location for older transactions.
+ * @param [request.transactionId] - Transaction Id.
  * @returns {Promise<IListTransactionDetailsResponse>} - Transaction details.
  */
 export default _default;

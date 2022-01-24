@@ -41,7 +41,7 @@ declare const _default: (query: IGetOptionChainsRequest) => Promise<IGetOptionCh
 /**
  * Returns a list of option chains for a specific underlying instrument.
  * @async
- * @param {IGetOptionChainsRequest} query - The request object.
+ * @param query - The request object.
  * @returns {Promise<IGetOptionChainsResponse>} - List of option chains for a specific underlying instrument.
  */
 export default _default;

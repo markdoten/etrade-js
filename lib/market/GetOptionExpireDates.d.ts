@@ -15,7 +15,7 @@ declare const _default: (query: IGetOptionExpireDatesRequest) => Promise<IGetOpt
 /**
  * Returns a list of dates suitable for structuring an option table display.
  * @async
- * @param {IGetOptionExpireDatesRequest} query - The request query object.
+ * @param query - The request query object.
  * @returns {Promise<IGetOptionExpireDatesResponse>} - List of dates suitable for structuring an option table display.
  */
 export default _default;
