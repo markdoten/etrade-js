@@ -160,12 +160,6 @@ export declare enum RoutingDestination {
     NYSE = "NYSE",
     PHX = "PHX"
 }
-export declare enum SecurityType {
-    EQ = "EQ",
-    MF = "MF",
-    MMF = "MMF",
-    OPTN = "OPTN"
-}
 export declare enum TransactionType {
     ATNM = "ATNM",
     BUY_TO_COVER = "BUY_TO_COVER",

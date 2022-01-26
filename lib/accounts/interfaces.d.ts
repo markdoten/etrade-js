@@ -4,7 +4,6 @@
 import type { AccountType } from './enums';
 import type { IPortfolioMargin, IProduct } from '../interfaces';
 import type { QuoteStatus } from '../enums';
-export { IFetchResponse, IPortfolioMargin, IProduct } from '../interfaces';
 export { IGetAccountBalancesRequest, IGetAccountBalancesResponse } from './GetAccountBalances';
 export { IListAccountsResponse } from './ListAccounts';
 export { IListTransactionDetailsRequest, IListTransactionDetailsResponse } from './ListTransactionDetails';

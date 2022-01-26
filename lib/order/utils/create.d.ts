@@ -1,4 +1,8 @@
-import { OrderAction, OrderPriceType, OrderTerm, SecurityType } from '../enums';
+/**
+ * @file Create order object.
+ */
+import { SecurityType } from '../../enums';
+import { OrderAction, OrderPriceType, OrderTerm } from '../enums';
 import type { IInstrument, IOrderDetail } from '../interfaces';
 import type { IProduct } from '../../interfaces';
 export interface IOrderParams {

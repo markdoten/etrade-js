@@ -9,10 +9,7 @@ import PlaceChangedOrder from './PlaceChangedOrder';
 import PlaceOrder from './PlaceOrder';
 import PreviewOrder from './PreviewOrder';
 
-export * as enums from './enums';
-export * as interfaces from './interfaces';
-
-export const functions = {
+export default {
   BuildOrder: createOrder,
   CancelOrder,
   ChangePreviewedOrder,

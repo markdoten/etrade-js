@@ -4,7 +4,6 @@
 import type {AlertStatus} from './enums';
 
 export {IDeleteAlertRequest, IDeleteAlertResponse} from './DeleteAlert';
-export {IFetchResponse} from '../interfaces';
 export {IListAlertDetailsRequest, IListAlertDetailsResponse} from './ListAlertDetails';
 export {IListAlertsRequest, IListAlertsResponse} from './ListAlerts';
 

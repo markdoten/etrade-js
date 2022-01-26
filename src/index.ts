@@ -1,48 +1,44 @@
 /**
  * @file E-Trade API.
  */
-import * as Accounts from './accounts';
-import * as Alerts from './alerts';
-import * as Auth from './auth';
-import * as Market from './market';
-import * as Order from './order';
+import Accounts from './accounts';
+import Alerts from './alerts';
+import Auth from './auth';
 import Emitter from 'events';
+import Market from './market';
+import Order from './order';
 import session from './session';
 import type {IEtradeConfig} from './interfaces';
 
-export * as enums from './enums';
-export * as interfaces from './interfaces';
+export * from './enums';
+export * from './interfaces';
 
-const {functions: AccountsFunctions, ...AccountsTypes} = Accounts;
-export const accounts = AccountsTypes;
-
-const {functions: AlertsFunctions, ...AlertsTypes} = Alerts;
-export const alerts = AlertsTypes;
-
-const {functions: AuthFunctions, ...AuthTypes} = Auth;
-export const auth = AuthTypes;
-
-const {functions: MarketFunctions, ...MarketTypes} = Market;
-export const market = MarketTypes;
-
-const {functions: OrderFunctions, ...OrderTypes} = Order;
-export const order = OrderTypes;
+// Export module specific enums and interfaces.
+export * from './accounts/enums';
+export * from './accounts/interfaces';
+export * from './alerts/enums';
+export * from './alerts/interfaces';
+export * from './auth/interfaces';
+export * from './market/enums';
+export * from './market/interfaces';
+export * from './order/enums';
+export * from './order/interfaces';
 
 /**
  * @class ETrade
  * @augments Emitter
  */
 export default class ETrade extends Emitter {
-  public accounts = AccountsFunctions;
-  public alerts = AlertsFunctions;
+  public accounts = Accounts;
+  public alerts = Alerts;
   public auth = {
-    ...AuthFunctions,
+    ...Auth,
     completeOAuth: (verifier: string): Promise<void> => session.oauthComplete(verifier),
     startOAuth: (): Promise<string> => session.oauthStart()
   };
 
-  public market = MarketFunctions;
-  public order = OrderFunctions;
+  public market = Market;
+  public order = Order;
 
   /**
    * E-Trade API constructor.

@@ -7,10 +7,7 @@ import ListTransactionDetails from './ListTransactionDetails';
 import ListTransactions from './ListTransactions';
 import ViewPortfolio from './ViewPortfolio';
 
-export * as enums from './enums';
-export * as interfaces from './interfaces';
-
-export const functions = {
+export default {
   GetAccountBalances,
   ListAccounts,
   ListTransactionDetails,

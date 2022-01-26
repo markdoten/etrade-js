@@ -178,13 +178,6 @@ export enum RoutingDestination {
   PHX = 'PHX'
 }
 
-export enum SecurityType {
-  EQ = 'EQ',
-  MF = 'MF',
-  MMF = 'MMF',
-  OPTN = 'OPTN'
-}
-
 export enum TransactionType {
   ATNM = 'ATNM',
   BUY_TO_COVER = 'BUY_TO_COVER',

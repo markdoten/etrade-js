@@ -1,11 +1,7 @@
 /**
  * @file Main index test.
  */
-import * as accountsEnums from '../src/accounts/enums';
-import * as alertsEnums from '../src/alerts/enums';
-import * as marketEnums from '../src/market/enums';
-import * as orderEnums from '../src/order/enums';
-import ETrade, {accounts, alerts, auth, market, order} from '../src/index';
+import ETrade from '../src/index';
 import session from '../src/session';
 
 describe('ETrade', () => {
@@ -61,26 +57,6 @@ describe('ETrade', () => {
       PlaceOrder: expect.any(Function),
       PreviewOrder: expect.any(Function)
     });
-  });
-
-  it('has accounts enums and interfaces exported separately', () => {
-    expect(accounts).toEqual({enums: accountsEnums, interfaces: {}});
-  });
-
-  it('has alerts enums and interfaces exported separately', () => {
-    expect(alerts).toEqual({enums: alertsEnums, interfaces: {}});
-  });
-
-  it('has auth enums and interfaces exported separately', () => {
-    expect(auth).toEqual({enums: {}, interfaces: {}});
-  });
-
-  it('has market enums and interfaces exported separately', () => {
-    expect(market).toEqual({enums: marketEnums, interfaces: {}});
-  });
-
-  it('has order enums and interfaces exported separately', () => {
-    expect(order).toEqual({enums: orderEnums, interfaces: {}});
   });
 
   it('completeOAuth calls session.oauthComplete', () => {

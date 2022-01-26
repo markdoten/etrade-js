@@ -5,7 +5,6 @@ import type {ExpiryType, OptionCategory} from './enums';
 import type {IProduct} from '../interfaces';
 import type {QuoteStatus} from '../enums';
 
-export {IFetchResponse, IMessages} from '../interfaces';
 export {IGetOptionChainsRequest, IGetOptionChainsResponse} from './GetOptionChains';
 export {IGetOptionExpireDatesRequest, IGetOptionExpireDatesResponse} from './GetOptionExpireDates';
 export {IGetQuotesRequest, IGetQuotesResponse} from './GetQuotes';

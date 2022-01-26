@@ -1,6 +1,5 @@
-export declare const enums: {};
-export * as interfaces from './interfaces';
-export declare const functions: {
+declare const _default: {
     RenewAccessToken: () => Promise<import("./RenewAccessToken").IRenewAccessTokenResponse>;
     RevokeAccessToken: () => Promise<import("./RevokeAccessToken").IRevokeAccessTokenResponse>;
 };
+export default _default;

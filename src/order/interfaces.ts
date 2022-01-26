@@ -17,15 +17,13 @@ import type {
   PositionQuantity,
   QuantityType,
   ReInvestOption,
-  RoutingDestination,
-  SecurityType
+  RoutingDestination
 } from './enums';
-import type {Currency, MarketSession} from '../enums';
+import type {Currency, MarketSession, SecurityType} from '../enums';
 import type {IMessages, IProduct} from '../interfaces';
 
 export {ICancelOrderRequest, ICancelOrderResponse} from './CanCelOrder';
 export {IChangePreviewedOrderRequest, IChangePreviewedOrderResponse} from './ChangePreviewedOrder';
-export {IFetchResponse, IMessages, IPortfolioMargin, IProduct} from '../interfaces';
 export {IListOrdersRequest, IListOrdersResponse} from './ListOrders';
 export {IOrderParams} from './utils/create';
 export {IPlaceChangedOrderRequest, IPlaceChangedOrderResponse} from './PlaceChangedOrder';

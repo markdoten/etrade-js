@@ -1,8 +1,8 @@
 /**
  * @file Create order object.
  */
-import {MarketSession} from '../../enums';
-import {OrderAction, OrderPriceType, OrderTerm, QuantityType, SecurityType} from '../enums';
+import {MarketSession, SecurityType} from '../../enums';
+import {OrderAction, OrderPriceType, OrderTerm, QuantityType} from '../enums';
 import type {IInstrument, IOrderDetail} from '../interfaces';
 import type {IProduct} from '../../interfaces';
 

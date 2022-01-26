@@ -1,73 +1,54 @@
 /// <reference types="node" />
-/**
- * @file E-Trade API.
- */
-import * as Accounts from './accounts';
-import * as Alerts from './alerts';
-import * as Auth from './auth';
-import * as Market from './market';
-import * as Order from './order';
 import Emitter from 'events';
 import type { IEtradeConfig } from './interfaces';
-export * as enums from './enums';
-export * as interfaces from './interfaces';
-export declare const accounts: {
-    enums: typeof Accounts.enums;
-    interfaces: typeof Accounts.interfaces;
-};
-export declare const alerts: {
-    enums: typeof Alerts.enums;
-    interfaces: typeof Alerts.interfaces;
-};
-export declare const auth: {
-    enums: {};
-    interfaces: typeof Auth.interfaces;
-};
-export declare const market: {
-    enums: typeof Market.enums;
-    interfaces: typeof Market.interfaces;
-};
-export declare const order: {
-    enums: typeof Order.enums;
-    interfaces: typeof Order.interfaces;
-};
+export * from './enums';
+export * from './interfaces';
+export * from './accounts/enums';
+export * from './accounts/interfaces';
+export * from './alerts/enums';
+export * from './alerts/interfaces';
+export * from './auth/interfaces';
+export * from './market/enums';
+export * from './market/interfaces';
+export * from './order/enums';
+export * from './order/interfaces';
 /**
  * @class ETrade
  * @augments Emitter
  */
 export default class ETrade extends Emitter {
     accounts: {
-        GetAccountBalances: ({ accountIdKey, accountType, realTimeNAV }: Accounts.interfaces.IGetAccountBalancesRequest) => Promise<Accounts.interfaces.IGetAccountBalancesResponse>;
-        ListAccounts: () => Promise<Accounts.interfaces.IListAccountsResponse>;
-        ListTransactionDetails: ({ accountIdKey, storeId, transactionId }: Accounts.interfaces.IListTransactionDetailsRequest) => Promise<Accounts.interfaces.IListTransactionDetailsResponse>;
-        ListTransactions: ({ accountIdKey, ...query }: Accounts.interfaces.IListTransactionsRequest) => Promise<Accounts.interfaces.IListTransactionsResponse>;
-        ViewPortfolio: ({ accountIdKey, count, lotsRequired, marketSession, sortBy, sortOrder, totalsRequired, view }: Accounts.interfaces.IViewPortfolioRequest) => Promise<Accounts.interfaces.IViewPortfolioResponse>;
+        GetAccountBalances: ({ accountIdKey, accountType, realTimeNAV }: import("./accounts/GetAccountBalances").IGetAccountBalancesRequest) => Promise<import("./accounts/GetAccountBalances").IGetAccountBalancesResponse>;
+        ListAccounts: () => Promise<import("./accounts/ListAccounts").IListAccountsResponse>;
+        ListTransactionDetails: ({ accountIdKey, storeId, transactionId }: import("./accounts/ListTransactionDetails").IListTransactionDetailsRequest) => Promise<import("./accounts/ListTransactionDetails").IListTransactionDetailsResponse>;
+        ListTransactions: ({ accountIdKey, ...query }: import("./accounts/ListTransactions").IListTransactionsRequest) => Promise<import("./accounts/ListTransactions").IListTransactionsResponse>;
+        ViewPortfolio: ({ accountIdKey, count, lotsRequired, marketSession, sortBy, sortOrder, totalsRequired, view }: import("./accounts/ViewPortfolio").IViewPortfolioRequest) => Promise<import("./accounts/ViewPortfolio").IViewPortfolioResponse>;
     };
     alerts: {
-        DeleteAlert: ({ alertIds }: Alerts.interfaces.IDeleteAlertRequest) => Promise<Alerts.interfaces.IDeleteAlertResponse>;
-        ListAlertDetails: ({ id, ...query }: Alerts.interfaces.IListAlertDetailsRequest) => Promise<Alerts.interfaces.IListAlertDetailsResponse>;
-        ListAlerts: (query: Alerts.interfaces.IListAlertsRequest) => Promise<Alerts.interfaces.IListAlertsResponse>;
+        DeleteAlert: ({ alertIds }: import("./alerts/DeleteAlert").IDeleteAlertRequest) => Promise<import("./alerts/DeleteAlert").IDeleteAlertResponse>;
+        ListAlertDetails: ({ id, ...query }: import("./alerts/ListAlertDetails").IListAlertDetailsRequest) => Promise<import("./alerts/ListAlertDetails").IListAlertDetailsResponse>;
+        ListAlerts: (query: import("./alerts/ListAlerts").IListAlertsRequest) => Promise<import("./alerts/ListAlerts").IListAlertsResponse>;
     };
     auth: {
         completeOAuth: (verifier: string) => Promise<void>;
         startOAuth: () => Promise<string>;
-        RenewAccessToken: () => Promise<Auth.interfaces.IRenewAccessTokenResponse>;
-        RevokeAccessToken: () => Promise<Auth.interfaces.IRevokeAccessTokenResponse>;
+        RenewAccessToken: () => Promise<import("./auth/RenewAccessToken").IRenewAccessTokenResponse>;
+        RevokeAccessToken: () => Promise<import("./auth/RevokeAccessToken").IRevokeAccessTokenResponse>;
     };
     market: {
-        GetOptionChains: (query: Market.interfaces.IGetOptionChainsRequest) => Promise<Market.interfaces.IGetOptionChainsResponse>;
-        GetOptionExpireDates: (query: Market.interfaces.IGetOptionExpireDatesRequest) => Promise<Market.interfaces.IGetOptionExpireDatesResponse>;
-        GetQuotes: ({ symbols, ...query }: Market.interfaces.IGetQuotesRequest) => Promise<Market.interfaces.IGetQuotesResponse>;
-        LookUpProduct: ({ search }: Market.interfaces.ILookUpProductRequest) => Promise<Market.interfaces.ILookUpProductResponse>;
+        GetOptionChains: (query: import("./market/GetOptionChains").IGetOptionChainsRequest) => Promise<import("./market/GetOptionChains").IGetOptionChainsResponse>;
+        GetOptionExpireDates: (query: import("./market/GetOptionExpireDates").IGetOptionExpireDatesRequest) => Promise<import("./market/GetOptionExpireDates").IGetOptionExpireDatesResponse>;
+        GetQuotes: ({ symbols, ...query }: import("./market/GetQuotes").IGetQuotesRequest) => Promise<import("./market/GetQuotes").IGetQuotesResponse>;
+        LookUpProduct: ({ search }: import("./market/LookUpProduct").ILookUpProductRequest) => Promise<import("./market/LookUpProduct").ILookUpProductResponse>;
     };
     order: {
-        BuildOrder: ({ accountId, allOrNone, orderAction, orderTerm, override, priceType, quantity, securityType, symbol }: Order.interfaces.IOrderParams) => Order.interfaces.IOrderDetail;
-        CancelOrder: ({ accountIdKey, orderId }: Order.interfaces.ICancelOrderRequest) => Promise<Order.interfaces.ICancelOrderResponse>;
-        ChangePreviewedOrder: ({ accountIdKey, orderId, ...PreviewOrderRequest }: Order.interfaces.IChangePreviewedOrderRequest) => Promise<Order.interfaces.IChangePreviewedOrderResponse>;
-        ListOrders: ({ accountIdKey, ...query }: Order.interfaces.IListOrdersRequest) => Promise<Order.interfaces.IListOrdersResponse>;
-        PlaceChangedOrder: ({ accountIdKey, orderId, ...PlaceOrderRequest }: Order.interfaces.IPlaceChangedOrderRequest) => Promise<Order.interfaces.IPlaceChangedOrderResponse>;
-        PlaceOrder: ({ accountIdKey, ...PlaceOrderRequest }: Order.interfaces.IPlaceOrderRequest) => Promise<Order.interfaces.IPlaceOrderResponse>;
-        PreviewOrder: ({ accountIdKey, ...PreviewOrderRequest }: Order.interfaces.IPreviewOrderRequest) => Promise<Order.interfaces.IPreviewOrderResponse>;
+        BuildOrder: ({ accountId, allOrNone, orderAction, orderTerm, override, priceType, quantity, securityType, symbol }: import("./order/interfaces").IOrderParams) => import("./order/interfaces").IOrderDetail;
+        CancelOrder: ({ accountIdKey, orderId }: import("./order/CanCelOrder").ICancelOrderRequest) => Promise<import("./order/CanCelOrder").ICancelOrderResponse>;
+        ChangePreviewedOrder: ({ accountIdKey, orderId, ...PreviewOrderRequest }: import("./order/ChangePreviewedOrder").IChangePreviewedOrderRequest) => Promise<import("./order/ChangePreviewedOrder").IChangePreviewedOrderResponse>;
+        ListOrders: ({ accountIdKey, ...query }: import("./order/ListOrders").IListOrdersRequest) => Promise<import("./order/ListOrders").IListOrdersResponse>;
+        PlaceChangedOrder: ({ accountIdKey, orderId, ...PlaceOrderRequest }: import("./order/PlaceChangedOrder").IPlaceChangedOrderRequest) => Promise<import("./order/PlaceChangedOrder").IPlaceChangedOrderResponse>;
+        PlaceOrder: ({ accountIdKey, ...PlaceOrderRequest }: import("./order/PlaceOrder").IPlaceOrderRequest) => Promise<import("./order/PlaceOrder").IPlaceOrderResponse>;
+        PreviewOrder: ({ accountIdKey, ...PreviewOrderRequest }: import("./order/PreviewOrder").IPreviewOrderRequest) => Promise<import("./order/PreviewOrder").IPreviewOrderResponse>;
     };
     /**
      * E-Trade API constructor.
