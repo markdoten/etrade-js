@@ -1,6 +1,12 @@
 {
   "name": "etrade-ts",
   "version": "1.0.4",
+  "homepage": "https://markdoten.github.io/etrade-ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/markdoten/etrade-ts"
+  },
+  "license": "BSD",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "engines": {
@@ -12,6 +18,7 @@
   "scripts": {
     "build": "tsc && ts-node ./scripts/lib.ts",
     "clean": "rimraf node_modules",
+    "docs": "typedoc src/index.ts",
     "lint": "eslint --config ./config/.eslintrc.js --ext .ts --ignore-path ./config/.eslintignore .",
     "lint:fix": "eslint --config ./config/.eslintrc.js --fix --ext .ts --ignore-path ./config/.eslintignore .",
     "start": "ts-node ./dev/index.ts",
@@ -42,6 +49,7 @@
     "nodemon": "^2.0.15",
     "rimraf": "^3.0.2",
     "ts-jest": "27.1.2",
-    "ts-node": "^10.4.0"
+    "ts-node": "^10.4.0",
+    "typedoc": "^0.22.11"
   }
 }
