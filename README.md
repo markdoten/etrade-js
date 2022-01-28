@@ -1,6 +1,6 @@
 # etrade-ts
 
-[![CircleCI](https://circleci.com/gh/markdoten/etrade-ts/tree/master.svg?style=svg)](https://circleci.com/gh/markdoten/etrade-ts/tree/master)
+[![CircleCI](https://circleci.com/gh/markdoten/etrade-ts/tree/main.svg?style=svg)](https://circleci.com/gh/markdoten/etrade-ts/tree/main)
 
 A TypeScript E-Trade SDK implementation.
 
