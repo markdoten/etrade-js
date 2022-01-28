@@ -22,7 +22,7 @@ import type {
 import type {Currency, MarketSession, SecurityType} from '../enums';
 import type {IMessages, IProduct} from '../interfaces';
 
-export {ICancelOrderRequest, ICancelOrderResponse} from './CanCelOrder';
+export {ICancelOrderRequest, ICancelOrderResponse} from './CancelOrder';
 export {IChangePreviewedOrderRequest, IChangePreviewedOrderResponse} from './ChangePreviewedOrder';
 export {IListOrdersRequest, IListOrdersResponse} from './ListOrders';
 export {IOrderParams} from './utils/create';

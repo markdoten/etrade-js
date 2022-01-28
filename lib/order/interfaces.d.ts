@@ -4,7 +4,7 @@
 import type { CashMargin, ConditionFollowPrice, ConditionType, EgQual, EventName, MFTransaction, OffsetType, OrderAction, OrderPriceType, OrderStatus, OrderTerm, OrderType, PositionQuantity, QuantityType, ReInvestOption, RoutingDestination } from './enums';
 import type { Currency, MarketSession, SecurityType } from '../enums';
 import type { IMessages, IProduct } from '../interfaces';
-export { ICancelOrderRequest, ICancelOrderResponse } from './CanCelOrder';
+export { ICancelOrderRequest, ICancelOrderResponse } from './CancelOrder';
 export { IChangePreviewedOrderRequest, IChangePreviewedOrderResponse } from './ChangePreviewedOrder';
 export { IListOrdersRequest, IListOrdersResponse } from './ListOrders';
 export { IOrderParams } from './utils/create';
