@@ -1,6 +1,6 @@
 {
   "name": "etrade-ts",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "homepage": "https://markdoten.github.io/etrade-ts",
   "repository": {
     "type": "git",
@@ -26,12 +26,8 @@
     "test": "jest --config ./config/jest.config.ts"
   },
   "dependencies": {
-    "abort-controller": "^3.0.0",
-    "node-fetch": "^2.6.6",
     "oauth": "^0.9.15",
-    "oauth-signature": "^1.5.0",
-    "typescript": "^4.4.4",
-    "uuid": "^8.3.2"
+    "typescript": "^4.4.4"
   },
   "devDependencies": {
     "@types/jest": "^27.0.2",
@@ -45,7 +41,6 @@
     "express": "^4.17.1",
     "express-session": "^1.17.2",
     "jest": "27.4.5",
-    "nock": "^13.0.5",
     "nodemon": "^2.0.15",
     "rimraf": "^3.0.2",
     "ts-jest": "27.1.2",
