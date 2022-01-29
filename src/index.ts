@@ -8,10 +8,11 @@ import Emitter from 'events';
 import Market from './market';
 import Order from './order';
 import session from './session';
-import type {IEtradeConfig} from './interfaces';
+import type {IEtradeConfig, ITokenData} from './interfaces';
 
 export * from './enums';
 export * from './interfaces';
+export {IFetchOptions} from './session';
 
 // Export module specific enums and interfaces.
 export * from './accounts/enums';
@@ -48,6 +49,12 @@ export default class ETrade extends Emitter {
     super();
     session.initialize(config);
   }
+
+  /**
+   * Get the active token, secret, and environment from the session.
+   * @returns {ITokenData} - The token data.
+   */
+  public getToken = (): ITokenData => session.toJSON();
 
   /**
    * Set the access token and secret.

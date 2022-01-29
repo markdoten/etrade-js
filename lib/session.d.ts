@@ -1,5 +1,5 @@
-import type { IEtradeConfig, IFetchResponse } from './interfaces';
-interface IFetchOptions {
+import type { IEtradeConfig, IFetchResponse, ITokenData } from './interfaces';
+export interface IFetchOptions {
     body?: Record<string, any>;
     headers?: string[];
     isOAuth?: boolean;
@@ -63,9 +63,9 @@ declare class Session {
     setToken(accessToken: string, accessTokenSecret: string): void;
     /**
      * JSON format of this class.
-     * @returns {Object} - JSON format of this class.
+     * @returns {ITokenData} - JSON format of this class.
      */
-    toJSON(): Record<string, any>;
+    toJSON: () => ITokenData;
 }
 declare const _default: Session;
 export default _default;

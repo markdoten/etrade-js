@@ -1,6 +1,7 @@
 /**
  * @file Main index test.
  */
+import {Environment} from '../src/enums';
 import ETrade from '../src/index';
 import session from '../src/session';
 
@@ -69,6 +70,25 @@ describe('ETrade', () => {
     jest.spyOn(session, 'oauthStart').mockReturnValue(null);
     sdk.auth.startOAuth();
     expect(session.oauthStart).toHaveBeenCalledWith();
+  });
+
+  describe('getToken', () => {
+    it('gets undefined token values from the session if not authorized yet', () => {
+      expect(sdk.getToken()).toEqual({
+        accessToken: undefined,
+        accessTokenSecret: undefined,
+        environment: Environment.SANDBOX
+      });
+    });
+
+    it('gets the token, secret and environment from the session', () => {
+      sdk.setToken('access-token', 'access-token-secret');
+      expect(sdk.getToken()).toEqual({
+        accessToken: 'access-token',
+        accessTokenSecret: 'access-token-secret',
+        environment: Environment.SANDBOX
+      });
+    });
   });
 
   describe('setToken', () => {

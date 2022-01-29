@@ -58,3 +58,9 @@ export interface IProductId {
   symbol: string;
   typeCode: TypeCode;
 }
+
+export interface ITokenData {
+  accessToken: string | undefined;
+  accessTokenSecret: string | undefined;
+  environment: Environment;
+}
