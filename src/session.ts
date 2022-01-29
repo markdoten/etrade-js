@@ -4,7 +4,7 @@
 import {Environment} from './enums';
 import {OAuth} from 'oauth';
 import {titleToCamelProperties} from './util';
-import type {IEtradeConfig, IFetchResponse} from './interfaces';
+import type {IEtradeConfig, IFetchResponse, ITokenData} from './interfaces';
 
 const HOSTNAMES = {
   [Environment.LIVE]: 'https://api.etrade.com',
@@ -13,20 +13,13 @@ const HOSTNAMES = {
 
 const REQUEST_MAX_DURATION = 1000 * 10;
 
-interface IFetchOptions {
+export interface IFetchOptions {
   body?: Record<string, any>;
   headers?: string[];
   isOAuth?: boolean;
   method?: 'DELETE' | 'GET' | 'POST' | 'PUT';
   path: string;
   query?: any;
-}
-
-interface IGenerateHeaders {
-  headers: string[];
-  method: string;
-  query?: Record<string, number | string>;
-  url: string;
 }
 
 /**
@@ -187,15 +180,13 @@ class Session {
 
   /**
    * JSON format of this class.
-   * @returns {Object} - JSON format of this class.
+   * @returns {ITokenData} - JSON format of this class.
    */
-  public toJSON(): Record<string, any> {
-    return {
-      accessToken: this._accessToken,
-      accessTokenSecret: this._accessTokenSecret,
-      environment: this._environment
-    };
-  }
+  public toJSON = (): ITokenData => ({
+    accessToken: this._accessToken,
+    accessTokenSecret: this._accessTokenSecret,
+    environment: this._environment
+  })
 }
 
 export default new Session;

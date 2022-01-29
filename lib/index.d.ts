@@ -1,8 +1,9 @@
 /// <reference types="node" />
 import Emitter from 'events';
-import type { IEtradeConfig } from './interfaces';
+import type { IEtradeConfig, ITokenData } from './interfaces';
 export * from './enums';
 export * from './interfaces';
+export { IFetchOptions } from './session';
 export * from './accounts/enums';
 export * from './accounts/interfaces';
 export * from './alerts/enums';
@@ -55,6 +56,11 @@ export default class ETrade extends Emitter {
      * @param config - The configuration object.
      */
     constructor(config: IEtradeConfig);
+    /**
+     * Get the active token, secret, and environment from the session.
+     * @returns {ITokenData} - The token data.
+     */
+    getToken: () => ITokenData;
     /**
      * Set the access token and secret.
      * @param accessToken - The access token.
