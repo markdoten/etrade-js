@@ -25,6 +25,9 @@ export interface IGetAccountBalancesRequest {
   realTimeNAV?: boolean;
 }
 
+/**
+ * @see {@link https://apisb.etrade.com/docs/api/account/api-balance-v1.html#/definitions/BalanceResponse|BalanceResponse Docs}
+ */
 export interface IGetAccountBalancesResponse extends IFetchResponse {
   /** The description of the account for which the balance is requested. */
   accountDesc: string;
@@ -66,6 +69,7 @@ export interface IGetAccountBalancesResponse extends IFetchResponse {
  * @param [request.accountType] - The registered account type.
  * @param [request.realTimeNAV] - Default is false. If true, fetches real time balance.
  * @returns {Promise<IGetAccountBalancesResponse>} - List of accounts.
+ * @see {@link https://apisb.etrade.com/docs/api/account/api-balance-v1.html#/definition/getBalance|Get Account Balances Docs}
  */
 export default ({
   accountIdKey,

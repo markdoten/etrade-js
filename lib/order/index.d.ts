@@ -1,5 +1,5 @@
 declare const _default: {
-    BuildOrder: ({ accountId, allOrNone, orderAction, orderTerm, override, priceType, quantity, securityType, symbol }: import("./utils/create").IOrderParams) => import("./interfaces").IOrderDetail;
+    BuildOrder: ({ accountId, allOrNone, orderAction, orderTerm, override, priceType, quantity, securityType, symbol }: import("./utils/create").IOrderParams) => import("./interfaces").IOrderDetailReq;
     CancelOrder: ({ accountIdKey, orderId }: import("./CancelOrder").ICancelOrderRequest) => Promise<import("./CancelOrder").ICancelOrderResponse>;
     ChangePreviewedOrder: ({ accountIdKey, orderId, ...PreviewOrderRequest }: import("./ChangePreviewedOrder").IChangePreviewedOrderRequest) => Promise<import("./ChangePreviewedOrder").IChangePreviewedOrderResponse>;
     ListOrders: ({ accountIdKey, ...query }: import("./ListOrders").IListOrdersRequest) => Promise<import("./ListOrders").IListOrdersResponse>;

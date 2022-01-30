@@ -6,6 +6,9 @@ export interface IDeleteAlertRequest {
     /** List of alert IDs. */
     alertIds: TAlertId[];
 }
+/**
+ * @see {@link https://apisb.etrade.com/docs/api/user/api-alert-v1.html#/definitions/DeleteAlertsResponse|DeleteAlertsResponse Docs}
+ */
 export interface IDeleteAlertResponse extends IFetchResponse {
     /** The failed alerts response. */
     failedAlerts: IFailedAlerts;
@@ -19,5 +22,6 @@ declare const _default: ({ alertIds }: IDeleteAlertRequest) => Promise<IDeleteAl
  * @param request - The request object.
  * @param [request.alertIds] - List of alert IDs.
  * @returns {Promise<IDeleteAlertResponse>} - Details for an alert.
+ * @see {@link https://apisb.etrade.com/docs/api/user/api-alert-v1.html#/definition/deleteAlert|Delete Alert Docs}
  */
 export default _default;

@@ -5,6 +5,8 @@ import session from '../session';
 import type {IBrokerage, ICategory} from './interfaces';
 import type {IFetchResponse} from '../interfaces';
 
+/* eslint-disable max-len */
+
 export interface IListTransactionDetailsRequest {
   /** The unique account key. Retrievable by calling the List Accounts API. */
   accountIdKey: string;
@@ -14,6 +16,9 @@ export interface IListTransactionDetailsRequest {
   transactionId: string;
 }
 
+/**
+ * @see {@link https://apisb.etrade.com/docs/api/account/api-transaction-v1.html#/definitions/TransactionDetailsResponse|TransactionDetailsResponse Docs}
+ */
 export interface IListTransactionDetailsResponse extends IFetchResponse {
   /** Numeric account ID. */
   accountId: string;
@@ -41,6 +46,7 @@ export interface IListTransactionDetailsResponse extends IFetchResponse {
  * @param [request.storeId] - Storage location for older transactions.
  * @param [request.transactionId] - Transaction Id.
  * @returns {Promise<IListTransactionDetailsResponse>} - Transaction details.
+ * @see {@link https://apisb.etrade.com/docs/api/account/api-transaction-v1.html#/definition/getTransactionDetails|List Transaction Details Docs}
  */
 export default ({
   accountIdKey,

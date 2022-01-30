@@ -43,7 +43,7 @@ export default class ETrade extends Emitter {
         LookUpProduct: ({ search }: import("./market/LookUpProduct").ILookUpProductRequest) => Promise<import("./market/LookUpProduct").ILookUpProductResponse>;
     };
     order: {
-        BuildOrder: ({ accountId, allOrNone, orderAction, orderTerm, override, priceType, quantity, securityType, symbol }: import("./order/interfaces").IOrderParams) => import("./order/interfaces").IOrderDetail;
+        BuildOrder: ({ accountId, allOrNone, orderAction, orderTerm, override, priceType, quantity, securityType, symbol }: import("./order/interfaces").IOrderParams) => import("./order/interfaces").IOrderDetailReq;
         CancelOrder: ({ accountIdKey, orderId }: import("./order/CancelOrder").ICancelOrderRequest) => Promise<import("./order/CancelOrder").ICancelOrderResponse>;
         ChangePreviewedOrder: ({ accountIdKey, orderId, ...PreviewOrderRequest }: import("./order/ChangePreviewedOrder").IChangePreviewedOrderRequest) => Promise<import("./order/ChangePreviewedOrder").IChangePreviewedOrderResponse>;
         ListOrders: ({ accountIdKey, ...query }: import("./order/ListOrders").IListOrdersRequest) => Promise<import("./order/ListOrders").IListOrdersResponse>;

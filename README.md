@@ -8,6 +8,12 @@ Documentation: https://markdoten.github.io/etrade-ts/
 
 E-Trade developer documentation: https://developer.etrade.com/home
 
+## IMPORTANT!
+
+The E-Trade documentation shows camel case property names throughout. However, for property names that as assigned to other interfaces, they are title case even though the documentation does not show that. For consistency, properties within responses are converted to camel case, so that it matches the E-Trade documentation.
+
+When making place order requests, a few of the properties need to be title case. The SDK automatically takes care of it.
+
 ## Authorization
 
 The E-Trade OAuth flow is a multi-step process. Here is the E-Trade OAuth documentation: https://developer.etrade.com/getting-started/developer-guides.

@@ -25,6 +25,9 @@ export interface IGetOptionChainsRequest {
     /** The market symbol for the instrument; for example, GOOG. */
     symbol: string;
 }
+/**
+ * @see {@link https://apisb.etrade.com/docs/api/market/api-market-v1.html#/definitions/OptionChainResponse|OptionChainResponse Docs}
+ */
 export interface IGetOptionChainsResponse extends IFetchResponse {
     /** The near price in the option chain. */
     nearPrice: number;
@@ -43,5 +46,6 @@ declare const _default: (query: IGetOptionChainsRequest) => Promise<IGetOptionCh
  * @async
  * @param query - The request object.
  * @returns {Promise<IGetOptionChainsResponse>} - List of option chains for a specific underlying instrument.
+ * @see {@link https://apisb.etrade.com/docs/api/market/api-market-v1.html#/definition/getOptionChains|Get Option Chains Docs}
  */
 export default _default;

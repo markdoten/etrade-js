@@ -2,6 +2,10 @@
  * @file Accounts Enums.
  */
 export { MarketSession, QuoteMode, SortOrder } from '../enums';
+export declare enum AccountStatus {
+    ACTIVE = "ACTIVE",
+    CLOSED = "CLOSED"
+}
 export declare enum AccountType {
     AMMCHK = "AMMCHK",
     ARO = "ARO",
@@ -120,6 +124,12 @@ export declare enum OptionLevel {
     LEVEL_3 = "LEVEL_3",
     LEVEL_4 = "LEVEL_4",
     NO_OPTIONS = "NO_OPTIONS"
+}
+export declare enum PositionIndicator {
+    TYPE1 = "TYPE1",
+    TYPE2 = "TYPE2",
+    TYPE5 = "TYPE5",
+    UNDEFINED = "UNDEFINED"
 }
 export declare enum SortBy {
     ADJ_NONADJ_FLAG = "ADJ_NONADJ_FLAG",

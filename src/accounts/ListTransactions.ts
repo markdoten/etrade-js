@@ -22,6 +22,9 @@ export interface IListTransactionsRequest {
   startDate?: string;
 }
 
+/**
+ * @see {@link https://apisb.etrade.com/docs/api/account/api-transaction-v1.html#/definitions/TransactionDetailsResponse|TransactionDetailsResponse Docs}
+ */
 export interface IListTransactionsResponse extends IFetchResponse {
   /** Numeric account ID. */
   accountId: string;
@@ -47,6 +50,7 @@ export interface IListTransactionsResponse extends IFetchResponse {
  * @param request - The request object.
  * @param [request.accountIdKey] - The unique account key.
  * @returns {Promise<IListTransactionsResponse>} - Get all transactions for the specified account.
+ * @see {@link https://apisb.etrade.com/docs/api/account/api-transaction-v1.html#/definition/getTransactions|List Transactions Docs}
  */
 export default ({accountIdKey, ...query}: IListTransactionsRequest): Promise<IListTransactionsResponse> => {
   const path = `/accounts/${accountIdKey}/transactions`;

@@ -15,6 +15,9 @@ export interface IGetOptionExpireDatesRequest {
   symbol: string;
 }
 
+/**
+ * @see {@link https://apisb.etrade.com/docs/api/market/api-market-v1.html#/definitions/OptionExpireDateResponse|OptionExpireDateResponse Docs}
+ */
 export interface IGetOptionExpireDatesResponse extends IFetchResponse {
   /** The expiration dates for the options. */
   expirationDates: IExpirationDate[];
@@ -25,6 +28,7 @@ export interface IGetOptionExpireDatesResponse extends IFetchResponse {
  * @async
  * @param query - The request query object.
  * @returns {Promise<IGetOptionExpireDatesResponse>} - List of dates suitable for structuring an option table display.
+ * @see {@link https://apisb.etrade.com/docs/api/market/api-market-v1.html#/definition/getOptionExpireDates|Get Option Expire Dates Docs}
  */
 export default (query: IGetOptionExpireDatesRequest): Promise<IGetOptionExpireDatesResponse> =>
   session.request<IGetOptionExpireDatesResponse>({

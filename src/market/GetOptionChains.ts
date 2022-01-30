@@ -33,6 +33,9 @@ export interface IGetOptionChainsRequest {
   symbol: string;
 }
 
+/**
+ * @see {@link https://apisb.etrade.com/docs/api/market/api-market-v1.html#/definitions/OptionChainResponse|OptionChainResponse Docs}
+ */
 export interface IGetOptionChainsResponse extends IFetchResponse {
   /** The near price in the option chain. */
   nearPrice: number;
@@ -51,6 +54,7 @@ export interface IGetOptionChainsResponse extends IFetchResponse {
  * @async
  * @param query - The request object.
  * @returns {Promise<IGetOptionChainsResponse>} - List of option chains for a specific underlying instrument.
+ * @see {@link https://apisb.etrade.com/docs/api/market/api-market-v1.html#/definition/getOptionChains|Get Option Chains Docs}
  */
 export default (query: IGetOptionChainsRequest): Promise<IGetOptionChainsResponse> =>
   session.request<IGetOptionChainsResponse>({

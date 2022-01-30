@@ -13,6 +13,9 @@ export interface IListAlertDetailsRequest {
   id: string;
 }
 
+/**
+ * @see {@link https://apisb.etrade.com/docs/api/user/api-alert-v1.html#/definitions/AlertDetailsResponse|AlertDetailsResponse Docs}
+ */
 export interface IListAlertDetailsResponse extends IFetchResponse {
   /** The date and time the alert was issued, in Epoch time. */
   createTime: number;
@@ -40,6 +43,7 @@ export interface IListAlertDetailsResponse extends IFetchResponse {
  * @param request - The request object.
  * @param [request.id] - The alert ID value. Alert id whose details are needed.
  * @returns {Promise<IListAlertDetailsResponse>} - Details for an alert.
+ * @see {@link https://apisb.etrade.com/docs/api/user/api-alert-v1.html#/definition/getAlertDetails|List Alert Details Docs}
  */
 export default ({id, ...query}: IListAlertDetailsRequest): Promise<IListAlertDetailsResponse> =>
   session.request<IListAlertDetailsResponse>({

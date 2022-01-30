@@ -12,6 +12,9 @@ export interface ILookUpProductRequest {
   search: string;
 }
 
+/**
+ * @see {@link https://apisb.etrade.com/docs/api/market/api-market-v1.html#/definitions/LookupResponse|LookupResponse Docs}
+ */
 export interface ILookUpProductResponse extends IFetchResponse {
   /** The lookup response data. */
   data: IData[];
@@ -23,6 +26,7 @@ export interface ILookUpProductResponse extends IFetchResponse {
  * @param request - The request object.
  * @param [request.search] - The search request.
  * @returns {Promise<ILookUpProductResponse>} - Information about market events.
+ * @see {@link https://apisb.etrade.com/docs/api/market/api-market-v1.html#/definition/Lookup|Look Up Product Docs}
  */
 export default ({search}: ILookUpProductRequest): Promise<ILookUpProductResponse> =>
   session.request<ILookUpProductResponse>({path: `/market/lookup/${search}`});
