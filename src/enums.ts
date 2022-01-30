@@ -2,6 +2,11 @@
  * @file Enums.
  */
 
+export enum CallPut {
+  CALL = 'CALL',
+  PUT = 'PUT'
+}
+
 export enum Currency {
   CAD = 'CAD',
   EUR = 'EUR',

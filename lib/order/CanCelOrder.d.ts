@@ -5,6 +5,9 @@ export interface ICancelOrderRequest {
     /** Order confirmation Id for the order placed. */
     orderId: number;
 }
+/**
+ * @see {@link https://apisb.etrade.com/docs/api/order/api-order-v1.html#/definitions/CancelOrderResponse|CancelOrderResponse Docs}
+ */
 export interface ICancelOrderResponse extends IFetchResponse {
     /** The numeric account ID for the cancelled order. */
     accountId: string;
@@ -23,5 +26,6 @@ declare const _default: ({ accountIdKey, orderId }: ICancelOrderRequest) => Prom
  * @param [request.accountIdKey] - The unique account key. Retrievable by calling the List Accounts API.
  * @param [request.orderId] - Order confirmation Id for the order placed.
  * @returns {Promise<ICancelOrderResponse>} - Order status.
+ * @see {@link https://apisb.etrade.com/docs/api/order/api-order-v1.html#/definition/cancelOrder|Cancel Order Docs}
  */
 export default _default;

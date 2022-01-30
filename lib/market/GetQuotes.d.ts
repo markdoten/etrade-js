@@ -13,6 +13,9 @@ export interface IGetQuotesRequest {
     /** One or more (comma-separated) symbols for equities or options, up to a maximum of 25. Symbols for equities are simple, for example, GOOG. Symbols for options are more complex, consisting of six elements separated by colons, in this format: underlier:year:month:day:optionType:strikePrice. */
     symbols: string[];
 }
+/**
+ * @see {@link https://apisb.etrade.com/docs/api/market/api-quote-v1.html#/definitions/QuoteResponse|QuoteResponse Docs}
+ */
 export interface IGetQuotesResponse extends IFetchResponse {
     /** The Quote response Message. */
     messages: IMessages;
@@ -26,5 +29,6 @@ declare const _default: ({ symbols, ...query }: IGetQuotesRequest) => Promise<IG
  * @param request - The request object.
  * @param [request.symbols] - One or more (comma-separated) symbols for equities or options, up to a maximum of 25. Symbols for equities are simple, for example, GOOG. Symbols for options are more complex, consisting of six elements separated by colons, in this format: underlier:year:month:day:optionType:strikePrice.
  * @returns {Promise<IGetQuotesResponse>} - Portfolio information for a selected brokerage account.
+ * @see {@link https://apisb.etrade.com/docs/api/market/api-quote-v1.html#/definition/getQuotes|Get Quotes Docs}
  */
 export default _default;

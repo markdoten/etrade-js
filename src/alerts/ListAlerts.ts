@@ -22,6 +22,9 @@ export interface IListAlertsRequest {
   status?: AlertStatus;
 }
 
+/**
+ * @see {@link https://apisb.etrade.com/docs/api/user/api-alert-v1.html#/definitions/AlertsResponse|AlertsResponse Docs}
+ */
 export interface IListAlertsResponse extends IFetchResponse {
   /** The array of alert responses. */
   alerts: IAlert[];
@@ -34,6 +37,7 @@ export interface IListAlertsResponse extends IFetchResponse {
  * @async
  * @param query - The request object.
  * @returns {Promise<IListAlertsResponse>} - List of alerts.
+ * @see {@link https://apisb.etrade.com/docs/api/user/api-alert-v1.html#/definition/getAlertsInbox|List Alerts Docs}
  */
 export default (query: IListAlertsRequest): Promise<IListAlertsResponse> =>
   session.request<IListAlertsResponse>({path: '/user/alerts', query});

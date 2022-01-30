@@ -8,6 +8,9 @@ export interface IListTransactionDetailsRequest {
     /** Numeric transaction ID. */
     transactionId: string;
 }
+/**
+ * @see {@link https://apisb.etrade.com/docs/api/account/api-transaction-v1.html#/definitions/TransactionDetailsResponse|TransactionDetailsResponse Docs}
+ */
 export interface IListTransactionDetailsResponse extends IFetchResponse {
     /** Numeric account ID. */
     accountId: string;
@@ -35,5 +38,6 @@ declare const _default: ({ accountIdKey, storeId, transactionId }: IListTransact
  * @param [request.storeId] - Storage location for older transactions.
  * @param [request.transactionId] - Transaction Id.
  * @returns {Promise<IListTransactionDetailsResponse>} - Transaction details.
+ * @see {@link https://apisb.etrade.com/docs/api/account/api-transaction-v1.html#/definition/getTransactionDetails|List Transaction Details Docs}
  */
 export default _default;

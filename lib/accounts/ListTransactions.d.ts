@@ -14,6 +14,9 @@ export interface IListTransactionsRequest {
     /** The earliest date to include in the date range, formatted as MMDDYYYY. History is available for two years. */
     startDate?: string;
 }
+/**
+ * @see {@link https://apisb.etrade.com/docs/api/account/api-transaction-v1.html#/definitions/TransactionDetailsResponse|TransactionDetailsResponse Docs}
+ */
 export interface IListTransactionsResponse extends IFetchResponse {
     /** Numeric account ID. */
     accountId: string;
@@ -39,5 +42,6 @@ declare const _default: ({ accountIdKey, ...query }: IListTransactionsRequest) =
  * @param request - The request object.
  * @param [request.accountIdKey] - The unique account key.
  * @returns {Promise<IListTransactionsResponse>} - Get all transactions for the specified account.
+ * @see {@link https://apisb.etrade.com/docs/api/account/api-transaction-v1.html#/definition/getTransactions|List Transactions Docs}
  */
 export default _default;

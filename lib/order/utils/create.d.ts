@@ -3,7 +3,7 @@
  */
 import { SecurityType } from '../../enums';
 import { OrderAction, OrderPriceType, OrderTerm } from '../enums';
-import type { IInstrument, IOrderDetail } from '../interfaces';
+import type { IInstrument, IOrderDetailReq } from '../interfaces';
 import type { IProduct } from '../../interfaces';
 export interface IOrderParams {
     accountId: string;
@@ -12,7 +12,7 @@ export interface IOrderParams {
     orderTerm?: OrderTerm;
     override?: {
         instrument?: Partial<IInstrument>;
-        orderDetail?: Partial<IOrderDetail>;
+        orderDetail?: Partial<IOrderDetailReq>;
         product?: Partial<IProduct>;
     };
     priceType?: OrderPriceType;
@@ -32,6 +32,6 @@ export interface IOrderParams {
  * @param [params.quantity] - Quantity.
  * @param [params.securityType] - Security type.
  * @param [params.symbol] - Symbol.
- * @returns {IOrderDetail} - Order detail object.
+ * @returns {IOrderDetailReq} - Order detail object.
  */
-export declare const createOrder: ({ accountId, allOrNone, orderAction, orderTerm, override, priceType, quantity, securityType, symbol }: IOrderParams) => IOrderDetail;
+export declare const createOrder: ({ accountId, allOrNone, orderAction, orderTerm, override, priceType, quantity, securityType, symbol }: IOrderParams) => IOrderDetailReq;

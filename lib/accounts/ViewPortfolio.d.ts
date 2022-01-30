@@ -24,6 +24,9 @@ export interface IViewPortfolioRequest {
     /** The view query. Default: Quick. */
     view?: View;
 }
+/**
+ * @see {@link https://apisb.etrade.com/docs/api/account/api-portfolio-v1.html#/definitions/PortfolioResponse|PortfolioResponse Docs}
+ */
 export interface IViewPortfolioResponse extends IFetchResponse {
     /** The account portfolio array. */
     accountPortfolio: IAccountPortfolio[];
@@ -44,5 +47,6 @@ declare const _default: ({ accountIdKey, count, lotsRequired, marketSession, sor
  * @param [request.totalsRequired] - It gives the total values of the portfolio.
  * @param [request.view] - The view query.
  * @returns {Promise<IViewPortfolioResponse>} - Provides portfolio information for a selected brokerage account.
+ * @see {@link https://apisb.etrade.com/docs/api/account/api-portfolio-v1.html#/definition/getPortfolio|View Portfolio Docs}
  */
 export default _default;

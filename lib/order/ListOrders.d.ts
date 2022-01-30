@@ -24,6 +24,9 @@ export interface IListOrdersRequest {
     /** Type of transaction. */
     transactionType?: TransactionType;
 }
+/**
+ * @see {@link https://apisb.etrade.com/docs/api/order/api-order-v1.html#/definitions/OrdersResponse|OrdersResponse Docs}
+ */
 export interface IListOrdersResponse extends IFetchResponse {
     /** Specifies the desired starting point of the set of items to return. Used for paging as described in the Notes below. */
     marker: string;
@@ -41,5 +44,6 @@ declare const _default: ({ accountIdKey, ...query }: IListOrdersRequest) => Prom
  * @param request - The request object.
  * @param [request.accountIdKey] - The unique account key. Retrievable by calling the List Accounts API.
  * @returns {Promise<IListOrdersResponse>} - Order details.
+ * @see {@link https://apisb.etrade.com/docs/api/order/api-order-v1.html#/definition/getOrders|List Orders Docs}
  */
 export default _default;
