@@ -117,7 +117,7 @@ export interface IInstrument {
  * This is the same as Instrument with Product title cased since E*Trade only accepts this format.
  * @see {@link https://apisb.etrade.com/docs/api/order/api-order-v1.html#/definitions/Instrument|Instrument Docs}
  */
-export interface IInstrumentReq extends IInstrument {
+export interface IInstrumentReq extends Omit<IInstrument, 'product'> {
     /** The product details for the security. */
     Product?: IProduct;
 }
@@ -294,7 +294,7 @@ export interface IOrderDetail {
  * This is the same as IOrderDetail with Instrument and Product title cased since E*Trade only accepts this format.
  * @see {@link https://apisb.etrade.com/docs/api/order/api-order-v1.html#/definitions/OrderDetail|OrderDetail Docs}
  */
-export interface IOrderDetailReq extends IOrderDetail {
+export interface IOrderDetailReq extends Omit<IOrderDetail, 'instrument'> {
     /** The object for the instrument. */
     Instrument?: IInstrumentReq[];
 }
