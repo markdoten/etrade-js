@@ -7,10 +7,7 @@ import type {IFetchResponse} from '../interfaces';
 /* eslint-disable max-len */
 
 export interface IRevokeAccessTokenResponse extends IFetchResponse {
-  // /** The consumer’s access token. */
-  // oauth_token: string;
-  // /** The token secret. */
-  // oauth_token_secret: number;
+  /** Message identifying that the token was revoked. */
   message: string;
 }
 

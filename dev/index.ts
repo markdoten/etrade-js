@@ -29,8 +29,10 @@ app.use(session(sess));
 let etrade: Etrade;
 let sessionData: any;
 
-fs.readFile(sessionPath, 'utf8')
+fs.access(sessionPath)
+  .then(() => fs.readFile(sessionPath, 'utf8'))
   .then((data: any) => (sessionData = JSON.parse(data)))
+  .catch(() => console.log(`${sessionPath} doesn't exist.`))
   .finally(() => {
     etrade = new Etrade({
       ...(sessionData || {}),
@@ -43,8 +45,9 @@ app.get('/ping', async (req: Request, res: Response) => {
   res.send('pong');
 });
 
-app.get('/etrade/auth/start', async (req: Request, res: Response) =>
-  res.redirect(await etrade.auth.startOAuth()));
+app.get('/etrade/auth/start', async (req: Request, res: Response) => {
+  res.redirect(await etrade.auth.startOAuth());
+});
 
 app.get('/etrade/auth/code', async (req: Request, res: Response) => {
   await etrade.auth.completeOAuth(req.query.oauth_verifier.toString());

@@ -7,12 +7,7 @@ import type {IFetchResponse} from '../interfaces';
 /* eslint-disable max-len */
 
 export interface IRenewAccessTokenResponse extends IFetchResponse {
-  // /** Returns true if a callback URL is configured for the current consumer key, otherwise false. Callbacks are described under the Authorize Application API. */
-  // oauth_callback_confirmed: string;
-  // /** The consumer's request token. */
-  // oauth_token: string;
-  // /** The token secret. */
-  // oauth_token_secret: string;
+  /** Message identifying that the token was renewed. */
   message: string;
 }
 
